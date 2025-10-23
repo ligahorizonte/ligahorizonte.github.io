@@ -150,7 +150,6 @@ Ele caminha com você. Transforma você. Sustenta você.
 
 > Pois eu estou certo de que Deus, que começou esse bom trabalho na vida de vocês, vai continuá-lo até que ele esteja completo no Dia de Cristo Jesus. Filipenses 1:6 NTLH
 
-
 # O que vem por aí
 
 Essa é só a introdução. Metanoia é um conceito tão rico, tão profundo, que a gente precisa explorar mais.

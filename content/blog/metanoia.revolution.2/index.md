@@ -39,25 +39,34 @@ Vamos nessa?
 
 # Jesus e o chamado à Revolução Mental
 
-Antes de entrar nas histórias individuais, precisa entender o contexto: Jesus veio fazendo um chamado direto à metanoia.
-Ele não começou seu ministério fazendo milagres ou pregando sermões complexos. Ele começou com uma mensagem direta e simples:
+Antes de entrar nas histórias individuais, você precisa entender o contexto: Jesus veio fazendo um chamado direto à metanoia.
 
-Daí em diante Jesus começou a anunciar a sua mensagem. Ele dizia: — Arrependam-se dos seus pecados porque o Reino do Céu está perto!
-— Mateus 4:17 NTLH
+Ele não começou seu ministério fazendo milagres ou pregando sermões complexos.
 
-Mas lembra do artigo anterior? A palavra traduzida como "arrependam-se" é metanoia. Então Jesus tava literalmente dizendo:
-"Mudem completamente sua mente! Transformem seu jeito de pensar! Uma nova realidade está chegando e vocês precisam de uma nova mentalidade pra enxergá-la."
+Ele começou com uma mensagem direta e simples:
+
+> Daí em diante Jesus começou a anunciar a sua mensagem. Ele dizia: — Arrependam-se dos seus pecados porque o Reino do Céu está perto! Mateus 4:17 NTLH
+
+Mas lembra do artigo anterior? A palavra traduzida como "arrependam-se" é metanoia.
+
+Então Jesus tava literalmente dizendo: _"Mudem completamente sua mente! Transformem seu jeito de pensar! Uma nova realidade está chegando e vocês precisam de uma nova mentalidade pra enxergá-la."_ 
+
 Isso não era um convite educado. Era uma revolução.
-Jesus tava dizendo que tudo que eles achavam que sabiam — sobre Deus, sobre religião, sobre o que é certo e errado, sobre como viver — precisava ser repensado. Do zero.
+
+Jesus tava dizendo que tudo que eles achavam que sabiam - sobre Deus, sobre religião, sobre o que é certo e errado, sobre como viver - precisava ser repensado. Do zero.
+
 E aí Ele começou a chamar pessoas pra essa revolução.
 
-João Batista: O Profeta Radical
+# João Batista: O profeta radical
+
 Antes de Jesus aparecer em cena, já tinha um cara preparando o terreno: João Batista. E esse cara não tava pra brincadeira.
 
-Naquele tempo João Batista foi para o deserto da Judeia e começou a pregar, dizendo: — Arrependam-se dos seus pecados porque o Reino do Céu está perto!
-— Mateus 3:1-2 NTLH
+> Naquele tempo João Batista foi para o deserto da Judeia e começou a pregar, dizendo: — Arrependam-se dos seus pecados porque o Reino do Céu está perto! Mateus 3:1-2 NTLH
 
-João era tipo aquele personagem de anime que vive no deserto, come gafanhotos e mel selvagem, usa roupa de pelo de camelo, e fala verdades brutais sem filtro nenhum. Ele era radical mesmo.
+João era tipo aquele personagem de anime que vive no deserto, come gafanhotos e mel selvagem, usa roupa de pelo de camelo, e fala verdades brutais sem filtro nenhum. 
+
+Ele era radical mesmo.
+
 Quando os líderes religiosos da época (os fariseus e saduceus) apareceram querendo ser batizados, João basicamente olhou pra eles e falou:
 "Raça de cobras venenosas! Quem foi que disse a vocês que vão escapar do castigo de Deus, que está para vir? Provem por meio de ações que vocês se arrependeram dos seus pecados!"
 — Mateus 3:7-8 NTLH

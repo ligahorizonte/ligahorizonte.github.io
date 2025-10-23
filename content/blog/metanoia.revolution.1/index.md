@@ -1,5 +1,5 @@
 ---
-title: "Metanoia Revolution 1 - O que é essa parada?"
+title: "Metanoia Revolution 1: O que é essa parada?"
 date: 2025-10-23T14:15:38-03:00
 draft: false
 description: "Descubra metanoia, a revolução interna que redefine sua mente, valores e vida. Inspire-se a dar um reset completo e viver de forma verdadeira e transformadora."

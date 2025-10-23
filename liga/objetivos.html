@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetivos LIGA 2026</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #fb692f;
+            --secondary-color: #000000;
+            --dark-bg: #0f172a;
+            --card-bg: #1e293b;
+            --text-light: #e2e8f0;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #1e293b 100%);
+            color: var(--text-light);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(240, 4, 4, 0.1);
+        }
+
+        .header-section h1 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: none;
+            border-radius: 1rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(239, 82, 4, 0.3);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            border-radius: 1rem 1rem 0 0 !important;
+            padding: 1rem 1.5rem;
+            font-weight: 600;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .badge-custom {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .list-item {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(240, 226, 226, 0.1);
+            color: var(--text-light) !important;
+        }
+        
+
+        .list-item:last-child {
+            border-bottom: none;
+        }
+
+        .icon-box {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+        }
+
+        .month-card {
+            background: linear-gradient(135deg, rgba(241, 99, 99, 0.1), rgba(255, 0, 0, 0.1));
+            border-left: 4px solid var(--primary-color);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .month-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .trimestre-header {
+            background: linear-gradient(135deg, rgba(241, 99, 99, 0.2), rgba(246, 92, 92, 0.2));
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-back {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgb(255, 255, 255);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-back:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            transform: translateX(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .header-section {
+                padding: 2rem 0;
+            }
+            
+            .header-section h1 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-section">
+        <div class="container">
+            <a href="index.html" class="btn btn-back mb-3">
+                <i class="fas fa-arrow-left"></i> Voltar
+            </a>
+            <h1 class="text-center">
+                <i class="fas fa-bullseye"></i> Objetivos LIGA 2026
+            </h1>
+            <p class="text-center mb-0">Planejamento Anual</p>
+        </div>
+    </div>
+
+    <div class="container pb-5">
+        <!-- Estrutura Semanal e Mensal -->
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-calendar-week"></i> Estrutura Semanal e Mensal
+            </div>
+            <div class="card-body">
+                <div class="list-item">
+                    <div class="icon-box">
+                        <i class="fas fa-clock text-white"></i>
+                    </div>
+                    <strong>Sextas-feiras:</strong> Encontro LIGA Ágape (19h às 21h)
+                </div>
+                <div class="list-item">
+                    <div class="icon-box">
+                        <i class="fas fa-church text-white"></i>
+                    </div>
+                    <strong>Último sábado de cada mês:</strong> Culto público (19h)
+                    <div class="ms-5 mt-2 text-muted">
+                        <small><i class="fas fa-info-circle"></i> Tema alinhado com o mês</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Objetivos Anuais -->
+        <!-- <div class="card">
+            <div class="card-header">
+                <i class="fas fa-target"></i> Objetivos Anuais da Liga 2026
+            </div>
+            <div class="card-body">
+                <div class="list-item">
+                    <span class="badge-custom">1</span>
+                    <strong>Formação de Identidade:</strong> Jovens firmados em quem são em Cristo
+                </div>
+                <div class="list-item">
+                    <span class="badge-custom">2</span>
+                    <strong>Relacionamentos Saudáveis:</strong> Construir vínculos bíblicos e duradouros
+                </div>
+                <div class="list-item">
+                    <span class="badge-custom">3</span>
+                    <strong>Santidade Prática:</strong> Viver a pureza em todas as áreas da vida
+                </div>
+                <div class="list-item">
+                    <span class="badge-custom">4</span>
+                    <strong>Cura Interior:</strong> Ministrar libertação e restauração emocional
+                </div>
+                <div class="list-item">
+                    <span class="badge-custom">5</span>
+                    <strong>Propósito e Missão:</strong> Restaurados para servir
+                </div>
+            </div>
+        </div> -->
+
+        <!-- Eventos Especiais -->
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-star"></i> Eventos Especiais do Ano
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="month-card">
+                            <div class="month-title"><i class="fas fa-calendar-day"></i> 17/01</div>
+                            <div>Convivência LIGA: Saída de férias</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="month-card">
+                            <div class="month-title"><i class="fas fa-calendar-day"></i> 13/03 a 17/03</div>
+                            <div>Retiro de Carnaval</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="month-card">
+                            <div class="month-title"><i class="fas fa-calendar-day"></i> 13 a 20/04</div>
+                            <div>Semana Santa</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="month-card">
+                            <div class="month-title"><i class="fas fa-calendar-day"></i> Julho</div>
+                            <div>Férias LIGA (mês inteiro)</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="month-card">
+                            <div class="month-title"><i class="fas fa-calendar-day"></i> Julho</div>
+                            <div>Impacto Evangelístico Geral</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="month-card">
+                            <div class="month-title"><i class="fas fa-calendar-day"></i> Agosto (?)</div>
+                            <div>Conferência</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="month-card">
+                            <div class="month-title"><i class="fas fa-calendar-day"></i> A definir</div>
+                            <div>Comunhão</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fluxo Temático Anual -->
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-book-open"></i> Fluxo Temático Anual
+            </div>
+            <div class="card-body">
+                <!-- Trimestre 1 -->
+                <div class="trimestre-header">
+                    <h5 class="mb-0"><i class="fas fa-circle-1"></i> TRIMESTRE 1 (JAN-MAR): FUNDAMENTOS DA FÉ</h5>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="month-card">
+                            <div class="month-title">Janeiro</div>
+                            <div>Identidade</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="month-card">
+                            <div class="month-title">Fevereiro</div>
+                            <div>Relacionamentos</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="month-card">
+                            <div class="month-title">Março</div>
+                            <div>Vocação</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trimestre 2 -->
+                <div class="trimestre-header mt-4">
+                    <h5 class="mb-0"><i class="fas fa-circle-2"></i> TRIMESTRE 2 (ABR-JUN): SANTIDADE E VIDA CRISTÃ</h5>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="month-card">
+                            <div class="month-title">Abril</div>
+                            <div>Sexualidade</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="month-card">
+                            <div class="month-title">Maio</div>
+                            <div>Homossexualidade</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="month-card">
+                            <div class="month-title">Junho</div>
+                            <div>Vida Cristã</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trimestre 3 -->
+                <div class="trimestre-header mt-4">
+                    <h5 class="mb-0"><i class="fas fa-circle-3"></i> TRIMESTRE 3 (JUL-SET): CURA E RESTAURAÇÃO</h5>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="month-card">
+                            <div class="month-title">Julho</div>
+                            <div>Pecado e Graça</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="month-card">
+                            <div class="month-title">Agosto</div>
+                            <div>Paternidade</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="month-card">
+                            <div class="month-title">Setembro</div>
+                            <div>Abuso Sexual</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trimestre 4 -->
+                <div class="trimestre-header mt-4">
+                    <h5 class="mb-0"><i class="fas fa-circle-4"></i> TRIMESTRE 4 (OUT-DEZ): PROPÓSITO E MISSÃO</h5>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="month-card">
+                            <div class="month-title">Outubro</div>
+                            <div>Rejeição</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="month-card">
+                            <div class="month-title">Novembro</div>
+                            <div>Família</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="month-card">
+                            <div class="month-title">Dezembro</div>
+                            <div>Gratidão</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Avaliação e Acompanhamento -->
+        <!-- <div class="card">
+            <div class="card-header">
+                <i class="fas fa-clipboard-check"></i> Avaliação e Acompanhamento
+            </div>
+            <div class="card-body">
+                <div class="list-item">
+                    <i class="fas fa-users text-primary"></i>
+                    Reunião mensal da liderança para avaliar programação
+                </div>
+                <div class="list-item">
+                    <i class="fas fa-poll text-primary"></i>
+                    Pesquisa de satisfação semestral com os jovens e adolescentes
+                </div>
+                <div class="list-item">
+                    <i class="fas fa-user-check text-primary"></i>
+                    Acompanhamento individual de novos convertidos
+                </div>
+                <div class="list-item">
+                    <i class="fas fa-users-cog text-primary"></i>
+                    Reunião trimestral com pais/responsáveis (Adolescentes e Pré-Adolescentes)
+                </div>
+                <div class="list-item">
+                    <i class="fas fa-cogs text-primary"></i>
+                    Ajustes na programação conforme necessidade
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

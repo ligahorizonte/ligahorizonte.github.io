@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liga</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ff7700 0%, #f9b588 100%);
+            min-height: 100vh;
+            display: flex;  
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .container-custom {
+            max-width: 600px;
+            margin: 0 auto;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .logo-section {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .logo-placeholder {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .logo-placeholder:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-placeholder i {
+            font-size: 70px;
+            color: #667eea;
+        }
+
+        .church-name {
+            color: white;
+            font-size: 2rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .links-section {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .link-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: #333;
+            display: block;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .link-card:hover::before {
+            left: 100%;
+        }
+
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            color: #ff7700;
+        }
+
+        .link-card i {
+            font-size: 2rem;
+            margin-right: 15px;
+            color: #ff7700;
+        }
+
+        .link-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .link-text {
+            flex-grow: 1;
+        }
+
+        .link-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .link-description {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .social-section {
+            text-align: center;
+            padding: 30px 0;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .social-title {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .social-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .social-btn {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        .social-btn i {
+            font-size: 1.5rem;
+        }
+
+        .social-label {
+            display: block;
+            font-size: 0.9rem;
+            color: #ffffff;
+            margin-top: 10px;
+            font-weight: 500;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .social-btn.youtube {
+            color: #FF0000;
+        }
+
+        .social-btn.instagram {
+            color: #E4405F;
+        }
+
+        .social-btn.instagram-liga {
+            color: #833AB4;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .church-name {
+                font-size: 1.5rem;
+            }
+
+            .link-card {
+                padding: 20px;
+            }
+
+            .link-card i {
+                font-size: 1.5rem;
+            }
+
+            .link-title {
+                font-size: 1.1rem;
+            }
+
+            .logo-placeholder {
+                width: 120px;
+                height: 120px;
+            }
+
+            .logo-placeholder i {
+                font-size: 50px;
+            }
+
+            .icone-liga {
+                width: 120px !important;
+                height: auto !important;
+            }
+        }
+        .icone-liga {
+            width: 150px;
+            height: auto;
+            vertical-align: middle;
+        }
+        
+    </style>
+    <meta property="og:image" content="https://ligahorizonte.vercel.app/liga.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+</head>
+<body>
+    <div class="container-custom">
+        <div class="logo-section">
+            <div class="logo-placeholder">
+                <!-- <i class="fas fa-church"></i> -->
+                <img src="logo_liga.svg" alt="Igreja" class="icone-liga">
+            </div>
+            <h1 class="church-name">Igreja Batista Ágape Horizonte</h1>
+        </div>
+
+        <!-- <div class="links-section">
+            <a href="devocional.html" class="link-card">
+                <div class="link-content">
+                    <i class="fas fa-book-open"></i>
+                    <div class="link-text">
+                        <div class="link-title">Devocional</div>
+                        <div class="link-description">Palavra diária para seu crescimento</div>
+                    </div>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </a> -->
+
+            <a href="agenda.html" class="link-card">
+                <div class="link-content">
+                    <i class="fas fa-calendar-alt"></i>
+                    <div class="link-text">
+                        <div class="link-title">Agenda</div>
+                        <div class="link-description">Confira nossos eventos e cultos</div>
+                    </div>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </a>
+
+            <a href="devocional.html" class="link-card">
+                <div class="link-content">
+                    <i class="fas fa-calendar-alt"></i>
+                    <div class="link-text">
+                        <div class="link-title">Como fazer devocional</div>
+                        <div class="link-description">Aprenda a extrair verdades que transformam o coração e renovam a mente através de uma profunda reflexão da Palavra de Deus</div>
+                    </div>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </a>
+
+            <a href="objetivos.html" class="link-card">
+                <div class="link-content">
+                    <i class="fas fa-calendar-alt"></i>
+                    <div class="link-text">
+                        <div class="link-title">Objetivos 2026</div>
+                        <div class="link-description">Confira um resumo da programação anual</div>
+                    </div>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </a>
+
+
+            <!-- <a href="#blog" class="link-card">
+                <div class="link-content">
+                    <i class="fas fa-pen-fancy"></i>
+                    <div class="link-text">
+                        <div class="link-title">Blog</div>
+                        <div class="link-description">Artigos e reflexões</div>
+                    </div>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </a> -->
+        </div>
+    </div>
+
+    <div class="social-section">
+        <div class="social-title">Siga-nos nas redes sociais</div>
+        <div class="social-links">
+            <div class="social-item">
+                <a href="https://www.youtube.com/@igrejabatistaagapehorizonte" class="social-btn youtube" target="_blank" title="YouTube da Igreja">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <span class="social-label">@igrejabatistaagapehorizonte</span>
+            </div>
+            <div class="social-item">
+                <a href="https://www.instagram.com/agapehorizonte/" class="social-btn instagram" target="_blank" title="Instagram da Igreja">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <span class="social-label">@agapehorizonte</span>
+            </div>
+            <div class="social-item">
+                <a href="https://www.instagram.com/ligaagapehorizontee/" class="social-btn instagram-liga" target="_blank" title="Instagram da Liga">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <span class="social-label">@ligaagapehorizontee</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

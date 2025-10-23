@@ -1,0 +1,100 @@
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+
+h1 {
+    color: #667eea;
+    font-weight: 700;
+    text-align: center;
+}
+
+.accordion {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.accordion-item {
+    border: none;
+    margin-bottom: 10px;
+}
+
+.accordion-header {
+    background: #f8f9fa;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 15px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.accordion-header:hover {
+    background: #e2e6ea;
+}
+
+.accordion-body {
+    background: #ffffff;
+    border-radius: 0 0 10px 10px;
+    padding: 15px;
+    display: none; /* Hidden by default */
+}
+
+.accordion-body.show {
+    display: block; /* Show when active */
+}
+
+.intensity-section {
+    margin-top: 10px;
+}
+
+.intensity-title {
+    font-weight: 700;
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+.intensity-btn {
+    background: white;
+    border: 2px solid #ddd;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 8px;
+    width: 100%;
+    text-align: left;
+    transition: all 0.2s;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.intensity-btn:hover {
+    border-color: #667eea;
+    background: #f8f9ff;
+}
+
+.intensity-btn.active {
+    border-color: #4455d6;
+    background: #eaf0ff;
+    box-shadow: inset 0 0 0 3px rgba(102, 126, 234, 0.08);
+}
+
+.success-message {
+    background: #d4edda;
+    color: #155724;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 1px solid #c3e6cb;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: none; /* Hidden by default */
+}

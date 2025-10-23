@@ -1,0 +1,175 @@
+description: Um local para edificação pessoal de jovens e adolescentes.
+keywords: deus, teologia, fé, religião, evangelismo
+
+hb:
+  # override SASS variables, please replace the dash with underline, e.g. `list-group-color` should be `list_group_color`.
+  styles:
+    primary: '#f9712c'
+  js_bundle_name: main # the JS bundle name.
+  css_bundle_name: main # the CSS bundle name.
+  
+  full_width: true # when true, the layout takes full width globally.
+
+  header:
+    # brand: HB # the brand name, leave it empty to use site's title.
+    brand: LIGA Ágape # the brand name, leave it empty to use site's title.
+    logo_bg: '#f9712c' # logo background color, used by logo with transparent background.
+    # see https://hbstack.dev/en/docs/modules/socials/.
+    socials:
+      instagram: ligahorizontee
+      rss: true
+  footer:
+    # see https://hbstack.dev/en/docs/modules/socials/.
+    socials:
+      _color: true # when false, remove the color of social icons.
+      instagram: ligahorizontee
+      rss: true
+  terms:
+    # the paginate for categories, tags, series list pages.
+    paginate: 12
+  blog:
+    # INÍCIO MINHAS CONFIGURAÇÕES
+    # list_style: cascade # para posts sem imagens
+    post_authors:
+      position: bottom
+    list_cols_md: 4
+    social_share_buttons:
+      alignment: center
+      icons: true
+      labels: false
+      media:
+        - twitter
+        - facebook
+        - linkedin
+        - reddit
+        - telegram
+        - whatsapp
+    # FIM MINHAS CONFIGURAÇÕES
+
+
+    sidebar:
+      profile:
+        # title: Profile title other than site title.
+        # description: Profile description other than site description.
+        # company: ISH
+        location: Igreja Batista Ágape Horizonte
+        socials:
+        #  github: sandsoncosta
+        instagram: ligahorizontee
+        #  linkedin: sandsoncosta
+        #  rss: true
+      posts:
+        recent_count: 5 # the number of recent posts.
+        featured_count: 5 # the number of featured posts.
+      taxonomies:
+        count: true # whether to show the number of posts associated to the item.
+        limit: 10 # the maximum number of the item.
+    paginate: 12 # paginate.
+    # post_thumbnail_placeholder: HB THEME # the text of thumbnail placeholder, default to site title.
+    post_thumbnail_placeholder: LIGA Ágape # the text of thumbnail placeholder, default to site title.
+    # post_thumbnail: false # whether to show the thumbnails.
+    # post_date_format: ":date_long" # see https://gohugo.io/functions/dateformat/#datetime-formatting-layouts.
+    home: # homepage settings.
+      # taxonomies: false # remove the taxonomies stat from the homepage.
+      featured_posts: 5 # the number of the featured posts.
+      main_sections: # leave it empty to include all regular pages.
+        # - docs
+        - blog
+        - tutorials
+    # COMENTÁRIOS DO BLOG
+    giscus:
+      endpoint: https://giscus.app/
+      category_id: DIC_kwDOMNgMqs4Coox_
+      repo: sandsoncosta/sandsoncosta.github.io
+      repo_id: R_kgDOMNgMqg
+      category: General
+      
+      # mapping: pathname
+      # theme: noborder_dark
+      # input_position: top
+      # reactions: true
+
+  docs:
+    giscus:
+      endpoint: https://giscus.app/
+      repo: sandsoncosta/sandsoncosta.github.io
+      repo_id: R_kgDOMNgMqg
+      category: General
+      category_id: DIC_kwDOMNgMqs4Coox_
+      # mapping: pathname
+      # theme: noborder_dark
+      # input_position: top
+      # reactions: true
+    content_panel:
+      enable: true
+      toc: true
+      collapsed: true
+
+    repo:
+      service: github # github or gitlab.
+      # repo: hbstack/theme
+      repo: sandsoncosta/sandsoncosta.github.io
+      branch: main
+      # subpath: exampleSite
+  # gallery:
+  #   thumbnail_size: "x640"
+  revision:
+    created_at: true
+    date_format: :date_full
+    font_size: .825rem
+
+  contact:
+    endpoint: "https://formspree.io/f/xwpkobwj"
+    file: false
+    recaptcha_siekey: ""
+
+    pwa_installer:
+    delay: 5
+    dismissed_period: 604800
+
+seo:
+  favicons: # see https://hugomods.com/en/docs/seo/#favicons-module
+    icon: images/logo.png # use logo as favicon.
+
+# PWA settings, see https://hugomods.com/en/docs/pwa/#site-parameters.
+pwa:
+  debug: false
+  manifest:
+    background_color: '#f9712c'
+    theme_color: '#f9712c'
+    short_name: 'LIGA Ágape'
+
+# see https://hugomods.com/search/configurations/.
+search:
+  stall_threshold: 300
+  min_match_char_length: 2
+  case_sensitive: false
+  # shortcut_search: ["/"]
+
+mermaid:
+  # replace it with other CDNs or self-hosted URLs.
+  js_url: https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.esm.min.mjs
+
+hugopress:
+  modules:
+    hb-custom:
+      hooks:
+        # see layouts/partials/hugopress/modules/hb-custom/hooks/head-end.html.
+        head-end:
+          cacheable: true
+        # see layouts/partials/hugopress/modules/hb-custom/hooks/body-end.html.
+        body-end:
+          cacheable: true
+        # see layouts/partials/hugopress/modules/hb-custom/hooks/hb-blog-sidebar.html.
+        hb-blog-sidebar:
+          cacheable: true
+          weight: 1
+    # change the order of sidebar modules.
+    hb-blog-sidebar-taxonomies:
+      hooks:
+        hb-blog-sidebar:
+          weight: 3
+    hb-blog-sidebar-posts:
+      hooks:
+        hb-blog-sidebar:
+          weight: 2

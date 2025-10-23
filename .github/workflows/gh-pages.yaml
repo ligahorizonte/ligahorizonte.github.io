@@ -40,6 +40,9 @@ jobs:
         with:
           node-version: "18"
 
+      - name: Install PostCSS & Autoprefixer
+        run: npm install -g postcss-cli autoprefixer
+
       - name: Install Dart Sass
         run: sudo snap install dart-sass && sudo snap alias dart-sass sass
         

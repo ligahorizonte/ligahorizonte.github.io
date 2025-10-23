@@ -353,3 +353,14 @@ A pergunta é: você está pronto para a revolução?
 > Escutem! Eu estou à porta e bato. Se alguém ouvir a minha voz e abrir a porta, eu entrarei na sua casa, e nós jantaremos juntos. - Apocalipse 3:20 NTLH
 
 Jesus está batendo. A revolução da metanoia espera por você.
+
+
+{{< bs/alert warning >}}
+{{< bs/alert-heading "TESTE" >}}
+TESTE
+{{< /bs/alert >}}
+
+{{< bs/alert info >}}
+{{< bs/alert-heading "P.S.:" >}}
+Se esse artigo mexeu com você de alguma forma, não guarda só pra você. Compartilha com aquele amigo que também tá precisando de um reset. Às vezes, metanoia começa com uma conversa.
+{{< /bs/alert >}}

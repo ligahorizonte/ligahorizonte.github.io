@@ -8,7 +8,7 @@ featured: false
 pinned: false
 comments: false
 series:
- - Metanoia Revolution
+ - 
 categories:
  - Vida Cristã
  - Espiritualidade

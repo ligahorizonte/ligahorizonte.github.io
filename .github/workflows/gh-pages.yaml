@@ -59,6 +59,7 @@ jobs:
           HUGO_ENV: production
         run: |
           hugo \
+            --source liga \
             --gc \
             --enableGitInfo \
             --minify \

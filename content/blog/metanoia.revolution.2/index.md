@@ -1,6 +1,5 @@
 ---
-title: "Metanoia Revolution #2 - Os maiores plot twists da Bíblia"
-url: "/blog/metanoia-revolution-2-os-maiores-plot-twists-da-biblia/"
+title: "Metanoia Revolution 2 - Os maiores plot twists da Bíblia"
 date: 2025-10-23T16:15:38-03:00
 draft: false
 description: "As histórias reais mais insanas de transformação. Paulo, Pedro e Davi provam que metanoia muda vidas radicalmente."

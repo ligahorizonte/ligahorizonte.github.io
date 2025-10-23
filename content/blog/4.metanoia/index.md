@@ -29,6 +29,63 @@ authors:
 ---
 ## Introdução: A revolução que começa na mente
 
+<<<<<<< HEAD
+=======
+<div style="
+  border: 2px solid #ff5252;
+  background-color: #ffffffff;
+  color: #ff5252;
+  padding: 1rem;
+  border-radius: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  max-width: 400px;
+  margin: 2rem auto;
+  text-align: center;
+">
+  <strong>💪 BOSS FIGHT</strong><br><br>
+  Desafio da Semana:<br>
+  Identifique 1 área da sua vida que precisa de metanoia.<br>
+  Escreva num papel.
+</div>
+
+<div style="
+  background-color: #efc47eff;
+  color: #db5d14ff;
+  padding: 1.5rem;
+  border-radius: 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 0 0 5px #db5d14ff;
+  max-width: 400px;
+  margin: 2rem auto;
+  text-align: center;
+  border: none;
+">
+  <strong style="
+    display: inline-block;
+    background-color: #db5d14ff;
+    color: #FFFFFF;
+    padding: 0.3rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  ">
+    Desafio da Semana
+  </strong>
+  <p style="margin-top: 1rem; font-weight: 600; font-size: 1.2rem;">
+    Identifique 1 área da sua vida que precisa de metanoia.<br>
+    Escreva num papel.
+  </p>
+  <p style="margin-top: 0.5rem;">
+  </p>
+</div>
+
+>>>>>>> master
 Você já sentiu que precisa de um reset completo na vida? Tipo limpar o celular e reinstalar tudo do zero? Pois é, existe uma palavra grega que é usada diversas vezes na Bíblia e que define exatamente isso: **metanoia**. E não, não é o nome de nenhum pokémon novo, mas é algo muito mais poderoso que pode literalmente transformar sua vida.
 
 Metanoia não é só "pedir desculpas" ou "sentir arrependimento". É uma mudança radical de mentalidade, uma revolução interna que muda a direção da sua vida. E sabe o que é mais incrível? Esse conceito atravessa milênios e continua sendo ultra relevante para a galera da geração Z e millennials. E o mais legal é que esse conceito, se levado pra sua vida, pode mudar todos os aspectos de sua vida e isso é muito louco! Saber que um conceito posto em prática, pode mudar seu comportamento, sua atitudade, sua vontade, sua profissão, sua escola, sua vida!
@@ -245,7 +302,7 @@ Metanoia não é um evento único. É um processo contínuo. Paulo disse para se
 ###### **Leia também**
 
 {{< bs/bookmark-card
-url="https://medium.com/@weldon_araujo/threat-hunting-investiga%C3%A7%C3%A3o-al%C3%A9m-dos-iocs-bbaa214f8395"
+url="https://ligahorizonte.github.io/liga/devocional.html"
 title="COMO FAZER UM DEVOCIONAL PROFUNDO" 
 img="https://tse4.mm.bing.net/th/id/OIP.iWwR_Edin6gXY_xZAtnnMQHaFb?cb=12ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" 
 >}}

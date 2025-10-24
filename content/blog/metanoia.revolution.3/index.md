@@ -85,7 +85,7 @@ A solução: Você pode criar novos caminhos. Toda vez que você conscientemente
 
 A ciência explica que uma rotina só vira hábito natural quando repetido por pelo menos 66 dias seguidos. É difícil, né? Mas não é impossível.
 
-## Atenção direciona Mudança
+## Atenção direciona mudança
 
 Seu cérebro muda baseado no que você presta atenção.
 
@@ -136,89 +136,90 @@ Davi orou:
 Metanoia exige autoconsciência. Você precisa: parar, observar seus padrões, reconhecer o que precisa mudar, escolher uma nova direção.
 Não dá pra ter transformação real no piloto automático.
 
-###### **ISSO VAI TE AJUDAR!**
+###### **Isso vai te ajudar! Identifique suas emoções de forma clara.**
 
 {{< bs/bookmark-card
 url="https://ligahorizonte.github.io/emocoes/"
 title="Roda das Emoções" 
 img="https://ligahorizonte.github.io/liga/logo.png" 
-author="Weldon Araújo"
-authorImg="https://miro.medium.com/v2/resize:fill:88:88/1*tv73jCM-iw0kBrg1kGhjdA.png"
-authorIcon="pencil-square"
-authorIconVendor="bootstrap"
 >}}
-Dentre as diversas abordagens em investigações de Threat Hunting, existe uma em que a análise pode ser conduzida com base em feeds de inteligência. Alguns desses feeds são mais específicos e costumam compartilhar, além de indicadores, pesquisas aprofundadas sobre malwares, atores de ameaça, incidentes cibernéticos, entre outros dados relevantes. São exemplos, a Cisco Talos e a Trend Micro, que oferecem conteúdos ricos para apoiar investigações mais estratégicas.
+A **Roda das Emoções** foi criado pelo psicólogo Robert Plutchik. Ela é uma forma de entender o que a gente sente. Quando a gente entende o que está sentindo, fica mais fácil controlar, expressar e até curar certas emoções. Por exemplo, às vezes a gente acha que está “mal”, mas na verdade está com medo, cansado ou triste — e cada uma dessas emoções precisa de um cuidado diferente.
 {{< /bs/bookmark-card >}}
 
+## A diferença: Mudança Natural vs. Metanoia
 
-A Diferença: Mudança Natural vs. Metanoia
 Sim, o cérebro muda naturalmente. Você aprende, cresce, amadurece. Isso é neuroplasticidade normal.
+
 Mas metanoia é diferente.
+
 Metanoia não é apenas mudança gradual e natural. É uma mudança intencional, radical, direcionada por Deus.
+
 Exemplo:
 
-Mudança natural: Você fica ansioso ao falar em público. Com prática, fica mais confortável. Seu cérebro se adapta.
-Metanoia: Você percebe que sua ansiedade vem de "eu só tenho valor se as pessoas me aprovarem." Você leva isso pra Deus, medita na verdade de que seu valor vem dEle. Com o tempo, sua identidade muda. A ansiedade não é só gerenciada, é transformada na raiz.
+- **Mudança natural:** Você fica ansioso ao falar em público. Com prática, fica mais confortável. Seu cérebro se adapta.
+- **Metanoia:** Você percebe que sua ansiedade vem de "eu só tenho valor se as pessoas me aprovarem." Você leva isso pra Deus, medita na verdade de que seu valor vem dEle. Com o tempo, sua identidade muda. A ansiedade não é só gerenciada, é transformada na raiz.
 
 Vê a diferença?
+
 Neuroplasticidade explica o como.
+
 Metanoia explica o porquê e pra onde essa mudança vai.
 
-Growth Mindset: Você Pode Crescer
-A psicóloga Carol Dweck identificou dois tipos de mentalidade:
-Fixed Mindset (Mentalidade Fixa):
+# Você pode crescer
 
-"Eu sou assim, não posso mudar"
-Evita desafios, desiste fácil
+A psicóloga americana Carol Dweck identificou dois tipos de mentalidade:
 
-Growth Mindset (Mentalidade de Crescimento):
+- **Mentalidade Fixa (Fixed Mindset):** _"Eu sou assim, não posso mudar"_. Evita desafios, desiste fácil.
+- **Mentalidade de Crescimento (Growth Mindset):** _"Eu posso aprender e melhorar"_. Abraça desafios, persiste.
 
-"Eu posso aprender e melhorar"
-Abraça desafios, persiste
+Pessoas com Mentalidade de Crescimento têm mais sucesso, são mais resilientes, e literalmente têm cérebros que mudam mais.
 
-Pessoas com growth mindset têm mais sucesso, são mais resilientes, e literalmente têm cérebros que mudam mais.
-A Bíblia promove growth mindset:
+A Bíblia promove Mentalidade de Crescimento:
 
-"Pois eu estou certo de que Deus, que começou esse bom trabalho na vida de vocês, vai continuá-lo até que ele esteja completo no Dia de Cristo Jesus."
-— Filipenses 1:6 NTLH
+> "Pois eu estou certo de que Deus, que começou esse bom trabalho na vida de vocês, vai continuá-lo até que ele esteja completo no Dia de Cristo Jesus." — Filipenses 1:6 NTLH
 
 Você não tá "pronto". Você tá em processo. Sempre crescendo, sempre sendo transformado.
 
-O Papel do Espírito Santo
-A ciência explica como o cérebro muda. Mas só a fé explica como Deus transforma pessoas de dentro pra fora de formas sobrenaturais.
-Paulo não virou pregador só porque "decidiu mudar". Ele teve um encontro sobrenatural com Jesus.
-Pedro não virou corajoso só trabalhando sua autoconfiança. Ele foi cheio do Espírito Santo em Pentecostes e nunca mais foi o mesmo.
-Metanoia é ciência + espiritualidade.
-É você cooperando com Deus. É natural + sobrenatural. É esforço humano + graça divina.
+# O papel do Espírito Santo
 
-Então... Minha Mente Pode Mudar?
+A ciência explica como o cérebro muda. Mas só a fé explica como Deus transforma pessoas de dentro pra fora de formas sobrenaturais.
+
+Paulo não virou pregador só porque "decidiu mudar". Ele teve um encontro sobrenatural com Jesus.
+
+Pedro não virou corajoso só trabalhando sua autoconfiança. Ele foi cheio do Espírito Santo em Pentecostes e nunca mais foi o mesmo.
+
+Metanoia é ciência + espiritualidade.
+
+É você cooperando com Deus. É o natural + sobrenatural. É o esforço humano + graça divina.
+
+# Então... minha mente pode mudar?
+
 Sim. Cientificamente, espiritualmente, praticamente — sim.
 
-Você não está preso aos seus padrões atuais
-Você não está condenado a repetir os mesmos erros
-Você não é "assim mesmo" pra sempre
+Você não está preso aos seus padrões atuais.
+
+Você não está condenado a repetir os mesmos erros.
+
+Você não é "assim mesmo" pra sempre.
 
 Seu cérebro pode mudar. E Deus quer transformá-lo.
+
 Mas mudança exige:
 
-Intenção — Você tem que querer mudar
-Ação — Escolhas diferentes consistentemente
-Comunidade — Pessoas ao seu redor apoiando
-Dependência de Deus — Você não consegue sozinho
+- **Intenção:** Você tem que querer mudar.
+- **Ação:** Escolhas diferentes consistentemente.
+- **Comunidade:** Pessoas ao seu redor apoiando.
+- **Dependência de Deus:** Você não consegue sozinho.
 
-Quando esses elementos se juntam? Transformação real acontece.
+Quando esses elementos se juntam, transformação real acontece.
 
 🔥 No próximo episódio: Metanoia Revolution #4 - Mude Sua Squad e o Mundo
 Metanoia não é só pra você ficar "zen". É pra você virar um agente de mudança na sua família, escola, cidade, mundo. A revolução se expande. 🌍🔥
 
 
 {{< bs/alert warning >}}
-{{< bs/alert-heading "No próximo artigo: Metanoia Revolution #3 - Seu Cérebro Pode Mudar (Sério!)" >}}
-Você viu as histórias bíblicas. Mas e a ciência? Será que existe base científica pra essa ideia de transformação mental radical?
-Spoiler: tem sim. E é fascinante.
-A gente vai mergulhar na neuroplasticidade, na psicologia da mudança, e descobrir que a Bíblia tava falando de coisas que a ciência só descobriu recentemente.
-Prepare-se pra ter sua mente explodida. (Literalmente, porque vamos falar de como seu cérebro funciona.)
-A revolução continua. 🧠⚡
+{{< bs/alert-heading "No próximo artigo: Metanoia Revolution #4: mude sua squad e o mundo" >}}
+Metanoia não é só pra você ficar "zen". É pra você virar um <strong>agente de mudança</strong> na sua família, escola, cidade e mundo. A revolução se expande.
 {{< /bs/alert >}}
 
 {{< bs/alert info >}}

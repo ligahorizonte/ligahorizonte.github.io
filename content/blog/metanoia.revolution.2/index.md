@@ -213,7 +213,7 @@ Jesus ainda faz isso hoje: pega pessoas quebradas e transforma completamente.
 Então... e se essa revolução começasse em você?
 
 {{< bs/alert warning >}}
-{{< bs/alert-heading "No próximo artigo: Metanoia Revolution #3 - Seu Cérebro Pode Mudar (Sério!)" >}}
+{{< bs/alert-heading "No próximo artigo: Metanoia Revolution #3 - Seu cérebro pode mudar (sério!)" >}}
 Você viu as histórias bíblicas. Mas e a ciência? Será que existe base científica pra essa ideia de transformação mental radical?
 Spoiler: tem sim. E é fascinante.
 A gente vai mergulhar na neuroplasticidade, na psicologia da mudança, e descobrir que a Bíblia tava falando de coisas que a ciência só descobriu recentemente.

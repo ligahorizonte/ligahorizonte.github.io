@@ -1,5 +1,6 @@
 ---
-title: "Os maiores plot twists da Bíblia"
+title: "Metanoia Revolution #2: Os maiores plot twists da Bíblia"
+url: "/blog/metanoia-revolution-2-os-maiores-plot-twists-da-biblia/"
 date: 2025-10-23T16:15:38-03:00
 draft: false
 description: "As histórias reais mais insanas de transformação. Paulo, Pedro e Davi provam que metanoia muda vidas radicalmente."
@@ -27,7 +28,7 @@ authors:
  - sandson
 #images:
 ---
-# Quando a vida real supera a ficção
+## Quando a vida real supera a ficção
 
 No último artigo, a gente usou Zuko como exemplo de metanoia. E sim, a transformação dele é épica. Mas agora se liga, porque você vai conhecer histórias reais que são tão absurdas que se fossem num anime, você ia falar: _"Ah, isso é forçado demais, não tem como."_
 
@@ -37,7 +38,7 @@ E o mais insano? Essas histórias estão na Bíblia, mas continuam sendo as tran
 
 Vamos nessa?
 
-# Jesus e o chamado à Revolução Mental
+## Jesus e o chamado à Revolução Mental
 
 Antes de entrar nas histórias individuais, você precisa entender o contexto: Jesus veio fazendo um chamado direto à metanoia.
 
@@ -57,7 +58,7 @@ Jesus tava dizendo que tudo que eles achavam que sabiam - sobre Deus, sobre reli
 
 E aí Ele começou a chamar pessoas pra essa revolução.
 
-# João Batista: O profeta radical
+## João Batista: O profeta radical
 
 Antes de Jesus aparecer em cena, já tinha um cara preparando o terreno: João Batista. E esse cara não tava pra brincadeira.
 

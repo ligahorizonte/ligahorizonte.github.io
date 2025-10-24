@@ -20,6 +20,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // utilitário para ids seguros
     function cssSafe(s){ return String(s).replace(/\s+/g,'_').replace(/[^\w\-]/g,''); }
 
+    // retorna entradas [nivel, subsArray] aceitando antigo objeto ou novo array
+    function getIntensityEntries(data){
+        const ints = data.intensities || {};
+        if (Array.isArray(ints)) {
+            // cada item: [nivel, sub1, sub2...]
+            return ints.map(arr => {
+                const [level, ...subs] = arr;
+                return [level, subs];
+            });
+        } else {
+            return Object.entries(ints);
+        }
+    }
+
     // estado de seleção: { 'Alegria': Set(['Eufórico','Extasiado']) , ... }
     window.selectedSubs = window.selectedSubs || {};
 
@@ -41,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (continueBtn) continueBtn.style.display = any ? 'inline-block' : 'none';
     }
 
-    // gerar acordeão a partir do objeto
+    // gerar acordeão a partir do objeto (usa getIntensityEntries)
     console.log('Gerando acordeão...');
     Object.entries(emotions).forEach(([name, data], idx) => {
         console.log(`Criando item para: ${name}`);
@@ -77,31 +91,95 @@ document.addEventListener('DOMContentLoaded', () => {
         const body = document.createElement('div');
         body.className = 'accordion-body';
 
-        // para cada nível de intensidade criar grupo com os sub‑itens clicáveis
-        Object.entries(data.intensities || {}).forEach(([level, subs]) => {
+        // usa helper para compatibilidade com os formatos antigos (intensities) e o novo (feelings)
+        if (Array.isArray(data.feelings)) {
+            // Flatten all groups and render every item as a selectable sentimento
+            const flat = data.feelings.reduce((acc, g) => {
+                if (Array.isArray(g)) return acc.concat(g);
+                return acc.concat([g]);
+            }, []);
+
             const lvl = document.createElement('div');
             lvl.className = 'intensity-group';
-            const levelTitle = document.createElement('h5');
-            levelTitle.textContent = level;
-            levelTitle.style.marginTop = '6px';
-            levelTitle.style.marginBottom = '6px';
-            lvl.appendChild(levelTitle);
-
             const list = document.createElement('div');
             list.className = 'sub-list';
+            list.style.display = 'flex';
+            list.style.flexWrap = 'wrap';
 
-            subs.forEach(sub => {
+            flat.forEach(feeling => {
                 const b = document.createElement('button');
                 b.type = 'button';
                 b.className = 'sub-btn';
-                b.textContent = sub;
+                b.textContent = feeling;
                 b.style.cursor = 'pointer';
-                b.onclick = () => toggleSub(name, b, sub);
+                b.onclick = () => toggleSub(name, b, feeling);
                 list.appendChild(b);
             });
+
             lvl.appendChild(list);
             body.appendChild(lvl);
-        });
+        } else {
+            // compatibilidade com o formato antigo (intensities)
+            const intensityEntries = getIntensityEntries(data);
+            intensityEntries.forEach(([level, subs]) => {
+                const lvl = document.createElement('div');
+                lvl.className = 'intensity-group';
+
+                // header com botão que abre/fecha a lista de sub‑emoções (mantido para compatibilidade)
+                const levelHeader = document.createElement('div');
+                levelHeader.className = 'd-flex align-items-center mb-2';
+
+                const levelBtn = document.createElement('button');
+                levelBtn.type = 'button';
+                levelBtn.className = 'level-btn btn btn-sm btn-outline-secondary me-2';
+                levelBtn.textContent = level;
+                levelBtn.setAttribute('aria-expanded', 'false');
+
+                const hint = document.createElement('small');
+                hint.className = 'text-muted';
+                hint.style.marginLeft = '6px';
+                hint.textContent = '(clique para ver/subir)';
+
+                levelHeader.appendChild(levelBtn);
+                levelHeader.appendChild(hint);
+                lvl.appendChild(levelHeader);
+
+                const list = document.createElement('div');
+                list.className = 'sub-list';
+                list.style.display = 'none';
+
+                // normalizar subs: aceitar ["nivel","a","b"] ou ["nivel", ["a","b"]]
+                let normalizedSubs = [];
+                if (Array.isArray(subs)) {
+                    if (subs.length && Array.isArray(subs[0])) {
+                        normalizedSubs = subs[0].slice();
+                    } else {
+                        normalizedSubs = subs.slice();
+                    }
+                }
+
+                normalizedSubs = normalizedSubs.filter(s => String(s) !== String(level));
+
+                normalizedSubs.forEach(sub => {
+                    const b = document.createElement('button');
+                    b.type = 'button';
+                    b.className = 'sub-btn';
+                    b.textContent = sub;
+                    b.style.cursor = 'pointer';
+                    b.onclick = () => toggleSub(name, b, sub);
+                    list.appendChild(b);
+                });
+
+                levelBtn.addEventListener('click', () => {
+                    const expanded = levelBtn.getAttribute('aria-expanded') === 'true';
+                    levelBtn.setAttribute('aria-expanded', String(!expanded));
+                    list.style.display = expanded ? 'none' : 'flex';
+                });
+
+                lvl.appendChild(list);
+                body.appendChild(lvl);
+            });
+        }
 
         collapse.appendChild(body);
         item.appendChild(collapse);
@@ -177,7 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 planGroup.className = 'mb-2';
                 const planLabel = document.createElement('label');
                 planLabel.className = 'form-label';
-                planLabel.textContent = '💡 O que você pode fazer para lidar melhor com isso?';
+                planLabel.textContent = '💡 Em caso de sentimento ruim, o que você pode fazer para lidar melhor com isso ou o que você pode fazer para resolver esse sentimento? Se não sabe o que fazer, que tal procurar seu líder pra conversar?';
                 const planTa = document.createElement('textarea');
                 planTa.className = 'form-control';
                 planTa.rows = 2;

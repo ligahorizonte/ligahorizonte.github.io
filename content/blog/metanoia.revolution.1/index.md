@@ -1,5 +1,6 @@
 ---
-title: "Metanoia Revolution: O que é essa parada?"
+title: "Metanoia Revolution #1: O que é essa parada?"
+url: "/blog/metanoia-revolution-1-o-que-e-essa-parada/"
 date: 2025-10-23T14:15:38-03:00
 draft: false
 description: "Descubra metanoia, a revolução interna que redefine sua mente, valores e vida. Inspire-se a dar um reset completo e viver de forma verdadeira e transformadora."
@@ -8,7 +9,7 @@ featured: false
 pinned: false
 comments: false
 series:
- - 
+ - Metanoia Revolution
 categories:
  - Vida Cristã
  - Espiritualidade
@@ -149,6 +150,7 @@ Deus **NÃO** te convida pra metanoia e depois fala "te vira!".
 Ele caminha com você. Transforma você. Sustenta você.
 
 > Pois eu estou certo de que Deus, que começou esse bom trabalho na vida de vocês, vai continuá-lo até que ele esteja completo no Dia de Cristo Jesus. Filipenses 1:6 NTLH
+
 
 # O que vem por aí
 

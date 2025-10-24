@@ -1,7 +1,7 @@
 ---
 title: "Metanoia: Mentes Transformadas, Vidas Revolucionadas"
 date: 2025-10-22T18:22:38-03:00
-draft: false
+draft: true
 description: "Metanoia: mais que arrependimento, é uma revolução da mente. Descubra como essa transformação radical pode mudar sua vida completamente. Para jovens e adolescentes que querem mais."
 noindex: false
 featured: false

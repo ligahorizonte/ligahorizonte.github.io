@@ -292,12 +292,9 @@ Comece com uma pessoa. Um lugar. Uma ação.
 
 E confie que Deus vai multiplicar.
 
-🔥 No próximo episódio: 
-
-
 {{< bs/alert warning >}}
-{{< bs/alert-heading "No próximo e último artigo da Série: Metanoia Revolution #5: seu guia + as histórias mais insanas" >}}
-Como você FAZ metanoia acontecer na SUA vida? Guia prático passo a passo + histórias reais absurdas de transformação. Se prepare. A revolução culmina aqui. 🔥🚀
+{{< bs/alert-heading "No próximo artigo da Série: Metanoia Revolution #5: as histórias mais insanas" >}}
+As histórias reais de transformação. Se prepare. A revolução culmina aqui. 🔥🚀
 {{< /bs/alert >}}
 
 {{< bs/alert info >}}

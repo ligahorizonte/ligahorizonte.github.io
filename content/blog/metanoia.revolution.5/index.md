@@ -3,6 +3,7 @@ title: "Metanoia Revolution #5: as histórias mais insanas"
 url: "/blog/metanoia-revolution-5-as-histórias-mais-insanas/"
 date: 2025-10-24T14:54:38-03:00
 draft: false
+private: true
 description: "Histórias incríveis de Agostinho, John Newton e Nicky Cruz. Como a metanoia transformou o mundo."
 noindex: false
 featured: false

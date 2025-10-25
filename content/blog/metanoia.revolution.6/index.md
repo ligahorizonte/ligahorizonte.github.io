@@ -1,6 +1,6 @@
 ---
 title: "Metanoia Revolution #6: seu guia para a metanoia"
-url: "/blog/metanoia-revolution-5-seu-guia-para-a-metanoia/"
+url: "/blog/metanoia-revolution-6-seu-guia-para-a-metanoia/"
 date: 2025-10-24T17:33:38-03:00
 draft: false
 description: "Guia prático completo pra metanoia real. Transformação é possível. Sua revolução começa agora. Você tá pronto?"

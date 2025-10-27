@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="https://ligahorizonte.vercel.app/liga.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <title>Jovens e Adolescentes LIGA</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #cb5b1a 5%, #050505 100%);
+            min-height: 800vh;
+            padding: 40px 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .container {
+            max-width: 900px;
+        }
+        
+        .card {
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: none;
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, #000000 100%, #db440d 100%);
+            color: white;
+            border-radius: 15px 15px 0 0 !important;
+            padding: 25px;
+            border: none;
+        }
+        
+        .card-header h1 {
+            margin: 0;
+            font-size: 2rem;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .table {
+            margin-bottom: 0;
+        }
+        
+        .table thead th {
+            background-color: #f8f9fa;
+            color: #495057;
+            font-weight: 600;
+            border-bottom: 2px solid #ea8e66;
+            padding: 15px;
+        }
+        
+        .table tbody tr {
+            transition: all 0.3s ease;
+        }
+        
+        .table tbody tr:hover {
+            background-color: #f0f0ff;
+            transform: scale(1.01);
+        }
+        
+        .table tbody td {
+            padding: 15px;
+            vertical-align: middle;
+        }
+        
+        .badge-number {
+            background: linear-gradient(135deg, #e66525 0%, #000000 100%);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 50%;
+            font-weight: 600;
+            display: inline-block;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        /* estilo do campo de busca e destaque */
+        .search-wrapper {
+            padding: 16px;
+            background: rgba(255,255,255,0.03);
+        }
+        .search-wrapper .form-control {
+            max-width: 480px;
+        }
+        .table tbody td mark {
+            background: #ffd54f;
+            color: #000;
+            padding: 0 2px;
+            border-radius: 2px;
+        }
+        
+        @media (max-width: 576px) {
+            .card-header h1 {
+                font-size: 1.5rem;
+            }
+            
+            .table tbody td,
+            .table thead th {
+                padding: 10px 8px;
+                font-size: 0.9rem;
+            }
+            
+            .badge-number {
+                padding: 6px 10px;
+                min-width: 35px;
+                font-size: 0.85rem;
+            }
+        }
+        .container-custom {
+            max-width: 600px;
+            margin: 0 auto;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .logo-section {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+        .icone-liga {
+            width: 120px !important;
+            height: auto !important;
+        }
+        
+        .icone-liga {
+            width: 150px;
+            height: auto;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+        <div class="container-custom">
+        <div class="logo-section">
+            <div class="logo-placeholder">
+                <!-- <i class="fas fa-church"></i> -->
+                <img src="logo_liga.png" alt="Igreja" class="icone-liga">
+            </div>
+            <!-- <h1 class="church-name">Igreja Batista Ágape Horizonte</h1> -->
+        </div>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h1>Jovens e adolescentes LIGA</h1>
+            </div>
+            
+            <div class="card-body p-0">
+                <!-- adicionar campo de busca aqui -->
+                <div class="search-wrapper">
+                    <input id="search" type="search" class="form-control" placeholder="Pesquisar nome..." aria-label="Pesquisar nome">
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th style="width: 80px;">#</th>
+                                <th>Nome</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabelaNomes">
+                            <!-- Nomes serão inseridos aqui pelo JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Array com os nomes
+        const nomes = [
+            "Ana Cecilia Lima de Sousa", 
+            "Ana Gabriela do Nascimento Silva", 
+            "Ana Júllia da Silva Fernandes", 
+            "Ana Lara Lourenço Silva Amorim", 
+            "Analice da Silva Lopes", 
+            "Andriel Holanda Souza de Santana", 
+            "Ângela Vitória Ferreira de Lima", 
+            "Anna Kácya Freitas Lopes", 
+            "Anna Kethelen Duarte da Silva", 
+            "Antônio Elonir Tomaz de Oliveira Júnior", 
+            "Arthur Alves Bezerra de Lima", 
+            "Caio Italo Santos Oliveira", 
+            "Carlos Daniel Aprígio de Freitas", 
+            "Carlos Eduardo Matias Mesquita", 
+            "Davy Lucas Carneiro Benicio", 
+            "Dayvid Natã de Souza Silva", 
+            "Delwin Regino Pinho Lima", 
+            "Deysiane Maria da Costa Lima", 
+            "Eduarda Ingrid dos Santos", 
+            "Evelyn dos Santos de Oliveira", 
+            "Evelyn Raquel Silva do Nascimento", 
+            "Francisca Kamilly Lima de Oliveira", 
+            "Francisca Vitória Rodrigues Alves", 
+            "Francisco de Assis Bento de Almeida", 
+            "Francisco Hilquias da Silva Sousa", 
+            "Francisco Iarley Assunção dos Santos", 
+            "Francisco Renan Rodrigues Alves", 
+            "Gabriel da Rocha Silva", 
+            "Gabriel da Silva Cavalcante", 
+            "Gustavo do Carmo de Assunção", 
+            "Isis Gabriele Carneiro Melo", 
+            "Jaiany da Silva Brito", 
+            "Janesson dos Santos da Costa", 
+            "Jarbas Silva Chagas", 
+            "Jhosefe Nascimento Duarte", 
+            "João Gabriel Silva Soares", 
+            "João Guilherme do Nascimento Silva", 
+            "João Italo Pinheiro da Silva", 
+            "Jonathan Pereira Lima",
+            "Kaleb Vasconcelos de Sousa", 
+            "Karine do Nascimento Queiroz", 
+            "Ketlyn Cavalcante Lima", 
+            "Laís de Sousa Alves", 
+            "Lara Gabrielly da Silva Nascimento Belarmino", 
+            "Levi Ramos Maia",
+            "Livia Belarmino",
+            "Luan da Silva Farias", 
+            "Luan Expedito Morais Moreira", 
+            "LUANA ANDRADE DE LIMA NASCIMENTO", 
+            "Luana de Sousa da Silva", 
+            "Lucas Eduardo de Souza Ramphal", 
+            "Luis Gustavo Nobre Lopes Camurça", 
+            "Maria Aparecida Bezerra Façanha", 
+            "Maria Eduarda Barroso de Melo", 
+            "Maria Eduarda da Silva de Assunção", 
+            "Maria Eduarda Santos Bezerra", 
+            "Maria Ellen Sousa da Silva", 
+            "Maria Isabel Santos da Costa", 
+            "Maria Joyane dos Santos Silva", 
+            "Maria joyciane dos Santos Silva", 
+            "Maria kelvia da Silva Gomes", 
+            "Maria Luiza de Souza Rocha", 
+            "Mariah Carly Procópio Araújo Ferreira", 
+            "Mirella da Silva Maia", 
+            "Naara da Rocha Silva", 
+            "Pamela Yohanne Almeida de Oliveira", 
+            "Pedro Henrique Santiago de Matos", 
+            "Pedro Vitor Nunes Araújo", 
+            "Pedro Wellington Ramos Marques", 
+            "Raul de Aquino Marques", 
+            "Rener De Assis Tomaz", 
+            "Ruth Belo do Nascimento", 
+            "Sabrina de Sousa Costa", 
+            "Sarah Helen Carneiro Melo", 
+            "Shirley Thaynara Farias Martins", 
+            "Vitória Hellen Damasceno da Silva", 
+            "Vitoria Nunes de Moura", 
+            "Vivian Maria Nobre da Silva ", 
+            "Yasline Braga de Lima", 
+            "Ykaro Rafael Santos da Costa"
+        ];
+        
+        // Função para escapar texto para regex
+        function escapeRegExp(string) {
+            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
+
+        // Função para preencher a tabela
+        function preencherTabela() {
+            const tbody = document.getElementById('tabelaNomes');
+            tbody.innerHTML = ''; // limpa, caso chame novamente
+
+            nomes.forEach((nome, index) => {
+                const tr = document.createElement('tr');
+                tr.dataset.index = index; // guarda índice para referência
+                tr.innerHTML = `
+                    <td><span class="badge-number">${index + 1}</span></td>
+                    <td class="nome-cell">${nome}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Filtra linhas pelo texto pesquisado (case-insensitive) e destaca correspondência
+        function filtrarTabela(query) {
+            const valor = query.trim().toLowerCase();
+            const tbody = document.getElementById('tabelaNomes');
+            const rows = tbody.querySelectorAll('tr');
+
+            rows.forEach(row => {
+                const idx = Number(row.dataset.index);
+                const nomeOriginal = nomes[idx] || '';
+                if (!valor) {
+                    // sem busca -> mostrar nome original sem destaque
+                    row.style.display = '';
+                    row.querySelector('.nome-cell').textContent = nomeOriginal;
+                    return;
+                }
+                const nomeLower = nomeOriginal.toLowerCase();
+                if (nomeLower.includes(valor)) {
+                    row.style.display = '';
+                    // destacar trecho correspondente
+                    const re = new RegExp(escapeRegExp(query), 'i');
+                    row.querySelector('.nome-cell').innerHTML = nomeOriginal.replace(re, m => `<mark>${m}</mark>`);
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+
+        // debounce simples
+        function debounce(fn, delay = 200) {
+            let t;
+            return (...args) => {
+                clearTimeout(t);
+                t = setTimeout(() => fn(...args), delay);
+            };
+        }
+
+        // Preencher a tabela ao carregar a página
+        preencherTabela();
+
+        // Ligar o input de busca
+        const inputSearch = document.getElementById('search');
+        inputSearch.addEventListener('input', debounce((e) => {
+            filtrarTabela(e.target.value);
+        }, 150));
+    </script>
+</body>
+</html>

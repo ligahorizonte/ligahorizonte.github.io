@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="https://ligahorizonte.github.io/liga/liga.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <title>COMO FAZER UM DEVOCIONAL PROFUNDO</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2c5f7e;
+            --secondary: #8b6f47;
+            --light: #f8f5f0;
+            --accent: #d4a574;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            background: var(--light);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .step-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid var(--accent);
+        }
+        
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+        
+        .step-number {
+            background: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .question-box {
+            background: var(--light);
+            border-left: 4px solid var(--secondary);
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+        
+        .question-box h5 {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .tip-box {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .tip-box i {
+            color: #ffc107;
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .accordion-button {
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background: var(--secondary);
+            color: white;
+        }
+        
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: var(--accent);
+        }
+        
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .icon-box {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        
+        .benefit-card {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="container">
+            <h1><i class="fas fa-book-open"></i> COMO FAZER UM DEVOCIONAL PROFUNDO</h1>
+            <p>Aprenda a extrair verdades que transformam o coração e renovam a mente através de uma profunda reflexão da Palavra de Deus.</p>
+        </div>
+    </div>
+
+    <!-- O que é o Devocional? -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <h2 class="section-title text-center">O que é o Devocional?</h2>
+            <p class="lead text-center mb-0">
+                Devocional é um tempo dedicado à leitura, reflexão e oração sobre a Palavra de Deus. É um momento pessoal para ouvir o que Deus tem a dizer, aplicar verdades bíblicas na sua vida e fortalecer o relacionamento com Ele. Com o devocional, você fortalece a sua fé, traz direcionamento espiritual, proporciona paz e comunhão com Deus.
+            </p>
+        </div>
+    </section>
+
+    <!-- Benefícios -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Por que fazer Devocional?</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="benefit-card">
+                        <div class="icon-box"><i class="fas fa-heart"></i></div>
+                        <h4>Intimidade com Deus</h4>
+                        <p>Desenvolver um relacionamento profundo e pessoal com Deus</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="benefit-card">
+                        <div class="icon-box"><i class="fas fa-seedling"></i></div>
+                        <h4>Crescimento Espiritual</h4>
+                        <p>Transformar sua mente e coração através da Palavra</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="benefit-card">
+                        <div class="icon-box"><i class="fas fa-compass"></i></div>
+                        <h4>Direção Diária</h4>
+                        <p>Receber sabedoria e orientação para suas decisões</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Passo a Passo -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <h2 class="section-title text-center">Passo a passo do Devocional</h2>
+            
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3><i class="fas fa-book-reader"></i> Leitura atenta</h3>
+                <p>Leia o texto bíblico escolhido 2 ou 3 vezes, se possível, e lentamente para entendimento pleno. Não tenha pressa. Deixe as palavras penetrarem em seu coração.</p>
+                <div class="question-box">
+                    <h5><i class="fas fa-question-circle"></i> Inicie seu Devocional com as seguintes perguntas:</h5>
+                    <p>Estas perguntas servem para você iniciar seu texto com uma introdução já com certa profundidade. Você vai extrair do seu texto algo que mais chama a sua atenção, é como que fosse o assunto central da sua leitura.</p>
+                    <ul>
+                        <li><strong>O que mais me chamou atenção neste texto?</strong> Aqui, você registra a parte da leitura ou assunto que mais se destacou para você. Pode ser uma frase da leitura, uma atitude de um personagem ou uma promessa. É o ponto que mais chamou sua atenção.</li>
+                        <li><strong>Que palavras ou frases se destacaram?</strong> Às vezes, as palavras ou frases podem ser exatamente as mesmas que a pergunta anterior, se esse for o caso, você pode ignorar essa pergunta, se não, escreva o que se destacou para você.</li>
+                        <li><strong>Há algo que me surpreendeu, incomodou ou gerou dúvidas?</strong> A Bíblia muitas vezes nos confronta, muitas vezes lemos curiosidades e muitas vezes nos geram dúvidas sobre algum assunto/tema. Esta pergunta ajuda desenvolver um sentido de buscar algo além das linhas escritas e buscar algo que faça sentido pra você e sobre o que Deus pensa sobre nós. Se algo incomodar/confrontar, não fuja! Anote e ore sobre isso e procure sua liderança para conversar e buscar esclarecimento sobre suas dúvidas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3><i class="fas fa-eye"></i> O que este texto revela sobre Deus?</h3>
+                <p>Aqui você vai explorar o caráter de Deus revelado no texto. Como Deus agiu no texto, quais os planos de Deus para nossa vida.</p>
+                <div class="question-box">
+                    <h5><i class="fas fa-question-circle"></i> Aspectos que podem ser abordados:</h5>
+                    <ul>
+                        <li>Que atributos de Deus são revelados?</li>
+                        <li>Como Deus se relaciona com as pessoas?</li>
+                        <li>O que este texto mostra sobre o amor/justiça/fidelidade de Deus?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3><i class="fas fa-mirror"></i> O que este texto revela sobre mim?</h3>
+                <p>Seja BRUTALMENTE honesto com você mesmo! A Palavra é um espelho. Este é o momento de deixar o Espírito Santo revelar sua verdadeira condição espiritual e como anda sua vida. Esse é o momento onde você vai olhar para dentro de você mesmo e ver: como anda seu coração, suas atitudes, seus medos, suas falhas e sua fé.</p>
+                <div class="question-box">
+                    <h5><i class="fas fa-question-circle"></i> Seja sincero e use estas perguntas(se aplicável) como guia para responder a pergunta principal:</h5>
+                    <ul>
+                        <li>Onde minha vida está em contradição com este texto?</li>
+                        <li>Que pecados ocultos este texto expõe?</li>
+                        <li>Quais são minhas verdadeiras motivações?</li>
+                        <li>Que medos ou inseguranças estão sendo revelados?</li>
+                        <li>Há algo semelhante ao texto que eu replico na minha vida?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <h3><i class="fas fa-times-circle"></i> Que mentiras tenho acreditado?</h3>
+                <p>Identifique as mentiras que você tem acreditado sobre Deus, sobre você mesmo, sobre os outros ou sobre a vida.</p>
+                <div class="question-box">
+                    <h5><i class="fas fa-question-circle"></i> Veja:</h5>
+                    <ul>
+                        <li>Que crenças falsas este texto desafia?</li>
+                        <li>Onde tenho colocado minha confiança em vez de colocar minha confiança em Deus?</li>
+                        <li>Que desculpas tenho dado para não obedecer?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">5</div>
+                <h3><i class="fas fa-exchange-alt"></i> O que precisa mudar?</h3>
+                <p>Identifique atitudes, hábitos e crenças específicas que precisam de transformação.</p>
+                <div class="question-box">
+                    <h5><i class="fas fa-question-circle"></i> Decida:</h5>
+                    <ul>
+                        <li><strong>PARAR de:</strong> Que comportamentos preciso abandonar?</li>
+                        <li><strong>COMEÇAR a:</strong> Que novos hábitos preciso adotar?</li>
+                        <li><strong>CONTINUAR diferente:</strong> O que faço, mas precisa ser transformado?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">6</div>
+                <h3><i class="fas fa-walking"></i> Como vou aplicar isso HOJE?</h3>
+                <p>Seja específico e prático. Aplicação vaga não gera mudança real.</p>
+                <div class="question-box">
+                    <h5><i class="fas fa-question-circle"></i> Planeje:</h5>
+                    <ul>
+                        <li>Na minha relação com Deus (oração, adoração, obediência)</li>
+                        <li>Nos meus pensamentos (o que vou meditar/rejeitar)</li>
+                        <li>Nas minhas palavras (como vou falar com as pessoas)</li>
+                        <li>Nas minhas ações (que atitude tomarei)</li>
+                        <li>Nos meus relacionamentos (como tratarei as pessoas)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">7</div>
+                <h3><i class="fas fa-praying-hands"></i> Oração de resposta</h3>
+                <p>Responda a Deus com base no que Ele revelou a você através da Sua Palavra.</p>
+                <div class="question-box">
+                    <h5><i class="fas fa-question-circle"></i> Ore com sinceridade:</h5>
+                    <ul>
+                        <li><strong>Adoração:</strong> Louve a Deus pelo que descobriu sobre Ele</li>
+                        <li><strong>Confissão:</strong> Confesse pecados e falhas específicas</li>
+                        <li><strong>Gratidão:</strong> Agradeça pelas verdades reveladas</li>
+                        <li><strong>Súplica:</strong> Peça a Deus a transformação necessária</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">8</div>
+                <h3><i class="fas fa-check-circle"></i> Compromisso mensurável</h3>
+                <p>Defina UMA ação específica e mensurável que você tomará nas próximas 24 horas.</p>
+                <div class="tip-box">
+                    <i class="fas fa-lightbulb"></i>
+                    <strong>Dica:</strong> À noite, revise: <strong>"Vivi esta verdade hoje? Como?"</strong> A revisão é essencial para mudança real.
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">9</div>
+                <h3><i class="fas fa-book"></i> Exemplo de Devocional</h3>
+                <p>Veja um exemplo de devocional que foi aplicado essas perguntas.</p>
+                <div class="question-box">
+                    <h5><i class="fas fa-question-circle"></i> DEVOCIONAL:</h5>
+                    <p>
+                        <strong>DATA:</strong> 10/10/2025 08h30<br>
+                        <strong>TEXTO:</strong> 2Cr 22<br>
+                    <strong>O que mais me chamou atenção neste texto?</strong><br>
+                    O rei Acazias era um jovem de 22 anos muito imaturo que se deixou ser influenciado a fazer o mal. E pior ainda, sua própria mãe o influenciou a fazer o mal.<br>
+                    <strong>Que palavras ou frases se destacaram?</strong><br>
+                    O que me chamou mais atenção foi a mãe incentivar o próprio filho a praticar o mal, isso demonstra algum nível de maldade no coração dela.<br>
+                    <strong>Há algo que me surpreendeu, incomodou ou gerou dúvidas?</strong><br>
+                    <strong>O que este texto revela sobre Deus?</strong><br>
+                    O texto não revela algo que Deus falou diretamente, mas o texto mostra que uma família pode ser amaldiçoada, mas Deus constituiu a família para ser amor e os pais conduzirem os filhos a praticar sempre o bem. Nossa casa precisa ser um santuário que nos conduza ao crescimento espiritual e pessoal. Os pais devem servir de exemplo para os filhos assim como Cristo nos serviu de exemplo. E somente Deus é capaz de reestruturar uma família, por que foi algo que Ele criou.<br>
+                    <strong>O que este texto revela sobre mim?</strong><br>
+                    Isso me mostra que eu não posso me espelhar em uma família como a do rei Acazias. Mas isso também me faz refletir se eu tenho sido influenciado a pecar ou se eu tenho sido influenciado a praticar o bem e se eu sou uma pessoa que influencia para o bem também. Apesar dos apesares, minha família sempre me incentivou a estudar e ser uma boa pessoa, fugir das maldades do mundo: bebidas, drogas, más influências, maus amigos...<br>
+                    <strong>Onde estou vivendo em contradição com este texto?</strong><br>
+                    Olhando para o texto e refletindo minha família antes de aceitar a Jesus, meus pais me davam exemplos ruins de família, no sentido de brigar constantemente, alcoolismo e separação, na época não éramos convertidos. Mas depois de crentes, meus pais me incentivaram a seguir Jesus e tudo mudou.<br>
+                    <strong>Que mentiras tenho acreditado que este texto confronta?</strong><br>
+                    <strong>O que seria diferente na minha vida?</strong><br>
+                    <strong>O que me impede de viver esta verdade plenamente?</strong><br>
+                    <strong>Que desculpas tenho dado para não obedecer?</strong><br>
+                    <strong>Que atitudes, hábitos ou crenças precisam mudar?</strong><br>
+                    Uma atitude que eu não posso ter quando for pai, é influenciar negativamente meus filhos. Eu preciso ser o espelho de Jesus para meus filhos. Preciso parar de pensar que tudo possa dar errado e começar a pensar positivamente para que Deus seja presente em minha vida todos os dias.<br>
+                    <strong>Como vou aplicar isso HOJE?</strong><br>
+                    Sempre que eu levantar, preciso agradecer a Deus por tudo que já me aconteceu de bom, e pedir perdão a Deus por tudo que já me aconteceu de ruim. Preciso sempre pensar em como Deus é fiel e capaz de mudar minha vida. Ter uma vida de retidão e me mostrar como exemplo a outros. A transformação da minha vida e da minha família deve partir de mim. Amar mais, cuidar mais, ouvir mais, estar mais presente. Como meu pastor Odair sempre fala, constranger os outros com amor.<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Perguntas frequentes</h2>
+            <div class="accordion" id="faqAccordion">
+
+                <div class="accordion-item mb-3">
+                    <h2 class="accordion-header" id="heading1">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                            Quanto tempo devo dedicar ao Devocional?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" aria-labelledby="heading1" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Não tem tempo mínimo nem máximo. O importante não é a quantidade de tempo, mas a qualidade da reflexão.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item mb-3">
+                    <h2 class="accordion-header" id="heading2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                            Qual o melhor horário para fazer o Devocional?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            O melhor horário é aquele em que você está menos distraído e tem sossego. Muitos preferem pela manhã, outros à noite. O importante é ter consistência.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item mb-3">
+                    <h2 class="accordion-header" id="heading3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                            Preciso escrever minhas reflexões?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            É importante escrever. Escrever organiza pensamentos, aumenta a honestidade e permite revisitar devocionais. Eu escrevo no digital.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item mb-3">
+                    <h2 class="accordion-header" id="heading4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+                            E se eu não sentir nada durante o devocional?
+                        </button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Sentimentos não são o objetivo. O crescimento acontece pela obediência e renovação da mente, não por emoções. Continue firme e buscando a Deus.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item mb-3">
+                    <h2 class="accordion-header" id="heading5">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
+                            Como escolher qual texto ler?
+                        </button>
+                    </h2>
+                    <div id="faq5" class="accordion-collapse collapse" aria-labelledby="heading5" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Você pode seguir um plano de leitura, ler um livro sequencialmente ou escolher textos relacionados à sua situação. O importante é consistência.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item mb-3">
+                    <h2 class="accordion-header" id="heading6">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false" aria-controls="faq6">
+                            Preciso responder a todas as perguntas?
+                        </button>
+                    </h2>
+                    <div id="faq6" class="accordion-collapse collapse" aria-labelledby="heading6" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Não. Nem todas as perguntas precisam ser respondidas. Algumas podem não se aplicar ao tema do seu texto.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Call to Action -->
+    <section class="py-5 bg-white text-center">
+        <div class="container">
+            <h2 class="section-title">Comece hoje mesmo!</h2>
+            <p class="lead mb-4">A transformação começa com um passo de cada vez. Escolha um texto e dedique os próximos 15 minutos à reflexão profunda.</p>
+            <button class="btn btn-primary btn-lg" onclick="scrollToTop()">
+                <i class="fas fa-arrow-up"></i> Voltar ao Início
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="mb-0"><i class="fas fa-bible"></i> "Lâmpada para os meus pés é a tua palavra e luz, para o meu caminho" - Salmos 119:105</p>
+            <small class="mt-2 d-block opacity-75">Desenvolvido para aprofundar sua jornada espiritual</small>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Animação suave ao rolar
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('.step-card, .benefit-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+.hugo_build.lock
+hugo_stats.json
+package-json.lock
+public/
+node_modules/
+tips.txt
+.env
+/content/about/
+config/_default/params.en.yaml
+content\blog\15-cve-mremoteng\index.en.md
+1.halloween copy 4
+1.halloween copy 5
+1.halloween copy 6
+1.halloween copy 7
+2.conhecendo.deus
+3.a.natureza.de.deus
+/static/images/

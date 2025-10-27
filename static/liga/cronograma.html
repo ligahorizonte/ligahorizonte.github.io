@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronograma LIGA 2026</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+<style>
+        :root {
+            /* Cores principais */
+            --primary-color: #000000;
+            --secondary-color: #3498db;
+            --accent-color: #ffffff;
+            --light-bg: #ecf0f1;
+            
+            /* Cores dos tipos de eventos - Cor principal */
+            --event-especial: #ecbd00;
+            --event-especial-light: #fbeee6;
+            --event-especial-border: #caa200;
+            
+            --event-evento: #ff00ff;
+            --event-evento-light: #e1f7ff;
+            --event-evento-border: #e600e6;
+            
+            --event-conferencia: #b300ff;
+            --event-conferencia-light: #f3e8ff;
+            --event-conferencia-border: #6c3483;
+            
+            --event-culto: #0099ff;
+            --event-culto-light: #fffbe1;
+            --event-culto-border: #006eb8;
+            
+            --event-retiro: #fc402b;
+            --event-retiro-light: #ffe4e1;
+            --event-retiro-border: rgb(211, 94, 83);
+            
+            --event-missoes: #2aa30c;
+            --event-missoes-light: #e1fff7;
+            --event-missoes-border: #1f720a;
+            
+            --event-encontro: #ff7300;
+            --event-encontro-light: #fff2e1;
+            --event-encontro-border: #cf5d00;
+            
+            /* Configurações do calendário */
+            --calendar-gap: 10px;
+            --calendar-gap-mobile: 1px;
+            --calendar-day-min-height: 80px;
+            --calendar-day-min-height-mobile: 30px;
+            --calendar-day-padding: 8px;
+            --calendar-day-padding-mobile: 2px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #34853e 0%, #0b250b 100%);
+            min-height: 100vh;
+            padding: 20px 0;
+        }
+
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #000000;
+            font-size: 1.1rem;
+        }
+
+        .calendar-container {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .calendar-header h2 {
+            color: var(--primary-color);
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .calendar-nav {
+            display: flex;
+            gap: 10px;
+        }
+
+        .calendar-nav button {
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .calendar-nav button:hover {
+            background: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: var(--calendar-gap);
+            margin-top: 20px;
+        }
+
+        .calendar-day-header {
+            text-align: center;
+            font-weight: bold;
+            color: var(--primary-color);
+            padding: 10px;
+            background: var(--light-bg);
+            border-radius: 8px;
+        }
+
+        .calendar-day {
+            aspect-ratio: 1;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: var(--calendar-day-padding);
+            cursor: pointer;
+            transition: all 0.3s;
+            background: white;
+            position: relative;
+            min-height: var(--calendar-day-min-height);
+        }
+
+        .calendar-day:hover {
+            border-color: var(--secondary-color);
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .calendar-day.other-month {
+            opacity: 0.3;
+        }
+
+        .calendar-day.has-event {
+            background: linear-gradient(135deg, #667eea22 0%, #764ba222 100%);
+            border-color: var(--secondary-color);
+        }
+
+        .calendar-day.today {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px #e74c3c44;
+            background: #ffeaea;
+        }
+
+        .calendar-day.especial {
+            background: linear-gradient(135deg, var(--event-especial) 0%, var(--event-especial-light) 100%);
+            border-color: var(--event-especial-border);
+        }
+
+        .calendar-day.evento {
+            background: linear-gradient(135deg, var(--event-evento) 0%, var(--event-evento-light) 100%);
+            border-color: var(--event-evento-border);
+        }
+
+        .calendar-day.conferencia {
+            background: linear-gradient(135deg, var(--event-conferencia) 0%, var(--event-conferencia-light) 100%);
+            border-color: var(--event-conferencia-border);
+        }
+
+        .calendar-day.culto {
+            background: linear-gradient(135deg, var(--event-culto) 0%, var(--event-culto-light) 100%);
+            border-color: var(--event-culto-border);
+        }
+
+        .calendar-day.retiro {
+            background: linear-gradient(135deg, var(--event-retiro) 0%, var(--event-retiro-light) 100%);
+            border-color: var(--event-retiro-border);
+        }
+
+        .calendar-day.missoes {
+            background: linear-gradient(135deg, var(--event-missoes) 0%, var(--event-missoes-light) 100%);
+            border-color: var(--event-missoes-border);
+        }
+
+        .calendar-day.encontro {
+            background: linear-gradient(135deg, var(--event-encontro) 0%, var(--event-encontro-light) 100%);
+            border-color: var(--event-encontro-border);
+        }
+
+        .day-number {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .event-indicator {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+        }
+
+        .event-list {
+            margin-top: 30px;
+        }
+
+        .event-card {
+            background: white;
+            border-left: 5px solid var(--secondary-color);
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .event-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .event-card h5 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .event-date {
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .event-description {
+            color: #000000;
+        }
+
+        .modal-content {
+            border-radius: 15px;
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .legend {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            padding: 15px;
+            background: var(--light-bg);
+            border-radius: 8px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .calendar-grid {
+                gap: var(--calendar-gap-mobile);
+            }
+
+            .calendar-day {
+                min-height: var(--calendar-day-min-height-mobile);
+                padding: var(--calendar-day-padding-mobile);
+                border-width: 1px;
+            }
+
+            .day-number {
+                font-size: 0.7rem;
+                margin-bottom: 2px;
+            }
+
+            .calendar-day-header {
+                font-size: 0.65rem;
+                padding: 3px 1px;
+            }
+            
+            .event-indicator {
+                width: 4px;
+                height: 4px;
+                bottom: 3px;
+                right: 3px;
+            }
+        }
+
+.event-card.especial { 
+    border-left-color: var(--event-especial-border);
+    background: linear-gradient(135deg, var(--event-especial) 0%, var(--event-especial-light) 100%);
+}
+.event-card.evento { 
+    border-left-color: var(--event-evento-border);
+    background: linear-gradient(135deg, var(--event-evento) 0%, var(--event-evento-light) 100%);
+}
+.event-card.conferencia { 
+    border-left-color: var(--event-conferencia-border);
+    background: linear-gradient(135deg, var(--event-conferencia) 0%, var(--event-conferencia-light) 100%);
+}
+.event-card.culto { 
+    border-left-color: var(--event-culto-border);
+    background: linear-gradient(135deg, var(--event-culto) 0%, var(--event-culto-light) 100%);
+}
+.event-card.retiro { 
+    border-left-color: var(--event-retiro-border);
+    background: linear-gradient(135deg, var(--event-retiro) 0%, var(--event-retiro-light) 100%);
+}
+.event-card.missoes { 
+    border-left-color: var(--event-missoes-border);
+    background: linear-gradient(135deg, var(--event-missoes) 0%, var(--event-missoes-light) 100%);
+}
+.event-card.encontro { 
+    border-left-color: var(--event-encontro-border);
+    background: linear-gradient(135deg, var(--event-encontro) 0%, var(--event-encontro-light) 100%);
+}
+
+        .nav-tabs .nav-link {
+            background-color: #fff !important;
+            opacity: 1 !important;
+            color: #2c3e50 !important;
+            border: 1px solid #dee2e6 !important;
+        }
+
+        .nav-tabs .nav-link.active {
+            background-color: #e9ecef !important;
+            color: #2c3e50 !important;
+            border-bottom: 2px solid #3498db !important;
+        }
+
+        .icone-liga {
+            width: 300px;
+            height: auto;
+            vertical-align: middle;
+        }
+
+        .event-dinamica {
+            color: #ffffff;
+            font-size: 1.15em;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 col-xl-10">
+                <div class="header">
+                    <h1><img src="logo_liga.svg" alt="Igreja" class="icone-liga"></h1>
+                    <h1>Cronograma 2026</h1>
+                    <p>Acompanhe todas as atividades e eventos da nossa igreja</p>
+                </div>
+                
+                <ul class="nav nav-tabs mb-4" id="mainTabs" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="calendar-tab" data-bs-toggle="tab" data-bs-target="#calendarTabPane" type="button" role="tab" aria-controls="calendarTabPane" aria-selected="true">
+                      <i class="fas fa-calendar-alt"></i> Calendário
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="all-events-tab" data-bs-toggle="tab" data-bs-target="#allEventsTabPane" type="button" role="tab" aria-controls="allEventsTabPane" aria-selected="false">
+                      <i class="fas fa-list"></i> Todas as Programações
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="retiro-tab" data-bs-toggle="tab" data-bs-target="#retiroTabPane" type="button" role="tab" aria-controls="retiroTabPane" aria-selected="false">
+                      <i class="fas fa-campground"></i> Retiro
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="objetivos-tab" data-bs-toggle="tab" data-bs-target="#objetivosTabPane" type="button" role="tab" aria-controls="objetivosTabPane" aria-selected="false">
+                      <i class="fas fa-bullseye"></i> Objetivos 2026
+                    </button>
+                  </li>
+                </ul>
+
+                <div class="tab-content" id="mainTabsContent">
+                  <div class="tab-pane fade show active" id="calendarTabPane" role="tabpanel" aria-labelledby="calendar-tab" tabindex="0">
+                    <div class="row">
+                      <div class="col-lg-8 col-12">
+                        <div class="calendar-container mb-4 mb-lg-0">
+                          <div class="calendar-header">
+                            <div>
+                              <h2 id="currentMonth"></h2>
+                              <div id="monthTheme" class="text-secondary mt-1"></div>
+                            </div>
+                            <div class="calendar-nav">
+                              <button class="btn btn-primary" onclick="previousMonth()"><i class="fas fa-chevron-left"></i> Anterior</button>
+                              <button class="btn btn-primary" onclick="nextMonth()">Próximo <i class="fas fa-chevron-right"></i></button>
+                              <button class="btn btn-primary" onclick="goToToday()">Hoje</button>
+                            </div>
+                          </div>
+
+                          <div class="calendar-grid" id="calendarGrid"></div>
+
+                          <div class="legend">
+                            <div class="legend-item">
+                              <div class="legend-color" style="background: linear-gradient(135deg, var(--event-especial) 0%, var(--event-especial-light) 100%); border: 2px solid var(--event-especial-border);"></div>
+                              <span>Especial</span>
+                            </div>
+                            <div class="legend-item">
+                              <div class="legend-color" style="background: linear-gradient(135deg, var(--event-evento) 0%, var(--event-evento-light) 100%); border: 2px solid var(--event-evento-border);"></div>
+                              <span>Evento</span>
+                            </div>
+                            <div class="legend-item">
+                              <div class="legend-color" style="background: linear-gradient(135deg, var(--event-conferencia) 0%, var(--event-conferencia-light) 100%); border: 2px solid var(--event-conferencia-border);"></div>
+                              <span>Conferência</span>
+                            </div>
+                            <div class="legend-item">
+                              <div class="legend-color" style="background: linear-gradient(135deg, var(--event-culto) 0%, var(--event-culto-light) 100%); border: 2px solid var(--event-culto-border);"></div>
+                              <span>Culto</span>
+                            </div>
+                            <div class="legend-item">
+                              <div class="legend-color" style="background: linear-gradient(135deg, var(--event-retiro) 0%, var(--event-retiro-light) 100%); border: 2px solid var(--event-retiro-border);"></div>
+                              <span>Retiro</span>
+                            </div>
+                            <div class="legend-item">
+                              <div class="legend-color" style="background: linear-gradient(135deg, var(--event-missoes) 0%, var(--event-missoes-light) 100%); border: 2px solid var(--event-missoes-border);"></div>
+                              <span>Missões</span>
+                            </div>
+                            <div class="legend-item">
+                              <div class="legend-color" style="background: linear-gradient(135deg, var(--event-encontro) 0%, var(--event-encontro-light) 100%); border: 2px solid var(--event-encontro-border);"></div>
+                              <span>Encontro</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-12">
+                        <div class="calendar-container mt-4 mt-lg-0">
+                          <h3 class="mb-4"><i class="fas fa-list"></i> Próximos Eventos</h3>
+                          <div id="eventList" class="event-list"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="allEventsTabPane" role="tabpanel" aria-labelledby="all-events-tab" tabindex="0">
+                    <div class="calendar-container">
+                      <h3 class="mb-4"><i class="fas fa-list"></i> Todas as Programações</h3>
+                      <div id="allEventsList"></div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="retiroTabPane" role="tabpanel" aria-labelledby="retiro-tab" tabindex="0">
+                    <div class="calendar-container">
+                      <h3 class="mb-4"><i class="fas fa-campground"></i> Programação do Retiro</h3>
+                      <div id="retiroList"></div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="objetivosTabPane" role="tabpanel" aria-labelledby="objetivos-tab" tabindex="0">
+                    <div class="calendar-container">
+                      <h3 class="mb-4"><i class="fas fa-bullseye"></i> Objetivos para 2026</h3>
+                      <div id="objetivos2026">
+                        <ul>
+                          <li><strong>Formação de Identidade: </strong>Jovens firmados em quem são em Cristo.</li>
+                          <li><strong>Relacionamentos Saudáveis: </strong>Construir vínculos bíblicos e duradouros.</li>
+                          <li><strong>Santidade: </strong>Viver a pureza em todas as áreas da vida.</li>
+                          <li><strong>Cura Interior: </strong>Ministrar libertação e restauração emocional.</li>
+                          <li><strong>Propósito e Missão: </strong>Descobrir e viver o chamado de Deus.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="eventModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle"></h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="modalBody"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // ==========================================
+        // CONFIGURAÇÕES CENTRALIZADAS
+        // ==========================================
+        
+        const CONFIG = {
+            eventColors: {
+                especial: '#ecbd00',
+                evento: '#ff00ff',
+                conferencia: '#b300ff',
+                culto: '#0099ff',
+                retiro: '#fc402b',
+                missoes: '#2aa30c',
+                encontro: '#ff7300'
+            },
+            
+            monthNames: [
+                "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+                "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+            ],
+            
+            dayNames: ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"],
+            
+            monthThemes: {
+                0: "TEMA: Identidade",
+                1: "TEMA: Relacionamentos",
+                2: "TEMA: Vocação",
+                3: "TEMA: Sexualidade",
+                4: "TEMA: Família",
+                5: "TEMA: Vida Cristã",
+                6: "TEMA: Paternidade",
+                7: "TEMA: Abuso sexual",
+                8: "TEMA: Rejeição",
+                9: "TEMA: Pecado e graça",
+                10: "TEMA: Homossexualidade",
+                11: "TEMA: Gratidão"
+            }
+        };
+        
+        let currentDate = new Date(2026, 0, 1);
+
+        // Eventos da LIGA
+        const events = [
+            // JANEIRO
+            // {date: new Date(2026, 0, 2), title: "Encontro LIGA", hour: "19:00", group: "LIGA TEEN", description: "Quem sou eu? Descobrindo minha identidade em Cristo.", type: "encontro", dinamic: ""},
+            {date: new Date(2026, 0, 9), title: "Encontro LIGA", hour: "19:00", group: "LIGA TEEN", dinamic: "DINÂMICA: Espelho da Identidade", description: "Para que existo? O propósito de Deus para minha vida.", type: "encontro"},
+            {date: new Date(2026, 0, 16), title: "Encontro LIGA", hour: "19:00", group: "LIGA TEEN", description: "Meu valor não está no mundo: Superando a pressão social e das redes sociais.", type: "encontro", dinamic: "DINÂMICA: Filtro da Verdade"},
+            {date: new Date(2026, 0, 23), title: "Encontro LIGA", hour: "19:00", group: "LIGA TEEN", description: "Vivendo com propósito: Como alinhar minha vida com a vontade de Deus.", type: "encontro", dinamic: "DINÂMICA: GPS de Deus + Bússola da Vida"},
+            {date: new Date(2026, 0, 30), title: "Encontro LIGA", hour: "19:00", group: "LIGA TEEN", description: "Desafios do mês.", type: "evento", dinamic: "TEMPO DE QUALIDADE"},
+            // {date: new Date(2026, 0, 30), title: "Encontro LIGA", hour: "19:00", group: "LIGA TEEN", description: "Nova criatura: Vivendo a transformação que Deus quer operar em mim.", type: "encontro", dinamic: "Metamorfose"},
+            // {date: new Date(2026, 0, 31), title: "LIGA Ágape", hour: "19:00", group: "CULTO", description: "Quem sou eu?", type: "culto", dinamic: ""},
+            {date: new Date(2026, 0, 31), title: "LIGA Ágape", hour: "19:00", group: "CULTO", description: "", type: "culto", dinamic: ""},
+            // FEVEREIRO
+            {date: new Date(2026, 1, 6),title: "Encontro LIGA", hour: "19:00", group: "LIGA TEEN", description: "Seja um adolescente 10/10: Como escolher boas amizades, se afastar de influências negativas e como se proteger.", type: "encontro", dinamic: ""},
+            // {date: new Date(2026, 1, 6),title: "Encontro LIGA", hour: "19:00", group: "LIGA TEEN", description: "Noite de diversão. <br>Esquenta Retiro LIGA Ágape.", type: "especial", dinamic: ""},
+            // {date: new Date(2026, 1, 20), title: "Encontro LIGA", hour: "19:00", group: "LIGA TEEN", description: "Sendo um bom amigo: Como ser um amigo verdadeiro.", type: "encontro" , dinamic: ""},
+            {date: new Date(2026, 1, 27),title: "Encontro LIGA", hour: "19:00", group: "LIGA TEEN", description: "Solidão e Comunhão: Lidando com a solidão e encontrando comunhão verdadeira.", type: "encontro" , dinamic: "DINÂMICA: Corrente da Comunhão"},
+            // MARÇO
+            {date: new Date(2026, 2, 6), title: "Encontro LIGA", hour: "19:00", group: "LIGA TEEN", description: "Deus tem um Plano: Descobrindo meu chamado.", type: "encontro" , dinamic: "DINÂMICA: Caça ao Tesouro Vocacional"},
+            // {date: new Date(2026, 2, 13), title: "Encontro LIGA", hour: "19:00", group: "LIGA TEEN", description: "Estudos, Carreira e Fé: Escolhas com propósito.", type: "encontro" , dinamic: "Feira das Profissões com Propósito(?)"},
+            {date: new Date(2026, 2, 13), title: "Encontro LIGA", hour: "19:00", group: "LIGA TEEN", description: "Estudos, Carreira e Fé: Escolhas com propósito.", type: "encontro" , dinamic: ""},
+            // {date: new Date(2026, 2, 13), title: "Encontro LIGA", hour: "19:00", group: "LIGA", description: "Estudos, Carreira e Finanças: Escolhas profissionais com propósito.", type: "encontro" , dinamic: ""},
+            // {date: new Date(2026, 2, 20), title: "Encontro LIGA", hour: "19:00", group: "LIGA TEEN", description: "Servindo com Excelência: Usando meus talentos para Deus.", type: "encontro" , dinamic: "Oficina de Talentos(?)"},
+            {date: new Date(2026, 2, 20), title: "Encontro LIGA", hour: "19:00", group: "LIGA TEEN", description: "Servindo com Excelência: Usando meus talentos para Deus.", type: "encontro" , dinamic: ""},
+            {date: new Date(2026, 2, 27), title: "Encontro LIGA", hour: "19:00", group: "LIGA TEEN", description: "Chamados para Impactar: Sendo sal e luz no mundo.", type: "encontro" , dinamic: ""},
+            // {date: new Date(2026, 2, 27), title: "Encontro LIGA", hour: "19:00", group: "LIGA TEEN", description: "Chamados para Impactar: Sendo sal e luz no mundo.", type: "encontro" , dinamic: "Missão Possível"},
+            // {date: new Date(2026, 2, 28), title: "Culto LIGA", hour: "19:00", group: "LIGA TEEN", description: "Qual o meu chamado?", type: "culto" , dinamic: ""},
+            {date: new Date(2026, 2, 28), title: "Culto LIGA", hour: "19:00", group: "LIGA TEEN", description: "", type: "culto" , dinamic: ""},
+            // ABRIL
+            // {date: new Date(2026, 3, 3), title: "Encontro LIGA", hour: "19:00", group: "PROGRAMAÇÃO ESPECIAL", description: "Oração como estilo de vida.", type: "especial", dinamic: ""},
+            {date: new Date(2026, 3, 4), title: "Consagração LIGA TEEN", hour: "09:00", group: "ORAÇÃO, CONSAGRAÇÃO, JEJUM E COMUNHÃO", description: "Oração Devocional: Oração como estilo de vida.", type: "especial", dinamic: ""},
+            {date: new Date(2026, 3, 3), title: "Encontro LIGA", hour: "19:00", group: "LIGA TEEN", description: "Pureza e santidade: O valor da pureza sexual.", type: "encontro" , dinamic: ""},
+            {date: new Date(2026, 3, 10), title: "Encontro LIGA", hour: "19:00", group: "LIGA TEEN", description: "Namoro Cristão e limites: Relacionamentos que honram a Deus.", type: "encontro" , dinamic: ""},
+            {date: new Date(2026, 3, 17), title: "Encontro LIGA", hour: "19:00", group: "LIGA TEEN", description: "A armadilha da pornografia: Entendendo o perigo e o vício.", type: "encontro" , dinamic: ""},
+            {date: new Date(2026, 3, 24), title: "Encontro LIGA", hour: "19:00", group: "LIGA TEEN", description: "O que entra pelos olhos: Guardando a mente e o coração.", type: "encontro" , dinamic: ""},
+            {date: new Date(2026, 3, 25), title: "Culto LIGA", hour: "19:00", group: "LIGA TEEN", description: "", type: "culto" , dinamic: ""},
+            // MAIO
+            {date: new Date(2026, 4, 1), title: "Encontro LIGA", hour: "19:00", group: "LIGA TEEN", description: "Honrando pai e mãe: O mandamento e suas bênçãos.", type: "encontro" , dinamic: ""},
+            {date: new Date(2026, 4, 2), title: "Consagração LIGA TEEN", hour: "09:00", group: "ORAÇÃO, CONSAGRAÇÃO, JEJUM E COMUNHÃO", description: "Oração Devocional: Oração como estilo de vida.", type: "especial", dinamic: ""},
+            {date: new Date(2026, 4, 8), title: "Encontro LIGA", hour: "19:00", group: "LIGA TEEN", description: "Conflitos familiares: Como lidar com desentendimentos em casa.", type: "encontro" , dinamic: ""},
+            {date: new Date(2026, 4, 15),title: "Encontro LIGA",hour: "19:00",group: "LIGA TEEN",description: "Famílias imperfeitas, Deus perfeito: Lidando com famílias disfuncionais.",type: "encontro", dinamic: ""},
+            {date: new Date(2026, 4, 22),title: "Encontro LIGA",hour: "19:00",group: "LIGA TEEN",description: "Sendo exemplo: Coragem para testemunhar em casa.",type: "encontro", dinamic: ""},
+            {date: new Date(2026, 4, 29),title: "Encontro LIGA",hour: "19:00",group: "LIGA TEEN",description: "O futuro da minha família: Quebrando maldições hereditárias e construindo um legado.",type: "encontro", dinamic: ""},
+            {date: new Date(2026, 4, 30),title: "Culto LIGA",hour: "19:00",group: "LIGA TEEN",description: "",type: "culto", dinamic: ""},
+            // JUNHO
+            {date: new Date(2026, 5, 5),title: "Encontro LIGA",hour: "19:00",group: "LIGA TEEN",description: "Vida devocional: Como desenvolver uma vida devocional.",type: "encontro", dinamic: ""},
+            {date: new Date(2026, 5, 6), title: "Consagração LIGA TEEN", hour: "09:00", group: "ORAÇÃO, CONSAGRAÇÃO, JEJUM E COMUNHÃO", description: "Oração Devocional: Oração como estilo de vida.", type: "especial", dinamic: ""},
+            {date: new Date(2026, 5, 12),title: "Encontro LIGA",hour: "19:00",group: "LIGA TEEN",description: "Jejum: Poder e propósito.",type: "encontro", dinamic: ""},
+            {date: new Date(2026, 5, 19),title: "Encontro LIGA",hour: "19:00",group: "LIGA TEEN",description: "Redes Sociais e Fé: Como ser cristão em um mundo digital.",type: "encontro", dinamic: ""},
+            {date: new Date(2026, 5, 26),title: "Encontro LIGA",hour: "19:00",group: "LIGA TEEN",description: "Maturidade Cristã: Crescendo espiritualmente.",type: "encontro", dinamic: ""},
+            {date: new Date(2026, 5, 27),title: "Culto LIGA",hour: "19:00",group: "LIGA TEEN",description: "",type: "culto", dinamic: ""},
+            // JULHO
+            {date: new Date(2026, 6, 3),title: "Encontro LIGA",hour: "19:00",group: "PALESTRANTE CONVIDADO",description: "Quebrando o silêncio: Reconhecendo o abuso e suas formas.",type: "encontro", dinamic: ""},
+            {date: new Date(2026, 6, 4), title: "Consagração LIGA TEEN", hour: "09:00", group: "ORAÇÃO, CONSAGRAÇÃO, JEJUM E COMUNHÃO", description: "Oração Devocional: Oração como estilo de vida.", type: "especial", dinamic: ""},
+            {date: new Date(2026, 6, 10),title: "Encontro LIGA",hour: "19:00",group: "LIGA TEEN",description: "Deus vê sua dor: O cuidado de Deus com os feridos.",type: "encontro", dinamic: ""},
+            {date: new Date(2026, 6, 17),title: "Encontro LIGA",hour: "19:00",group: "PALESTRANTE CONVIDADO",description: "Buscando ajuda: Como e onde buscar apoio.",type: "encontro", dinamic: ""},
+            {date: new Date(2026, 6, 24),title: "Encontro LIGA",hour: "19:00",group: "LIGA TEEN",description: "O processo de cura: Restauração emocional e espiritual.",type: "encontro", dinamic: ""},
+            // {date: new Date(2026, 6, 31),title: "Culto LIGA",hour: "19:00",group: "ABERTO AO PÚBLICO",description: "",type: "culto", dinamic: ""},
+            // AGOSTO
+            // {date: new Date(2026, 7, 1), title: "Consagração LIGA TEEN", hour: "09:00", group: "ORAÇÃO, CONSAGRAÇÃO, JEJUM E COMUNHÃO", description: "Oração Devocional: Oração como estilo de vida.", type: "especial", dinamic: ""},
+            // {date: new Date(2026, 7, 7),title: "Encontro LIGA",hour: "19:00",group: "LIGA TEEN",description: "Filhos amados do Pai: Conhecendo o coração do Pai.",type: "encontro", dinamic: ""},
+            {date: new Date(2026, 7, 7),title: "Encontro LIGA",hour: "19:00",group: "LIGA TEEN",description: "Abraço que cura: A presença paterna que transforma.",type: "encontro", dinamic: ""},
+            {date: new Date(2026, 7, 14),title: "Encontro LIGA",hour: "19:00",group: "LIGA TEEN",description: "Filhos órfãos de pais vivos: Identificando as feridas da ausência.",type: "encontro", dinamic: ""},
+            {date: new Date(2026, 7, 21),title: "Encontro LIGA",hour: "19:00",group: "LIGA TEEN",description: "Quebrando ciclos: Da rejeição à restauração.",type: "encontro", dinamic: ""},
+            {date: new Date(2026, 7, 28),title: "Encontro LIGA",hour: "19:00",group: "LIGA TEEN",description: "Identidade Roubada: Resgatando quem Deus criou você para ser.",type: "encontro", dinamic: ""},
+            {date: new Date(2026, 7, 29),title: "Culto LIGA",hour: "19:00",group: "LIGA TEEN",description: "",type: "culto", dinamic: ""},
+            // SETEMBRO
+            {date: new Date(2026, 8, 5), title: "Consagração LIGA TEEN", hour: "09:00", group: "ORAÇÃO, CONSAGRAÇÃO, JEJUM E COMUNHÃO", description: "Oração Devocional: Oração como estilo de vida.", type: "especial", dinamic: ""},
+            {date: new Date(2026, 8, 4),title: "Encontro LIGA",hour: "19:00",group: "LIGA TEEN",description: "As feridas da rejeição: Entendendo a raiz da rejeição.",type: "encontro", dinamic: ""},
+            {date: new Date(2026, 8, 11),title: "Encontro LIGA",hour: "19:00",group: "LIGA TEEN",description: "Jesus, o rejeitado: Cristo como nosso exemplo e Salvador.",type: "encontro", dinamic: ""},
+            {date: new Date(2026, 8, 18),title: "Encontro LIGA",hour: "19:00",group: "LIGA TEEN",description: "Aceito pelo Pai: Nossa verdadeira identidade em Cristo.",type: "encontro", dinamic: ""},
+            {date: new Date(2026, 8, 25),title: "Encontro LIGA",hour: "19:00",group: "LIGA TEEN",description: "Superando a rejeição: Cura e liberdade.",type: "encontro", dinamic: ""},
+            {date: new Date(2026, 8, 26),title: "Culto LIGA",hour: "19:00",group: "LIGA TEEN",description: "",type: "culto", dinamic: ""},
+            // OUTUBRO
+            {date: new Date(2026, 9, 2),title: "Encontro LIGA",hour: "19:00",group: "LIGA TEEN",description: "O Que é Pecado? Entendendo a natureza do pecado.",type: "encontro", dinamic: ""},
+            {date: new Date(2026, 9, 3), title: "Consagração LIGA TEEN", hour: "09:00", group: "ORAÇÃO, CONSAGRAÇÃO, JEJUM E COMUNHÃO", description: "Oração Devocional: Oração como estilo de vida.", type: "especial", dinamic: ""},
+            {date: new Date(2026, 9, 9),title: "Encontro LIGA",hour: "19:00",group: "LIGA TEEN",description: "Arrependimento verdadeiro: Como o pecado afeta nossa vida.",type: "encontro", dinamic: ""},
+            {date: new Date(2026, 9, 16),title: "Encontro LIGA",hour: "19:00",group: "LIGA TEEN",description: "A graça que liberta: O poder do perdão de Deus.",type: "encontro", dinamic: ""},
+            {date: new Date(2026, 9, 23),title: "Encontro LIGA",hour: "19:00",group: "LIGA TEEN",description: "Vencendo a tentação: Estratégias práticas para resistir ao pecado.",type: "encontro", dinamic: ""},
+            {date: new Date(2026, 9, 30),title: "Encontro LIGA",hour: "19:00",group: "LIGA TEEN",description: "Confissão de pecado: Libertando-se das prisões.",type: "encontro", dinamic: ""},
+            {date: new Date(2026, 9, 31),title: "Culto LIGA",hour: "19:00",group: "LIGA TEEN",description: "",type: "culto", dinamic: ""},
+            // NOVEMBRO
+            {date: new Date(2026, 10, 7), title: "Consagração LIGA TEEN", hour: "09:00", group: "ORAÇÃO, CONSAGRAÇÃO, JEJUM E COMUNHÃO", description: "Oração Devocional: Oração como estilo de vida.", type: "especial", dinamic: ""},
+            {date: new Date(2026, 10, 6),title: "Encontro LIGA",hour: "19:00",group: "LIGA TEEN",description: "O que a Bíblia diz? Posição bíblica com amor e clareza.",type: "encontro", dinamic: ""},
+            {date: new Date(2026, 10, 13),title: "Encontro LIGA",hour: "19:00",group: "LIGA TEEN",description: "Tentação não é pecado: Diferença entre atração e ação.",type: "encontro", dinamic: ""},
+            {date: new Date(2026, 10, 20),title: "Encontro LIGA",hour: "19:00",group: "LIGA TEEN",description: "De onde vem a homossexualidade? Entendendo suas origens à luz da Bíblia.",type: "encontro", dinamic: ""},
+            {date: new Date(2026, 10, 27),title: "Encontro LIGA",hour: "19:00",group: "LIGA TEEN",description: "O amor de Deus transforma: Nova identidade em Cristo.",type: "encontro", dinamic: ""},
+            {date: new Date(2026, 10, 28),title: "Culto LIGA",hour: "19:00",group: "LIGA TEEN",description: "Testemunhos de transformação: O poder do evangelho pode mudar vidas.",type: "culto", dinamic: ""},
+            // DEZEMBRO
+            {date: new Date(2026, 11, 4),title: "Encontro LIGA",hour: "19:00",group: "LIGA TEEN",description: "Um ano de vitórias: Testemunhos do que Deus fez em 2026.",type: "encontro", dinamic: ""},
+            {date: new Date(2026, 11, 5), title: "Consagração LIGA TEEN", hour: "09:00", group: "ORAÇÃO, CONSAGRAÇÃO, JEJUM E COMUNHÃO", description: "Oração Devocional: Oração como estilo de vida.", type: "especial", dinamic: ""},
+            {date: new Date(2026, 11, 11),title: "Encontro LIGA",hour: "19:00",group: "LIGA TEEN",description: "Gratidão em tudo: Coração grato mesmo nas dificuldades.",type: "encontro", dinamic: ""},
+            {date: new Date(2026, 11, 18),title: "Encontro LIGA",hour: "19:00",group: "LIGA TEEN",description: "O maior presente, Jesus: O verdadeiro sentido do Natal.",type: "encontro", dinamic: ""},
+            {date: new Date(2026, 11, 25),title: "Encontro LIGA",hour: "19:00",group: "LIGA TEEN",description: "Confraternização de encerramento do ano.",type: "encontro", dinamic: ""},
+            {date: new Date(2026, 11, 26),title: "Culto LIGA",hour: "19:00",group: "LIGA TEEN",description: "",type: "culto", dinamic: ""},
+        
+            // PROGRAMAÇÕES ESPECIAIS DO ANO
+            //RETIRO
+            {date: new Date(2026, 1, 13), title: "Retiro LIGA Ágape", hour: "19:00", group: "DIA 1 - Noite", description: "A determinar programação.", type: "retiro", dinamic: "Abertura"},
+            {date: new Date(2026, 1, 14), title: "Retiro LIGA Ágape", hour: "", group: "DIA 2", description: "A determinar programação.", type: "retiro", dinamic: "ss"},
+            {date: new Date(2026, 1, 15), title: "Retiro LIGA Ágape", hour: "", group: "DIA 3", description: "A determinar programação.", type: "retiro", dinamic: ""},
+            {date: new Date(2026, 1, 16), title: "Retiro LIGA Ágape", hour: "", group: "DIA 4", description: "A determinar programação.", type: "retiro", dinamic: ""},
+            {date: new Date(2026, 1, 17), title: "Retiro LIGA Ágape", hour: "", group: "DIA 5", description: "A determinar programação.", type: "retiro", dinamic: "Encerramento"},
+            // SEMANA SANTA
+
+            //CONFERÊNCIA
+            {date: new Date(2026, 6, 31), title: "Conferência LIGA", hour: "18:00", group: "DIA 1 - Noite", description: "METANÓIA: Mentes Transformadas, Vidas Revolucionadas", type: "conferencia", dinamic: "ABERTURA"},
+            {date: new Date(2026, 7, 1), title: "Conferência LIGA", hour: "18:00", group: "DIA 2 - Manhã", description: "METANÓIA: Mentes Transformadas, Vidas Revolucionadas", type: "conferencia", dinamic: ""},
+            {date: new Date(2026, 7, 1), title: "Conferência LIGA", hour: "18:00", group: "DIA 2 - Tarde", description: "METANÓIA: Mentes Transformadas, Vidas Revolucionadas", type: "conferencia", dinamic: ""},
+            {date: new Date(2026, 7, 1), title: "Conferência LIGA", hour: "18:00", group: "DIA 2 - Noite", description: "METANÓIA: Mentes Transformadas, Vidas Revolucionadas", type: "conferencia", dinamic: "ENCERRAMENTO"},
+            // FÉRIAS LIGA
+            {date: new Date(2026, 6, 1),title: "Gincana LIGA",hour: "18:30",group: "LIGA TEEN",description: "",type: "especial", dinamic: ""},
+            {date: new Date(2026, 6, 8),title: "Gincana LIGA",hour: "19:00",group: "LIGA TEEN",description: "",type: "especial", dinamic: ""},
+            {date: new Date(2026, 6, 15),title: "Gincana LIGA",hour: "19:00",group: "LIGA TEEN",description: "",type: "especial", dinamic: ""},
+            {date: new Date(2026, 6, 22),title: "Gincana LIGA",hour: "19:00",group: "LIGA TEEN",description: "",type: "especial", dinamic: ""},
+            // {date: new Date(2026, 6, 29),title: "Gincana LIGA",hour: "19:00",group: "LIGA TEEN",description: "",type: "especial", dinamic: ""},
+            // FIM PROGRAMAÇÕES ESPECIAIS DO ANO
+        ];
+
+        function renderCalendar() {
+            const year = currentDate.getFullYear();
+            const month = currentDate.getMonth();
+
+            document.getElementById('currentMonth').textContent = `${CONFIG.monthNames[month]} ${year}`;
+            document.getElementById('monthTheme').textContent = CONFIG.monthThemes[month] || "";
+
+            const firstDay = new Date(year, month, 1);
+            const lastDay = new Date(year, month + 1, 0);
+            const prevLastDay = new Date(year, month, 0);
+            
+            const firstDayIndex = firstDay.getDay();
+            const lastDayDate = lastDay.getDate();
+            const prevLastDayDate = prevLastDay.getDate();
+            
+            const calendarGrid = document.getElementById('calendarGrid');
+            calendarGrid.innerHTML = '';
+            
+            CONFIG.dayNames.forEach(day => {
+                const dayHeader = document.createElement('div');
+                dayHeader.className = 'calendar-day-header col';
+                dayHeader.textContent = day;
+                calendarGrid.appendChild(dayHeader);
+            });
+            
+            for (let i = firstDayIndex; i > 0; i--) {
+                const day = createDayElement(prevLastDayDate - i + 1, true);
+                calendarGrid.appendChild(day);
+            }
+            
+            for (let i = 1; i <= lastDayDate; i++) {
+                const day = createDayElement(i, false);
+                calendarGrid.appendChild(day);
+            }
+            
+            const remainingDays = 42 - (firstDayIndex + lastDayDate);
+            for (let i = 1; i <= remainingDays; i++) {
+                const day = createDayElement(i, true);
+                calendarGrid.appendChild(day);
+            }
+            
+            renderEventList();
+        }
+
+        function createDayElement(dayNumber, isOtherMonth) {
+            const dayEl = document.createElement('div');
+            dayEl.className = `calendar-day col ${isOtherMonth ? 'other-month' : ''}`;
+
+            const dayNumEl = document.createElement('div');
+            dayNumEl.className = 'day-number';
+            dayNumEl.textContent = dayNumber;
+            dayEl.appendChild(dayNumEl);
+
+            if (!isOtherMonth) {
+                const currentDateCheck = new Date(currentDate.getFullYear(), currentDate.getMonth(), dayNumber);
+                const dayEvents = events.filter(event => isSameDay(event.date, currentDateCheck));
+                const hasEvent = dayEvents.length > 0;
+
+                const today = new Date();
+                if (
+                    currentDateCheck.getDate() === today.getDate() &&
+                    currentDateCheck.getMonth() === today.getMonth() &&
+                    currentDateCheck.getFullYear() === today.getFullYear()
+                ) {
+                    dayEl.classList.add('today');
+                }
+
+                if (hasEvent) {
+                    dayEl.classList.add('has-event');
+                    const types = [...new Set(dayEvents.map(ev => ev.type))];
+
+                    if (types.length > 1) {
+                        const percent = 100 / types.length;
+                        let gradient = 'linear-gradient(180deg, ';
+                        types.forEach((type, i) => {
+                            const color = CONFIG.eventColors[type] || '#3498db';
+                            const start = (i * percent).toFixed(2);
+                            const end = ((i + 1) * percent).toFixed(2);
+                            gradient += `${color} ${start}%, ${color} ${end}%${i < types.length - 1 ? ', ' : ''}`;
+                        });
+                        gradient += ')';
+                        dayEl.style.background = gradient;
+                        dayEl.style.borderColor = CONFIG.eventColors[types[0]] || '#3498db';
+                    } else {
+                        dayEl.classList.add(types[0]);
+                    }
+
+                    const indicator = document.createElement('div');
+                    indicator.className = 'event-indicator';
+                    dayEl.appendChild(indicator);
+
+                    dayEl.onclick = () => showDayEvents(currentDateCheck);
+                }
+            }
+
+            return dayEl;
+        }
+
+        function isSameDay(date1, date2) {
+            return date1.getDate() === date2.getDate() &&
+                   date1.getMonth() === date2.getMonth() &&
+                   date1.getFullYear() === date2.getFullYear();
+        }
+
+        function showDayEvents(date) {
+            const dayEvents = events.filter(event => isSameDay(event.date, date));
+            
+            if (dayEvents.length > 0) {
+                const modal = new bootstrap.Modal(document.getElementById('eventModal'));
+                document.getElementById('modalTitle').textContent = `Eventos - ${date.getDate()} de ${CONFIG.monthNames[date.getMonth()]}`;
+                
+                let bodyContent = '';
+                
+                dayEvents.forEach(event => {
+                    bodyContent += `
+                        <div class="event-card ${event.type} mb-3">
+                            <div class="event-date">
+                                <i class="far fa-calendar-alt"></i> ${event.date.getDate()} de ${CONFIG.monthNames[event.date.getMonth()]} de ${event.date.getFullYear()}
+                            </div>
+                            <h5>${event.title} - ${event.hour} - ${event.group}</h5>
+                            ${event.dinamic ? `<div class="event-dinamica mb-1"><small>${event.dinamic}</small></div>` : ""}
+                            <div class="event-description">${event.description}</div>
+                        </div>
+                    `;
+                });
+                
+                document.getElementById('modalBody').innerHTML = bodyContent;
+                modal.show();
+            }
+        }
+
+        function renderEventList() {
+            const eventList = document.getElementById('eventList');
+            const today = new Date();
+            const currentMonth = currentDate.getMonth();
+            const currentYear = currentDate.getFullYear();
+            
+            const upcomingEvents = events
+                .filter(event => 
+                    event.date >= today &&
+                    event.date.getMonth() === currentMonth &&
+                    event.date.getFullYear() === currentYear
+                )
+                .sort((a, b) => a.date - b.date);
+            
+            if (upcomingEvents.length === 0) {
+                eventList.innerHTML = '<p class="text-muted">Nenhum evento neste mês.</p>';
+                return;
+            }
+            
+            eventList.innerHTML = upcomingEvents.map(event => `
+                <div class="event-card ${event.type}">
+                    <div class="event-date">
+                        <i class="far fa-calendar-alt"></i> ${event.date.getDate()} de ${CONFIG.monthNames[event.date.getMonth()]} de ${event.date.getFullYear()}
+                    </div>
+                    <h5>${event.title} - ${event.hour} - ${event.group}</h5>
+                    ${event.dinamic ? `<div class="event-dinamica mb-1"><small>${event.dinamic}</small></div>` : ""}
+                    <div class="event-description">${event.description}</div>
+                </div>
+            `).join('');
+        }
+
+        function renderAllEventsList() {
+            const allEventsList = document.getElementById('allEventsList');
+            const allEvents = [...events].sort((a, b) => a.date - b.date);
+            let html = '';
+            let lastMonth = -1;
+            allEvents.forEach(event => {
+                if (event.date.getMonth() !== lastMonth) {
+                    html += `<h4 class="mt-4 mb-2">${CONFIG.monthNames[event.date.getMonth()]} ${event.date.getFullYear()}</h4>`;
+                    lastMonth = event.date.getMonth();
+                }
+                html += `
+                    <div class="event-card ${event.type} mb-2">
+                        <div class="event-date">
+                            <i class="far fa-calendar-alt"></i> ${event.date.getDate()} de ${CONFIG.monthNames[event.date.getMonth()]} de ${event.date.getFullYear()}
+                        </div>
+                        <h5>${event.title} - ${event.hour} - ${event.group}</h5>
+                        ${event.dinamic ? `<div class="event-dinamica mb-1"><small>${event.dinamic}</small></div>` : ""}
+                        <div class="event-description">${event.description}</div>
+                    </div>
+                `;
+            });
+            allEventsList.innerHTML = html;
+        }
+
+        document.getElementById('all-events-tab').addEventListener('shown.bs.tab', renderAllEventsList);
+
+        function renderRetiroList() {
+            const retiroList = document.getElementById('retiroList');
+            retiroList.innerHTML = `
+                <h4 class="mb-3">📋 Programação do Retiro:</h4>
+
+                <strong>SEXTA 28/02</strong>
+                <ul>
+                    <li>19h: Concentração e saída</li>
+                    <li>22h: Chegada e acomodação</li>
+                    <li>23h: Momento de louvor e boas-vindas</li>
+                    <li>00h: Descanso</li>
+                </ul>
+
+                <strong>SÁBADO 01/03</strong>
+                <ul>
+                    <li>08h: Devocional matinal - "Mente Renovada"</li>
+                    <li>09h: Café da manhã</li>
+                    <li>10h: <b>PLENÁRIA 1</b> - "O Que é Metanóia? A Transformação que Vem de Deus"</li>
+                    <li>12h: Almoço</li>
+                    <li>14h: Oficinas simultâneas:
+                        <ul>
+                            <li>Oração transformadora</li>
+                            <li>Louvor e adoração</li>
+                            <li>Evangelismo criativo</li>
+                            <li>Liderança servidora</li>
+                        </ul>
+                    </li>
+                    <li>16h: Momento livre/recreação/jogos</li>
+                    <li>18h: Jantar</li>
+                    <li>20h: <b>PLENÁRIA 2</b> - "Quebrando Padrões Mundanos"</li>
+                    <li>22h: Fogueira e comunhão</li>
+                </ul>
+
+                <strong>DOMINGO 02/03</strong>
+                <ul>
+                    <li>08h: Devocional matinal - "Nova Criatura"</li>
+                    <li>09h: Café da manhã</li>
+                    <li>10h: <b>PLENÁRIA 3</b> - "Transformados para Transformar o Mundo"</li>
+                    <li>12h: Almoço</li>
+                    <li>14h: Grupos de compartilhamento e oração</li>
+                    <li>16h: Momento livre</li>
+                    <li>18h: Jantar</li>
+                    <li>20h: <b>CULTO DE ENCERRAMENTO</b> - Ministração e Santa Ceia</li>
+                    <li>22h: Confraternização final</li>
+                </ul>
+
+                <strong>SEGUNDA 03/03</strong>
+                <ul>
+                    <li>08h: Café da manhã</li>
+                    <li>09h: Limpeza e organização</li>
+                    <li>10h: Culto de envio</li>
+                    <li>11h: Retorno</li>
+                </ul>
+            `;
+        }
+
+        function previousMonth() {
+            currentDate.setMonth(currentDate.getMonth() - 1);
+            saveCurrentCalendarDate();
+            renderCalendar();
+        }
+
+        function nextMonth() {
+            currentDate.setMonth(currentDate.getMonth() + 1);
+            saveCurrentCalendarDate();
+            renderCalendar();
+        }
+
+        function goToToday() {
+            currentDate = new Date();
+            saveCurrentCalendarDate();
+            renderCalendar();
+        }
+
+        // Salva mês/ano do calendário no localStorage
+function saveCurrentCalendarDate() {
+    localStorage.setItem('calendarMonthLiga', currentDate.getMonth());
+    localStorage.setItem('calendarYearLiga', currentDate.getFullYear());
+}
+
+// Ao carregar, restaura mês/ano do calendário se existir
+window.addEventListener('DOMContentLoaded', () => {
+    const lastTab = localStorage.getItem('activeTabLiga');
+    if (lastTab) {
+        const tabBtn = document.getElementById(lastTab);
+        if (tabBtn) {
+            new bootstrap.Tab(tabBtn).show();
+        }
+    }
+    const savedMonth = localStorage.getItem('calendarMonthLiga');
+    const savedYear = localStorage.getItem('calendarYearLiga');
+    if (savedMonth !== null && savedYear !== null) {
+        currentDate = new Date(Number(savedYear), Number(savedMonth), 1);
+    }
+    renderCalendar();
+});
+
+        renderCalendar();
+    </script>
+</body>
+</html>

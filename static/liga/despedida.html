@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slideshow de Despedida</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    .slideshow-container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    .caption {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 24px;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+
+    .controls button {
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 24px;
+      transition: background 0.3s;
+    }
+
+    .controls button:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    .dots {
+      position: absolute;
+      bottom: 10px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin: 0 5px;
+      background: #bbb;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .dot.active {
+      background: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="slideshow-container">
+    <!-- Substitua os caminhos das imagens pelos das suas fotos -->
+    <img src="images/1.jpg" class="slide">
+    <img src="images/2.jpg" class="slide">
+    <img src="images/3.jpg" class="slide">
+    <img src="images/4.jpg" class="slide">
+    <img src="images/5.jpg" class="slide">
+    <img src="images/6.jpg" class="slide">
+    <img src="images/7.jpg" class="slide">
+    <img src="images/8.jpg" class="slide">
+    <img src="images/9.jpg" class="slide">
+    <img src="images/10.jpg" class="slide">
+    <img src="images/11.jpg" class="slide">
+    <img src="images/12.jpg" class="slide">
+    <img src="images/13.jpg" class="slide">
+    <img src="images/14.jpg" class="slide">
+    <img src="images/15.jpg" class="slide">
+    <img src="images/16.jpg" class="slide">
+    <img src="images/17.jpg" class="slide">
+    <img src="images/19.jpg" class="slide">
+    <img src="images/18.jpg" class="slide">
+    <img src="images/20.jpg" class="slide">
+    <img src="images/21.jpg" class="slide">
+    <img src="images/22.jpg" class="slide">
+    <img src="images/23.jpg" class="slide">
+    <img src="images/24.jpg" class="slide">
+    <img src="images/25.jpg" class="slide">
+    <img src="images/26.jpg" class="slide">
+    <img src="images/27.jpg" class="slide">
+    <img src="images/28.jpg" class="slide">
+    <img src="images/29.jpg" class="slide">
+    <img src="images/30.jpg" class="slide">
+    <img src="images/31.jpg" class="slide">
+    <img src="images/32.jpg" class="slide">
+    <img src="images/33.jpg" class="slide">
+    <img src="images/34.jpg" class="slide">
+    <img src="images/35.jpg" class="slide">
+    <img src="images/36.jpg" class="slide">
+    <img src="images/37.jpg" class="slide">
+    <img src="images/38.jpg" class="slide">
+    <img src="images/39.jpg" class="slide">
+    <img src="images/40.jpg" class="slide">
+    <img src="images/41.jpg" class="slide">
+    <img src="images/42.jpg" class="slide">
+    <img src="images/43.jpg" class="slide">
+    <img src="images/44.jpg" class="slide">
+    <img src="images/45.jpg" class="slide">
+    <img src="images/46.jpg" class="slide">
+    <img src="images/47.jpg" class="slide">
+    <img src="images/48.jpg" class="slide">
+    <img src="images/49.jpg" class="slide">
+    <img src="images/50.jpg" class="slide">
+    <img src="images/51.jpg" class="slide">
+    <img src="images/52.jpg" class="slide">
+    <img src="images/53.jpg" class="slide">
+    <img src="images/54.jpg" class="slide">
+    <img src="images/55.jpg" class="slide">
+    <img src="images/56.jpg" class="slide">
+    <div class="caption">Despedida do Elias, da Raquel e da Clarice</div>
+    <div class="controls">
+      <button onclick="changeSlide(-1)">&#10094;</button>
+      <button onclick="changeSlide(1)">&#10095;</button>
+    </div>
+    <!-- <div class="dots">
+      <span class="dot" onclick="currentSlide(0)"></span>
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+    </div> -->
+  </div>
+
+  <script>
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+      if (index >= totalSlides) currentIndex = 0;
+      else if (index < 0) currentIndex = totalSlides - 1;
+      else currentIndex = index;
+
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === currentIndex);
+      });
+
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIndex);
+      });
+    }
+
+    function changeSlide(n) {
+      showSlide(currentIndex + n);
+    }
+
+    function currentSlide(n) {
+      showSlide(n);
+    }
+
+    // Inicializa o slideshow
+    showSlide(currentIndex);
+
+    // Troca automática de slides a cada 2 segundos
+    setInterval(() => {
+      changeSlide(1);
+    }, 2000);
+  </script>
+</body>
+</html>

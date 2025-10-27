@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronograma LIGA 2026</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+<style>
+        :root {
+            /* Cores principais */
+            --primary-color: #000000;
+            --secondary-color: #3498db;
+            --accent-color: #ffffff;
+            --light-bg: #ecf0f1;
+            
+            /* Cores dos tipos de eventos - Cor principal */
+            --event-especial: #ecbd00;
+            --event-especial-light: #fbeee6;
+            --event-especial-border: #caa200;
+            
+            --event-evento: #ff00ff;
+            --event-evento-light: #e1f7ff;
+            --event-evento-border: #e600e6;
+            
+            --event-conferencia: #b300ff;
+            --event-conferencia-light: #f3e8ff;
+            --event-conferencia-border: #6c3483;
+            
+            --event-culto: #0099ff;
+            --event-culto-light: #fffbe1;
+            --event-culto-border: #006eb8;
+            
+            --event-retiro: #fc402b;
+            --event-retiro-light: #ffe4e1;
+            --event-retiro-border: rgb(211, 94, 83);
+            
+            --event-missoes: #2aa30c;
+            --event-missoes-light: #e1fff7;
+            --event-missoes-border: #1f720a;
+            
+            --event-encontro: #ff7300;
+            --event-encontro-light: #fff2e1;
+            --event-encontro-border: #cf5d00;
+            
+            /* Configurações do calendário */
+            --calendar-gap: 10px;
+            --calendar-gap-mobile: 1px;
+            --calendar-day-min-height: 80px;
+            --calendar-day-min-height-mobile: 30px;
+            --calendar-day-padding: 8px;
+            --calendar-day-padding-mobile: 2px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #34853e 0%, #0b250b 100%);
+            min-height: 100vh;
+            padding: 20px 0;
+        }
+
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #000000;
+            font-size: 1.1rem;
+        }
+
+        .calendar-container {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .calendar-header h2 {
+            color: var(--primary-color);
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .calendar-nav {
+            display: flex;
+            gap: 10px;
+        }
+
+        .calendar-nav button {
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .calendar-nav button:hover {
+            background: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: var(--calendar-gap);
+            margin-top: 20px;
+        }
+
+        .calendar-day-header {
+            text-align: center;
+            font-weight: bold;
+            color: var(--primary-color);
+            padding: 10px;
+            background: var(--light-bg);
+            border-radius: 8px;
+        }
+
+        .calendar-day {
+            aspect-ratio: 1;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: var(--calendar-day-padding);
+            cursor: pointer;
+            transition: all 0.3s;
+            background: white;
+            position: relative;
+            min-height: var(--calendar-day-min-height);
+        }
+
+        .calendar-day:hover {
+            border-color: var(--secondary-color);
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .calendar-day.other-month {
+            opacity: 0.3;
+        }
+
+        .calendar-day.has-event {
+            background: linear-gradient(135deg, #667eea22 0%, #764ba222 100%);
+            border-color: var(--secondary-color);
+        }
+
+        .calendar-day.today {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px #e74c3c44;
+            background: #ffeaea;
+        }
+
+        .calendar-day.especial {
+            background: linear-gradient(135deg, var(--event-especial) 0%, var(--event-especial-light) 100%);
+            border-color: var(--event-especial-border);
+        }
+
+        .calendar-day.evento {
+            background: linear-gradient(135deg, var(--event-evento) 0%, var(--event-evento-light) 100%);
+            border-color: var(--event-evento-border);
+        }
+
+        .calendar-day.conferencia {
+            background: linear-gradient(135deg, var(--event-conferencia) 0%, var(--event-conferencia-light) 100%);
+            border-color: var(--event-conferencia-border);
+        }
+
+        .calendar-day.culto {
+            background: linear-gradient(135deg, var(--event-culto) 0%, var(--event-culto-light) 100%);
+            border-color: var(--event-culto-border);
+        }
+
+        .calendar-day.retiro {
+            background: linear-gradient(135deg, var(--event-retiro) 0%, var(--event-retiro-light) 100%);
+            border-color: var(--event-retiro-border);
+        }
+
+        .calendar-day.missoes {
+            background: linear-gradient(135deg, var(--event-missoes) 0%, var(--event-missoes-light) 100%);
+            border-color: var(--event-missoes-border);
+        }
+
+        .calendar-day.encontro {
+            background: linear-gradient(135deg, var(--event-encontro) 0%, var(--event-encontro-light) 100%);
+            border-color: var(--event-encontro-border);
+        }
+
+        .day-number {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .event-indicator {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+        }
+
+        .event-list {
+            margin-top: 30px;
+        }
+
+        .event-card {
+            background: white;
+            border-left: 5px solid var(--secondary-color);
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .event-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .event-card h5 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .event-date {
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .event-description {
+            color: #000000;
+        }
+
+        .modal-content {
+            border-radius: 15px;
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .legend {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            padding: 15px;
+            background: var(--light-bg);
+            border-radius: 8px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .calendar-grid {
+                gap: var(--calendar-gap-mobile);
+            }
+
+            .calendar-day {
+                min-height: var(--calendar-day-min-height-mobile);
+                padding: var(--calendar-day-padding-mobile);
+                border-width: 1px;
+            }
+
+            .day-number {
+                font-size: 0.7rem;
+                margin-bottom: 2px;
+            }
+
+            .calendar-day-header {
+                font-size: 0.65rem;
+                padding: 3px 1px;
+            }
+            
+            .event-indicator {
+                width: 4px;
+                height: 4px;
+                bottom: 3px;
+                right: 3px;
+            }
+        }
+
+.event-card.especial { 
+    border-left-color: var(--event-especial-border);
+    background: linear-gradient(135deg, var(--event-especial) 0%, var(--event-especial-light) 100%);
+}
+.event-card.evento { 
+    border-left-color: var(--event-evento-border);
+    background: linear-gradient(135deg, var(--event-evento) 0%, var(--event-evento-light) 100%);
+}
+.event-card.conferencia { 
+    border-left-color: var(--event-conferencia-border);
+    background: linear-gradient(135deg, var(--event-conferencia) 0%, var(--event-conferencia-light) 100%);
+}
+.event-card.culto { 
+    border-left-color: var(--event-culto-border);
+    background: linear-gradient(135deg, var(--event-culto) 0%, var(--event-culto-light) 100%);
+}
+.event-card.retiro { 
+    border-left-color: var(--event-retiro-border);
+    background: linear-gradient(135deg, var(--event-retiro) 0%, var(--event-retiro-light) 100%);
+}
+.event-card.missoes { 
+    border-left-color: var(--event-missoes-border);
+    background: linear-gradient(135deg, var(--event-missoes) 0%, var(--event-missoes-light) 100%);
+}
+.event-card.encontro { 
+    border-left-color: var(--event-encontro-border);
+    background: linear-gradient(135deg, var(--event-encontro) 0%, var(--event-encontro-light) 100%);
+}
+
+        .nav-tabs .nav-link {
+            background-color: #fff !important;
+            opacity: 1 !important;
+            color: #2c3e50 !important;
+            border: 1px solid #dee2e6 !important;
+        }
+
+        .nav-tabs .nav-link.active {
+            background-color: #e9ecef !important;
+            color: #2c3e50 !important;
+            border-bottom: 2px solid #3498db !important;
+        }
+
+        .icone-liga {
+            width: 300px;
+            height: auto;
+            vertical-align: middle;
+        }
+
+        .event-dinamica {
+            color: #ffffff;
+            font-size: 0.95em;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 col-xl-10">
+                <div class="header">
+                    <h1><a href="index.html"><img src="logo_liga.svg" alt="Igreja" class="icone-liga"></a></h1>
+                    <h1>Cronograma 2026</h1>
+                    <p>Acompanhe todas as atividades e eventos da nossa igreja</p>
+                </div>
+                
+                <ul class="nav nav-tabs mb-4" id="mainTabs" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="calendar-tab" data-bs-toggle="tab" data-bs-target="#calendarTabPane" type="button" role="tab" aria-controls="calendarTabPane" aria-selected="true">
+                      <i class="fas fa-calendar-alt"></i> Calendário
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="all-events-tab" data-bs-toggle="tab" data-bs-target="#allEventsTabPane" type="button" role="tab" aria-controls="allEventsTabPane" aria-selected="false">
+                      <i class="fas fa-list"></i> Todas as Programações
+                    </button>
+                  </li>
+                  <!-- <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="retiro-tab" data-bs-toggle="tab" data-bs-target="#retiroTabPane" type="button" role="tab" aria-controls="retiroTabPane" aria-selected="false">
+                      <i class="fas fa-campground"></i> Retiro
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="objetivos-tab" data-bs-toggle="tab" data-bs-target="#objetivosTabPane" type="button" role="tab" aria-controls="objetivosTabPane" aria-selected="false">
+                      <i class="fas fa-bullseye"></i> Objetivos 2026
+                    </button>
+                  </li> -->
+                </ul>
+
+                <div class="tab-content" id="mainTabsContent">
+                  <div class="tab-pane fade show active" id="calendarTabPane" role="tabpanel" aria-labelledby="calendar-tab" tabindex="0">
+                    <div class="row">
+                      <div class="col-lg-8 col-12">
+                        <div class="calendar-container mb-4 mb-lg-0">
+                          <div class="calendar-header">
+                            <div>
+                              <h2 id="currentMonth"></h2>
+                              <div id="monthTheme" class="text-secondary mt-1"></div>
+                            </div>
+                            <div class="calendar-nav">
+                              <button class="btn btn-primary" onclick="previousMonth()"><i class="fas fa-chevron-left"></i> Anterior</button>
+                              <button class="btn btn-primary" onclick="nextMonth()">Próximo <i class="fas fa-chevron-right"></i></button>
+                              <button class="btn btn-primary" onclick="goToToday()">Hoje</button>
+                            </div>
+                          </div>
+
+                          <div class="calendar-grid" id="calendarGrid"></div>
+
+                          <div class="legend">
+                            <div class="legend-item">
+                              <div class="legend-color" style="background: linear-gradient(135deg, var(--event-especial) 0%, var(--event-especial-light) 100%); border: 2px solid var(--event-especial-border);"></div>
+                              <span>Especial</span>
+                            </div>
+                            <div class="legend-item">
+                              <div class="legend-color" style="background: linear-gradient(135deg, var(--event-evento) 0%, var(--event-evento-light) 100%); border: 2px solid var(--event-evento-border);"></div>
+                              <span>Evento</span>
+                            </div>
+                            <div class="legend-item">
+                              <div class="legend-color" style="background: linear-gradient(135deg, var(--event-conferencia) 0%, var(--event-conferencia-light) 100%); border: 2px solid var(--event-conferencia-border);"></div>
+                              <span>Conferência</span>
+                            </div>
+                            <div class="legend-item">
+                              <div class="legend-color" style="background: linear-gradient(135deg, var(--event-culto) 0%, var(--event-culto-light) 100%); border: 2px solid var(--event-culto-border);"></div>
+                              <span>Culto</span>
+                            </div>
+                            <div class="legend-item">
+                              <div class="legend-color" style="background: linear-gradient(135deg, var(--event-retiro) 0%, var(--event-retiro-light) 100%); border: 2px solid var(--event-retiro-border);"></div>
+                              <span>Retiro</span>
+                            </div>
+                            <div class="legend-item">
+                              <div class="legend-color" style="background: linear-gradient(135deg, var(--event-missoes) 0%, var(--event-missoes-light) 100%); border: 2px solid var(--event-missoes-border);"></div>
+                              <span>Missões</span>
+                            </div>
+                            <div class="legend-item">
+                              <div class="legend-color" style="background: linear-gradient(135deg, var(--event-encontro) 0%, var(--event-encontro-light) 100%); border: 2px solid var(--event-encontro-border);"></div>
+                              <span>Encontro</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-12">
+                        <div class="calendar-container mt-4 mt-lg-0">
+                          <h3 class="mb-4"><i class="fas fa-list"></i> Próximos Eventos</h3>
+                          <div id="eventList" class="event-list"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="allEventsTabPane" role="tabpanel" aria-labelledby="all-events-tab" tabindex="0">
+                    <div class="calendar-container">
+                      <h3 class="mb-4"><i class="fas fa-list"></i> Todas as Programações</h3>
+                      <div id="allEventsList"></div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="retiroTabPane" role="tabpanel" aria-labelledby="retiro-tab" tabindex="0">
+                    <div class="calendar-container">
+                      <h3 class="mb-4"><i class="fas fa-campground"></i> Programação do Retiro</h3>
+                      <div id="retiroList"></div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="objetivosTabPane" role="tabpanel" aria-labelledby="objetivos-tab" tabindex="0">
+                    <div class="calendar-container">
+                      <h3 class="mb-4"><i class="fas fa-bullseye"></i> Objetivos para 2026</h3>
+                      <div id="objetivos2026">
+                        <ul>
+                          <li><strong>Formação de Identidade: </strong>Jovens firmados em quem são em Cristo.</li>
+                          <li><strong>Relacionamentos Saudáveis: </strong>Construir vínculos bíblicos e duradouros.</li>
+                          <li><strong>Santidade: </strong>Viver a pureza em todas as áreas da vida.</li>
+                          <li><strong>Cura Interior: </strong>Ministrar libertação e restauração emocional.</li>
+                          <li><strong>Propósito e Missão: </strong>Descobrir e viver o chamado de Deus.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="eventModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle"></h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="modalBody"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // ==========================================
+        // CONFIGURAÇÕES CENTRALIZADAS
+        // ==========================================
+        
+        const CONFIG = {
+            eventColors: {
+                especial: '#ff6f61',
+                evento: '#2980b9',
+                conferencia: '#6c3483',
+                culto: '#f39c12',
+                retiro: '#ff8138',
+                missoes: '#13866e',
+                encontro: '#3eca1e'
+            },
+            
+            monthNames: [
+                "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+                "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+            ],
+            
+            dayNames: ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"],
+            
+            monthThemes: {
+                0: "TEMA: Identidade",
+                1: "TEMA: Relacionamentos",
+                2: "TEMA: Vocação",
+                3: "TEMA: Sexualidade",
+                4: "TEMA: Família",
+                5: "TEMA: Vida Cristã",
+                6: "TEMA: Paternidade",
+                7: "TEMA: Abuso sexual",
+                8: "TEMA: Rejeição",
+                9: "TEMA: Pecado e graça",
+                10: "TEMA: Homossexualidade",
+                11: "TEMA: Gratidão"
+            }
+        };
+        
+        let currentDate = new Date(2026, 0, 1);
+
+        // Eventos da LIGA
+        const events = []
+        
+        function renderCalendar() {
+            const year = currentDate.getFullYear();
+            const month = currentDate.getMonth();
+
+            document.getElementById('currentMonth').textContent = `${CONFIG.monthNames[month]} ${year}`;
+            document.getElementById('monthTheme').textContent = CONFIG.monthThemes[month] || "";
+
+            const firstDay = new Date(year, month, 1);
+            const lastDay = new Date(year, month + 1, 0);
+            const prevLastDay = new Date(year, month, 0);
+            
+            const firstDayIndex = firstDay.getDay();
+            const lastDayDate = lastDay.getDate();
+            const prevLastDayDate = prevLastDay.getDate();
+            
+            const calendarGrid = document.getElementById('calendarGrid');
+            calendarGrid.innerHTML = '';
+            
+            CONFIG.dayNames.forEach(day => {
+                const dayHeader = document.createElement('div');
+                dayHeader.className = 'calendar-day-header col';
+                dayHeader.textContent = day;
+                calendarGrid.appendChild(dayHeader);
+            });
+            
+            for (let i = firstDayIndex; i > 0; i--) {
+                const day = createDayElement(prevLastDayDate - i + 1, true);
+                calendarGrid.appendChild(day);
+            }
+            
+            for (let i = 1; i <= lastDayDate; i++) {
+                const day = createDayElement(i, false);
+                calendarGrid.appendChild(day);
+            }
+            
+            const remainingDays = 42 - (firstDayIndex + lastDayDate);
+            for (let i = 1; i <= remainingDays; i++) {
+                const day = createDayElement(i, true);
+                calendarGrid.appendChild(day);
+            }
+            
+            renderEventList();
+        }
+
+        function createDayElement(dayNumber, isOtherMonth) {
+            const dayEl = document.createElement('div');
+            dayEl.className = `calendar-day col ${isOtherMonth ? 'other-month' : ''}`;
+
+            const dayNumEl = document.createElement('div');
+            dayNumEl.className = 'day-number';
+            dayNumEl.textContent = dayNumber;
+            dayEl.appendChild(dayNumEl);
+
+            if (!isOtherMonth) {
+                const currentDateCheck = new Date(currentDate.getFullYear(), currentDate.getMonth(), dayNumber);
+                const dayEvents = events.filter(event => isSameDay(event.date, currentDateCheck));
+                const hasEvent = dayEvents.length > 0;
+
+                const today = new Date();
+                if (
+                    currentDateCheck.getDate() === today.getDate() &&
+                    currentDateCheck.getMonth() === today.getMonth() &&
+                    currentDateCheck.getFullYear() === today.getFullYear()
+                ) {
+                    dayEl.classList.add('today');
+                }
+
+                if (hasEvent) {
+                    dayEl.classList.add('has-event');
+                    const types = [...new Set(dayEvents.map(ev => ev.type))];
+
+                    if (types.length > 1) {
+                        const percent = 100 / types.length;
+                        let gradient = 'linear-gradient(180deg, ';
+                        types.forEach((type, i) => {
+                            const color = CONFIG.eventColors[type] || '#3498db';
+                            const start = (i * percent).toFixed(2);
+                            const end = ((i + 1) * percent).toFixed(2);
+                            gradient += `${color} ${start}%, ${color} ${end}%${i < types.length - 1 ? ', ' : ''}`;
+                        });
+                        gradient += ')';
+                        dayEl.style.background = gradient;
+                        dayEl.style.borderColor = CONFIG.eventColors[types[0]] || '#3498db';
+                    } else {
+                        dayEl.classList.add(types[0]);
+                    }
+
+                    const indicator = document.createElement('div');
+                    indicator.className = 'event-indicator';
+                    dayEl.appendChild(indicator);
+
+                    dayEl.onclick = () => showDayEvents(currentDateCheck);
+                }
+            }
+
+            return dayEl;
+        }
+
+        function isSameDay(date1, date2) {
+            return date1.getDate() === date2.getDate() &&
+                   date1.getMonth() === date2.getMonth() &&
+                   date1.getFullYear() === date2.getFullYear();
+        }
+
+        function showDayEvents(date) {
+            const dayEvents = events.filter(event => isSameDay(event.date, date));
+            
+            if (dayEvents.length > 0) {
+                const modal = new bootstrap.Modal(document.getElementById('eventModal'));
+                document.getElementById('modalTitle').textContent = `Eventos - ${date.getDate()} de ${CONFIG.monthNames[date.getMonth()]}`;
+                
+                let bodyContent = '';
+                
+                dayEvents.forEach(event => {
+                    bodyContent += `
+                        <div class="event-card ${event.type} mb-3">
+                            <div class="event-date">
+                                <i class="far fa-calendar-alt"></i> ${event.date.getDate()} de ${CONFIG.monthNames[event.date.getMonth()]} de ${event.date.getFullYear()}
+                            </div>
+                            <h5>${event.title} - ${event.hour} - ${event.group}</h5>
+                            ${event.dinamic ? `<div class="event-dinamica mb-1">DINÂMICA: <small>${event.dinamic}</small></div>` : ""}
+                            <div class="event-description">${event.description}</div>
+                        </div>
+                    `;
+                });
+                
+                document.getElementById('modalBody').innerHTML = bodyContent;
+                modal.show();
+            }
+        }
+
+        function renderEventList() {
+            const eventList = document.getElementById('eventList');
+            const today = new Date();
+            const currentMonth = currentDate.getMonth();
+            const currentYear = currentDate.getFullYear();
+            
+            const upcomingEvents = events
+                .filter(event => 
+                    event.date >= today &&
+                    event.date.getMonth() === currentMonth &&
+                    event.date.getFullYear() === currentYear
+                )
+                .sort((a, b) => a.date - b.date);
+            
+            if (upcomingEvents.length === 0) {
+                eventList.innerHTML = '<p class="text-muted">Nenhum evento neste mês.</p>';
+                return;
+            }
+            
+            eventList.innerHTML = upcomingEvents.map(event => `
+                <div class="event-card ${event.type}">
+                    <div class="event-date">
+                        <i class="far fa-calendar-alt"></i> ${event.date.getDate()} de ${CONFIG.monthNames[event.date.getMonth()]} de ${event.date.getFullYear()}
+                    </div>
+                    <h5>${event.title} - ${event.hour} - ${event.group}</h5>
+                    ${event.dinamic ? `<div class="event-dinamica mb-1">DINÂMICA: <small>${event.dinamic}</small></div>` : ""}
+                    <div class="event-description">${event.description}</div>
+                </div>
+            `).join('');
+        }
+
+        function renderAllEventsList() {
+            const allEventsList = document.getElementById('allEventsList');
+            const allEvents = [...events].sort((a, b) => a.date - b.date);
+            let html = '';
+            let lastMonth = -1;
+            allEvents.forEach(event => {
+                if (event.date.getMonth() !== lastMonth) {
+                    html += `<h4 class="mt-4 mb-2">${CONFIG.monthNames[event.date.getMonth()]} ${event.date.getFullYear()}</h4>`;
+                    lastMonth = event.date.getMonth();
+                }
+                html += `
+                    <div class="event-card ${event.type} mb-2">
+                        <div class="event-date">
+                            <i class="far fa-calendar-alt"></i> ${event.date.getDate()} de ${CONFIG.monthNames[event.date.getMonth()]} de ${event.date.getFullYear()}
+                        </div>
+                        <h5>${event.title} - ${event.hour} - ${event.group}</h5>
+                        ${event.dinamic ? `<div class="event-dinamica mb-1">DINÂMICA: <small>${event.dinamic}</small></div>` : ""}
+                        <div class="event-description">${event.description}</div>
+                    </div>
+                `;
+            });
+            allEventsList.innerHTML = html;
+        }
+
+        document.getElementById('all-events-tab').addEventListener('shown.bs.tab', renderAllEventsList);
+
+        function renderRetiroList() {
+            const retiroList = document.getElementById('retiroList');
+            retiroList.innerHTML = `
+                <h4 class="mb-3">📋 Programação do Retiro:</h4>
+
+                <strong>SEXTA 28/02</strong>
+                <ul>
+                    <li>19h: Concentração e saída</li>
+                    <li>22h: Chegada e acomodação</li>
+                    <li>23h: Momento de louvor e boas-vindas</li>
+                    <li>00h: Descanso</li>
+                </ul>
+
+                <strong>SÁBADO 01/03</strong>
+                <ul>
+                    <li>08h: Devocional matinal - "Mente Renovada"</li>
+                    <li>09h: Café da manhã</li>
+                    <li>10h: <b>PLENÁRIA 1</b> - "O Que é Metanóia? A Transformação que Vem de Deus"</li>
+                    <li>12h: Almoço</li>
+                    <li>14h: Oficinas simultâneas:
+                        <ul>
+                            <li>Oração transformadora</li>
+                            <li>Louvor e adoração</li>
+                            <li>Evangelismo criativo</li>
+                            <li>Liderança servidora</li>
+                        </ul>
+                    </li>
+                    <li>16h: Momento livre/recreação/jogos</li>
+                    <li>18h: Jantar</li>
+                    <li>20h: <b>PLENÁRIA 2</b> - "Quebrando Padrões Mundanos"</li>
+                    <li>22h: Fogueira e comunhão</li>
+                </ul>
+
+                <strong>DOMINGO 02/03</strong>
+                <ul>
+                    <li>08h: Devocional matinal - "Nova Criatura"</li>
+                    <li>09h: Café da manhã</li>
+                    <li>10h: <b>PLENÁRIA 3</b> - "Transformados para Transformar o Mundo"</li>
+                    <li>12h: Almoço</li>
+                    <li>14h: Grupos de compartilhamento e oração</li>
+                    <li>16h: Momento livre</li>
+                    <li>18h: Jantar</li>
+                    <li>20h: <b>CULTO DE ENCERRAMENTO</b> - Ministração e Santa Ceia</li>
+                    <li>22h: Confraternização final</li>
+                </ul>
+
+                <strong>SEGUNDA 03/03</strong>
+                <ul>
+                    <li>08h: Café da manhã</li>
+                    <li>09h: Limpeza e organização</li>
+                    <li>10h: Culto de envio</li>
+                    <li>11h: Retorno</li>
+                </ul>
+            `;
+        }
+
+        function previousMonth() {
+            currentDate.setMonth(currentDate.getMonth() - 1);
+            renderCalendar();
+        }
+
+        function nextMonth() {
+            currentDate.setMonth(currentDate.getMonth() + 1);
+            renderCalendar();
+        }
+
+        function goToToday() {
+            currentDate = new Date();
+            renderCalendar();
+        }
+
+        renderCalendar();
+    </script>
+</body>
+</html>

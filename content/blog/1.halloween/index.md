@@ -33,7 +33,7 @@ Tem escola que faz festa, loja decorada, gente postando foto fantasiada… tudo 
 
 Mas será que é mesmo? 🤔
 
-A verdade é que essa comemoração tem uma origem bem diferente do que parece — e ela vai totalmente contra o que somos chamados a ser em Cristo.
+A verdade é que essa comemoração tem uma origem bem diferente do que parece, e ela vai totalmente contra o que somos chamados a ser em Cristo.
 
 Jesus nos chamou pra ser luz do mundo.
 
@@ -45,7 +45,7 @@ E a luz não combina com as trevas.
 
 # A origem do Halloween
 
-O Halloween vem de um festival pagão celta chamado **Samhain** — que significa “fim do verão”.
+O Halloween vem de um festival pagão celta chamado **Samhain**, que significa “fim do verão”.
 
 Pra eles, o dia 31 de outubro marcava o começo do inverno e era um tempo em que, segundo suas crenças, **o mundo dos vivos e dos mortos se misturava**.
 
@@ -63,7 +63,7 @@ Com o tempo, a Igreja Católica tentou mudar o sentido dessa data.
 
 O Papa Gregório III criou o **Dia de Todos os Santos** (1º de novembro) pra honrar os mártires e santos da fé.
 
-A noite anterior — 31 de outubro — ficou conhecida como **All Hallows’ Eve** (“Véspera do Dia de Todos os Santos”).
+A noite anterior, 31 de outubro, ficou conhecida como **All Hallows’ Eve** (“Véspera do Dia de Todos os Santos”).
 
 Com o tempo, o nome foi encurtado pra… **Halloween**.
 
@@ -73,7 +73,7 @@ Mesmo assim, muita coisa pagã continuou: o medo, as fantasias e a ligação com
 
 Uma das tradições mais conhecidas do Halloween é o “Trick or Treat”, que significa “doce ou travessura”.
 
-As crianças saem fantasiadas batendo de porta em porta pedindo doces — se não ganham, prometem “fazer travessuras”.
+As crianças saem fantasiadas batendo de porta em porta pedindo doces, se não ganham, prometem “fazer travessuras”.
 
 Mas pouca gente sabe que essa prática também vem de rituais antigos.
 
@@ -98,26 +98,26 @@ Mas Jesus veio pra nos libertar de todo medo e engano.
 Hoje muita gente diz: “Ah, é só uma brincadeira!”.
 Mas a Bíblia deixa claro que a gente não deve se envolver com as obras das trevas.
 
-> “E não vos associeis às obras infrutíferas das trevas; antes, condenai-as.” — Efésios 5:11
+> “E não vos associeis às obras infrutíferas das trevas; antes, condenai-as.”, Efésios 5:11
 
 O inimigo tenta fazer o mal parecer algo legal, divertido e normal.
-Mas quando a gente brinca com coisas espiritualmente sérias — tipo morte, demônios e medo —, o coração vai ficando insensível pro que é santo.
+Mas quando a gente brinca com coisas espiritualmente sérias, tipo morte, demônios e medo ,, o coração vai ficando insensível pro que é santo.
 
-> “Ai dos que ao mal chamam bem, e ao bem mal…” — Isaías 5:20
+> “Ai dos que ao mal chamam bem, e ao bem mal…”, Isaías 5:20
 
 Enquanto o Halloween celebra o medo e as trevas, nós celebramos vida, amor e luz em Jesus.
 
-> “Porque Deus não nos deu espírito de covardia, mas de poder, de amor e de moderação.” — 2 Timóteo 1:7
+> “Porque Deus não nos deu espírito de covardia, mas de poder, de amor e de moderação.”, 2 Timóteo 1:7
 
 # Então o que o cristão deve fazer?
 
 Não é sobre ter medo do Halloween.
 É sobre ter discernimento.
 
-O cristão não se conforma com o mundo (Romanos 12:2) — ele faz a diferença!
+O cristão não se conforma com o mundo (Romanos 12:2), ele faz a diferença!
 Em vez de se fantasiar de monstros, a gente pode vestir a armadura de Deus (Efésios 6:10-11) e mostrar que a luz sempre vence as trevas.
 
-> “Ele nos libertou do império das trevas e nos transportou para o Reino do Filho do seu amor.” — Colossenses 1:13
+> “Ele nos libertou do império das trevas e nos transportou para o Reino do Filho do seu amor.”, Colossenses 1:13
 
 Use esse dia pra brilhar!
 Fale de Jesus, compartilhe esperança, mostre que a vida em Cristo é muito mais poderosa do que qualquer “noite das bruxas”.
@@ -128,9 +128,9 @@ O Halloween pode até parecer só uma festa, mas ele representa tudo o que Crist
 
 Enquanto o mundo se diverte com o medo, nós vivemos pra mostrar que a luz já venceu.
 
-Então, neste 31 de outubro, não entre na onda do Halloween — escolha viver como quem foi chamado pra ser luz em meio à escuridão.
+Então, neste 31 de outubro, não entre na onda do Halloween, escolha viver como quem foi chamado pra ser luz em meio à escuridão.
 
 {{< bs/alert info >}}
 {{< bs/alert-heading "P.S.:" >}}
-Se esse artigo mexeu com você de alguma forma, não guarda só pra você. Compartilha com aquele amigo que também tá precisando de um reset. Às vezes, metanoia começa com uma conversa.
+Se esse artigo mexeu com você de alguma forma, não guarda só pra você. Compartilha com aquele amigo ou amiga ou amiga que também tá precisando de um reset. Às vezes, metanoia começa com uma conversa.
 {{< /bs/alert >}}

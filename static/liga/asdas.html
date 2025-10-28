@@ -501,7 +501,7 @@
                     // gerar uma seção separada para cada sub‑emoção selecionada
                     selectedSubs.forEach(sub => {
                         const subKey = cssSafe(sub);
-                        let html = `<div class="emotion-section" data-emotion="${emotion.name}" data-sub="${sub}"><h3 style="color:#495057;margin-top:8px">${emotion.emoji} ${emotion.name} — ${sub}</h3>`;
+                        let html = `<div class="emotion-section" data-emotion="${emotion.name}" data-sub="${sub}"><h3 style="color:#495057;margin-top:8px">${emotion.emoji} ${emotion.name}, ${sub}</h3>`;
                         // usar as perguntas definidas para a emoção primária, aplicadas à sub‑emoção
                         data.questions.forEach((q, idx) => {
                             const questionId = `${emotionKey}_${subKey}_q${idx}`;
@@ -589,7 +589,7 @@
                     // para cada sub‑emoção, incluir seção com perguntas e plano
                     selectedSubs.forEach((sub, sIdx) => {
                         const subKey = cssSafe(sub);
-                        text += `*Emoção:* ${key} ${emoji} — ${sub}\n\n*📝 REFLEXÃO:*\n`;
+                        text += `*Emoção:* ${key} ${emoji}, ${sub}\n\n*📝 REFLEXÃO:*\n`;
                         const data = emotionData[key];
                         data.questions.forEach((q, qidx) => {
                             const answer = (document.getElementById(`${emotionKey}_${subKey}_q${qidx}`) || {}).value || '';

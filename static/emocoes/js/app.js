@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const continueBtn = document.getElementById('continueBtn');
     const emotions = window.emotionsData || {};
 
-    console.log('DOMContentLoaded — emotions keys:', Object.keys(emotions));
+    console.log('DOMContentLoaded, emotions keys:', Object.keys(emotions));
 
     if (!container) {
         console.error('Elemento #emotionAccordion não encontrado.');
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // estado de seleção: { 'Alegria': Set(['Eufórico','Extasiado']) , ... }
+    // estado de seleção: { 'Alegria': Set(['Eufórico','Extasiado']), ... }
     window.selectedSubs = window.selectedSubs || {};
 
     function toggleSub(emotionName, subBtn, subName){
@@ -232,7 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const title = document.createElement('h5');
                 title.className = 'card-title';
-                title.textContent = `${data.emoji || ''} ${emotion} — ${sub}`;
+                title.textContent = `${data.emoji || ''} ${emotion}, ${sub}`;
                 body.appendChild(title);
 
                 (data.questions || []).forEach((q, qi) => {
@@ -308,7 +308,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const emoji = (emotions[emotion] && emotions[emotion].emoji) || '';
             selected.forEach((sub, sIdx) => {
                 const prefix = `${cssSafe(emotion)}_${cssSafe(sub)}`;
-                text += `*Emoção:* ${emotion} ${emoji} — ${sub}\n\n*📝 REFLEXÃO:*\n`;
+                text += `*Emoção:* ${emotion} ${emoji}, ${sub}\n\n*📝 REFLEXÃO:*\n`;
                 const questions = (emotions[emotion] && emotions[emotion].questions) || [];
                 questions.forEach((q, qi) => {
                     const ans = (document.getElementById(`${prefix}_q${qi}`) || {}).value || '';

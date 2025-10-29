@@ -37,6 +37,78 @@ document.addEventListener('DOMContentLoaded', () => {
     // estado de seleção: { 'Alegria': Set(['Eufórico','Extasiado']), ... }
     window.selectedSubs = window.selectedSubs || {};
 
+    // -- persistência --
+    const STORAGE_KEY = 'rodaEmocoes_state_v1';
+    let isRestoring = false;
+
+    function saveState(){
+        if (isRestoring) return;
+        const selected = getSelectedByEmotion(); // plain arrays
+        const answers = {};
+        // salvar todos os inputs/textarea com id
+        document.querySelectorAll('#formsWrap textarea[id], #formsWrap input[id]').forEach(el => {
+            if (el.id) answers[el.id] = el.value || '';
+        });
+        const mode = document.getElementById('formsWrap') ? 'forms' : 'accordion';
+        const state = { selected, answers, mode, savedAt: new Date().toISOString() };
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        } catch(e){
+            console.error('Erro ao salvar estado:', e);
+        }
+    }
+
+    function loadState(){
+        try {
+            const raw = localStorage.getItem(STORAGE_KEY);
+            return raw ? JSON.parse(raw) : null;
+        } catch(e){
+            console.error('Erro ao carregar estado:', e);
+            return null;
+        }
+    }
+
+    function restoreState(state){
+        if (!state) return;
+        isRestoring = true;
+        // limpar atual
+        window.selectedSubs = {};
+        // marcar botões de seleção existentes
+        document.querySelectorAll('.sub-btn').forEach(b => {
+            const eName = b.dataset.emotion;
+            const sName = b.dataset.sub;
+            const should = state.selected && state.selected[eName] && state.selected[eName].includes(sName);
+            if (should) {
+                b.classList.add('selected');
+                window.selectedSubs[eName] = window.selectedSubs[eName] || new Set();
+                window.selectedSubs[eName].add(sName);
+            } else {
+                b.classList.remove('selected');
+            }
+        });
+
+        // restaurar respostas (serão aplicadas só quando elementos existirem)
+        if (state.answers) {
+            // se o formulário já existe (modo forms), preencher; caso contrário, preencher após renderForms()
+            for (const id in state.answers) {
+                const el = document.getElementById(id);
+                if (el) el.value = state.answers[id];
+            }
+        }
+
+        isRestoring = false;
+        updateContinueButton();
+
+        // se estava no modo forms, reconstruir formulários e preencher depois
+        if (state.mode === 'forms') {
+            // pequena espera para garantir que eventuais listeners e elementos estejam prontos
+            setTimeout(() => {
+                renderForms(); // renderForms chamará loadState novamente para preencher inputs
+            }, 50);
+        }
+    }
+
+    // ...existing code...
     function toggleSub(emotionName, subBtn, subName){
         window.selectedSubs[emotionName] = window.selectedSubs[emotionName] || new Set();
         const set = window.selectedSubs[emotionName];
@@ -48,6 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
             subBtn.classList.add('selected');
         }
         updateContinueButton();
+        saveState();
     }
 
     function updateContinueButton(){
@@ -112,6 +185,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 b.className = 'sub-btn';
                 b.textContent = feeling;
                 b.style.cursor = 'pointer';
+                // dados para recuperação
+                b.dataset.emotion = name;
+                b.dataset.sub = feeling;
                 b.onclick = () => toggleSub(name, b, feeling);
                 list.appendChild(b);
             });
@@ -166,6 +242,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     b.className = 'sub-btn';
                     b.textContent = sub;
                     b.style.cursor = 'pointer';
+                    // dados para recuperação
+                    b.dataset.emotion = name;
+                    b.dataset.sub = sub;
                     b.onclick = () => toggleSub(name, b, sub);
                     list.appendChild(b);
                 });
@@ -187,6 +266,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     console.log('Acordeão gerado! Total de itens:', container.children.length);
+
+    // restaurar estado salvo (seleções e possivelmente formulários)
+    const saved = loadState();
+    restoreState(saved);
 
     // estado inicial
     updateContinueButton();
@@ -219,6 +302,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         formsWrap.innerHTML = '';
 
+        // carregar estado para preencher respostas existentes
+        const state = loadState() || { answers: {} };
+
         // para cada emoção e sua(s) sub(s) criar cards com perguntas e plano
         Object.entries(window.selectedSubs).forEach(([emotion, set]) => {
             const selected = Array.from(set || []);
@@ -245,6 +331,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     ta.className = 'form-control';
                     ta.rows = 3;
                     ta.id = `${cssSafe(emotion)}_${cssSafe(sub)}_q${qi}`;
+                    // preencher se houver
+                    if (state.answers && state.answers[ta.id]) ta.value = state.answers[ta.id];
+                    // salvar ao digitar
+                    ta.addEventListener('input', saveState);
                     formGroup.appendChild(label);
                     formGroup.appendChild(ta);
                     body.appendChild(formGroup);
@@ -255,11 +345,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 planGroup.className = 'mb-2';
                 const planLabel = document.createElement('label');
                 planLabel.className = 'form-label';
-                planLabel.textContent = '💡 Em caso de sentimento ruim, o que você pode fazer para lidar melhor com isso ou o que você pode fazer para resolver esse sentimento? Se não sabe o que fazer, que tal procurar seu líder pra conversar?';
+                planLabel.textContent = '💡 Em caso de sentimento ruim, o que você pode fazer para lidar melhor com isso ou o que você pode fazer para resolver esse sentimento? Se não sabe o que fazer, que tal procurar alguém pra conversar?';
                 const planTa = document.createElement('textarea');
                 planTa.className = 'form-control';
                 planTa.rows = 2;
                 planTa.id = `${cssSafe(emotion)}_${cssSafe(sub)}_plan`;
+                if (state.answers && state.answers[planTa.id]) planTa.value = state.answers[planTa.id];
+                planTa.addEventListener('input', saveState);
                 planGroup.appendChild(planLabel);
                 planGroup.appendChild(planTa);
                 body.appendChild(planGroup);
@@ -272,6 +364,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const whenInput = document.createElement('input');
                 whenInput.className = 'form-control';
                 whenInput.id = `${cssSafe(emotion)}_${cssSafe(sub)}_when`;
+                if (state.answers && state.answers[whenInput.id]) whenInput.value = state.answers[whenInput.id];
+                whenInput.addEventListener('input', saveState);
                 whenGroup.appendChild(whenLabel);
                 whenGroup.appendChild(whenInput);
                 body.appendChild(whenGroup);
@@ -291,6 +385,8 @@ document.addEventListener('DOMContentLoaded', () => {
         formsWrap.appendChild(controls);
 
         document.getElementById('backToAccordion').onclick = () => {
+            // manter respostas salvas
+            saveState();
             formsWrap.remove();
             container.style.display = '';
             updateContinueButton();
@@ -298,6 +394,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('saveAndCopy').onclick = saveAndCopy;
         // rolar para topo do formulário
         window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        // marcar modo forms no storage
+        saveState();
     }
 
     function saveAndCopy(){
@@ -345,6 +444,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (formsWrap) formsWrap.remove();
             container.style.display = '';
             updateContinueButton();
+            // limpar armazenamento (já salvou via copiar)
+            try { localStorage.removeItem(STORAGE_KEY); } catch(e){ console.error(e); }
         }).catch(err => {
             alert('Erro ao copiar para área de transferência.');
             console.error(err);

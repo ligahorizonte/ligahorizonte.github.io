@@ -8,12 +8,11 @@ featured: false
 pinned: false
 comments: false
 series:
- - Do medo à liberdade
+ - Libertos do medo
 categories:
- - Vida Cristã
  - Saúde Mental
- - Fé
- - Discipulado
+ - Ansiedade
+ - Medo
 tags:
  - medo
  - ansiedade
@@ -28,7 +27,7 @@ authors:
  - sandson
 #images:
 ---
-<span style="color: orange;"><strong>Série: Do Medo à Liberdade - Artigo 5 de 7</strong></span>
+<span style="color: orange;"><strong>Série: Libertos do medo - Artigo 5 de 7</strong></span>
 
 # Introdução
 
@@ -177,7 +176,7 @@ Então, respira fundo. E dá o primeiro passo: escolhe uma pessoa de confiança 
 Você não precisa carregar isso sozinho.
 
 {{< bs/alert warning >}}
-{{< bs/alert-heading "No próximo artigo da série \"Do medo à liberdade\": Ferramentas práticas para enfrentar o medo" >}}
+{{< bs/alert-heading "No próximo artigo da série \"Libertos do medo\": Ferramentas práticas para enfrentar o medo" >}}
 Técnicas simples e eficazes que você pode usar hoje para lidar com ansiedade e medo. Sem enrolação, só o que realmente funciona.
 {{< /bs/alert >}}
 

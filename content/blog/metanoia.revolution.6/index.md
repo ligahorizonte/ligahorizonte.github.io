@@ -16,14 +16,17 @@ categories:
  - Discipulado
 tags:
  - metanoia
- - transforamação espiritual
+ - transforamação
  - arrependimento
+ - vida cristã prática
  - juventude cristã
  - discipulado
  - crescimento espiritual
  - conversão
  - santificação
  - testemunho
+ - relacionamento com Deus
+ - mudança de mente
 authors:
  - sandson
 #images:

@@ -8,12 +8,12 @@ featured: false
 pinned: false
 comments: false
 series:
- - Do medo à liberdade
+ - Libertos do medo
 categories:
- - Vida Cristã
  - Saúde Mental
+ - Ansiedade
+ - Medo
  - Fé
- - Discipulado
 tags:
  - medo
  - ansiedade
@@ -28,9 +28,9 @@ authors:
  - sandson
 #images:
 ---
-<span style="color: orange;"><strong>Série: Do Medo à Liberdade - Artigo 7 de 7</strong></span>
+<span style="color: orange;"><strong>Série: Libertos do medo - Artigo 7 de 7</strong></span>
 
-# Introdução
+# A fé que vence o medo
 
 Chegamos ao último artigo da série. Você aprendeu sobre o medo, sobre ansiedade, sobre depressão, sobre redes sociais, sobre pedir ajuda, sobre ferramentas práticas. Agora vamos falar sobre a arma mais poderosa que você tem: sua fé.
 
@@ -204,6 +204,6 @@ Um dia de cada vez. Um passo de cada vez. Com Deus ao seu lado.
 Deus te abençoe. 🙏
 
 {{< bs/alert info >}}
-{{< bs/alert-heading "Fim da Série: Do Medo à Liberdade" >}}
+{{< bs/alert-heading "Fim da Série: Libertos do medo" >}}
 Se essa série te ajudou de alguma forma, compartilhe com alguém que também precisa ler isso. E se você ainda tá lutando, busque ajuda. Você merece viver livre do medo.
 {{< /bs/alert >}}

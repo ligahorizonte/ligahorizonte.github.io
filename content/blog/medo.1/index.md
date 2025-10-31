@@ -9,12 +9,11 @@ featured: false
 pinned: false
 comments: false
 series:
- - Do medo à liberdade
+ - Libertos do medo
 categories:
- - Vida Cristã
  - Saúde Mental
- - Fé
- - Discipulado
+ - Ansiedade
+ - Medo
 tags:
  - medo
  - ansiedade
@@ -29,7 +28,7 @@ authors:
  - sandson
 #images:
 ---
-<span style="color: orange;"><strong>Série: Do Medo à Liberdade - Artigo 1 de 7</strong></span>
+<span style="color: orange;"><strong>Série: Libertos do medo - Artigo 1 de 7</strong></span>
 
 # Introdução
 
@@ -199,7 +198,7 @@ Entender o medo é o primeiro passo. Agora você sabe de onde ele vem e por que 
 Mas por enquanto, guarda isso: **você não tá sozinho(a)**. O medo que você sente é real, mas ele não precisa controlar sua vida. Deus tá com você.
 
 {{< bs/alert warning >}}
-{{< bs/alert-heading "No próximo artigo da série \"Do medo à liberdade\": Quando o medo vira ansiedade: os sinais que você precisa conhecer" >}}
+{{< bs/alert-heading "No próximo artigo da série \"Libertos do medo\": Quando o medo vira ansiedade: os sinais que você precisa conhecer" >}}
 Entenda como diferentes tipos de medo se transformam em ansiedade e aprenda a identificar os sinais antes que fiquem insuportáveis.
 {{< /bs/alert >}}
 

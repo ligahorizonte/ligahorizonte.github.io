@@ -8,12 +8,11 @@ featured: false
 pinned: false
 comments: false
 series:
- - Do medo à liberdade
+ - Libertos do medo
 categories:
- - Vida Cristã
  - Saúde Mental
- - Fé
- - Discipulado
+ - Ansiedade
+ - Medo
 tags:
  - medo
  - ansiedade
@@ -28,7 +27,7 @@ authors:
  - sandson
 #images:
 ---
-<span style="color: orange;"><strong>Série: Do Medo à Liberdade - Artigo 6 de 7</strong></span>
+<span style="color: orange;"><strong>Série: Libertos do medo - Artigo 6 de 7</strong></span>
 
 # Introdução
 
@@ -236,7 +235,7 @@ Seja paciente com você mesmo.
 Descubra como sua fé pode ser a âncora nos momentos de maior ansiedade. Versículos poderosos e práticas espirituais que transformam.
 
 {{< bs/alert warning >}}
-{{< bs/alert-heading "No próximo e último artigo da série \"Do medo à liberdade\": Fortalecendo sua Fé contra o medo" >}}
+{{< bs/alert-heading "No próximo e último artigo da série \"Libertos do medo\": Fortalecendo sua Fé contra o medo" >}}
 Descubra como sua fé pode ser a âncora nos momentos de maior ansiedade. Versículos poderosos e práticas espirituais que transformam.
 {{< /bs/alert >}}
 

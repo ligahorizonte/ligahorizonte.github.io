@@ -8,12 +8,11 @@ featured: false
 pinned: false
 comments: false
 series:
- - Do medo à liberdade
+ - Libertos do medo
 categories:
- - Vida Cristã
  - Saúde Mental
- - Fé
- - Discipulado
+ - Ansiedade
+ - Medo
 tags:
  - medo
  - ansiedade
@@ -28,7 +27,7 @@ authors:
  - sandson
 #images:
 ---
-<span style="color: orange;"><strong>Série: Do Medo à Liberdade - Artigo 2 de 7</strong></span>
+<span style="color: orange;"><strong>Série: Libertos do medo - Artigo 2 de 7</strong></span>
 
 # Introdução
 
@@ -250,7 +249,7 @@ Mas por enquanto, lembra disso: Deus não te deu espírito de medo. A ansiedade 
 ---
 
 {{< bs/alert warning >}}
-{{< bs/alert-heading "No próximo artigo da série \"Do medo à liberdade\": Quando o medo vira depressão: o peso invisível" >}}
+{{< bs/alert-heading "No próximo artigo da série \"Libertos do medo\": Quando o medo vira depressão: o peso invisível" >}}
 O medo crônico pode levar à depressão. Conheça os sinais, entenda o processo e saiba que há esperança e ajuda disponível para você.
 {{< /bs/alert >}}
 

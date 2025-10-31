@@ -10,17 +10,9 @@ comments: false
 series:
  - 
 categories:
- - Windows
- - Ataques e Exploração
- - Inteligência e Análise
+ -
 tags:
- - PowerShell
- - Logs do Windows
- - Ferramentas de Segurança
- - Threat Hunting
- - Exploração
- - Análise de Ameaças
- - Scripts
+ -
 authors:
  - sandson
 #images:

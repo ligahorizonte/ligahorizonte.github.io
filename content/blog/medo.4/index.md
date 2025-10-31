@@ -8,12 +8,11 @@ featured: false
 pinned: false
 comments: false
 series:
- - Do medo à liberdade
+ - Libertos do medo
 categories:
- - Vida Cristã
  - Saúde Mental
- - Fé
- - Discipulado
+ - Ansiedade
+ - Medo
 tags:
  - medo
  - ansiedade
@@ -28,7 +27,7 @@ authors:
  - sandson
 #images:
 ---
-<span style="color: orange;"><strong>Série: Do Medo à Liberdade - Artigo 4 de 7</strong></span>
+<span style="color: orange;"><strong>Série: Libertos do medo - Artigo 4 de 7</strong></span>
 
 # Introdução
 
@@ -193,7 +192,7 @@ Seu valor foi estabelecido há mais de 2000 anos, quando Jesus morreu na cruz po
 Você é amado. Você é valioso. Você é suficiente. Com zero seguidores ou com mil. Com zero likes ou com milhões. Nada disso muda quem você é em Cristo.
 
 {{< bs/alert warning >}}
-{{< bs/alert-heading "No próximo artigo da série \"Do medo à liberdade\": Conversas difíceis: como falar sobre seus medos" >}}
+{{< bs/alert-heading "No próximo artigo da série \"Libertos do medo\": Conversas difíceis: como falar sobre seus medos" >}}
 Pedir ajuda não é fraqueza, é coragem. Aprenda como abrir o coração com pais, amigos, líderes espirituais e profissionais da saúde sem medo de ser julgado.
 {{< /bs/alert >}}
 

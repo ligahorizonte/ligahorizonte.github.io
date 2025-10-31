@@ -8,27 +8,27 @@ noindex: false
 featured: false
 pinned: false
 comments: false
-series:
- - Analisando Músicas
-categories:
- - Fé
- - Cultura
- - Relacionamentos
-tags:
- - Olivia Rodrigo
- - Deja Vu
- - música pop
- - juventude cristã
- - discipulado
- - crescimento espiritual
- - conversão
- - santificação
- - testemunho
- - análise cristã
- - ciúme
- - comparação
- - perdão
- - fé
+# series:
+#  - Analisando Músicas
+# categories:
+#  - Fé
+#  - Cultura
+#  - Relacionamentos
+# tags:
+#  - Olivia Rodrigo
+#  - Deja Vu
+#  - música pop
+#  - juventude cristã
+#  - discipulado
+#  - crescimento espiritual
+#  - conversão
+#  - santificação
+#  - testemunho
+#  - análise cristã
+#  - ciúme
+#  - comparação
+#  - perdão
+#  - fé
 authors:
  - sandson
 #images:

@@ -8,12 +8,12 @@ featured: false
 pinned: false
 comments: false
 series:
- - Do medo à liberdade
+ - Libertos do medo
 categories:
- - Vida Cristã
  - Saúde Mental
- - Fé
- - Discipulado
+ - Ansiedade
+ - Medo
+ - Depressão
 tags:
  - medo
  - ansiedade
@@ -28,7 +28,7 @@ authors:
  - sandson
 #images:
 ---
-<span style="color: orange;"><strong>Série: Do Medo à Liberdade - Artigo 3 de 7</strong></span>
+<span style="color: orange;"><strong>Série: Libertos do medo - Artigo 3 de 7</strong></span>
 
 # Introdução
 
@@ -203,7 +203,7 @@ Sua noite pode estar sendo longa. Mas a manhã vai chegar. A alegria vai voltar.
 ---
 
 {{< bs/alert warning >}}
-{{< bs/alert-heading "No próximo artigo da série \"Do medo à liberdade\": O medo das redes sociais: quando a validação se torna uma prisão" >}}
+{{< bs/alert-heading "No próximo artigo da série \"Libertos do medo\": O medo das redes sociais: quando a validação se torna uma prisão" >}}
 As redes sociais amplificam nossos medos naturais. Descubra como se libertar da busca infinita por aprovação e encontrar validação verdadeira.
 {{< /bs/alert >}}
 

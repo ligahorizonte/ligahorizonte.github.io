@@ -10,8 +10,9 @@ comments: false
 series:
  - 
 categories:
- - Vida Cristã
- - Discipulado
+ - Cultura
+ - Fé
+ - Cristianismo
 tags:
  - halloween
  - cristão

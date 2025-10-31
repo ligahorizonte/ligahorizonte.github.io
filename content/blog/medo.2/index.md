@@ -174,6 +174,32 @@ O valor que você tem não depende de notas, elogios ou da opinião dos outros.
 - Exaustão por tentar agradar todo mundo.
 - Sensação de vazio mesmo quando recebe elogios.
 
+# Ansiedade mascarada: quando você nem sabe que tem ansiedade
+
+Tem um tipo de ansiedade que é traiçoeira porque você nem percebe que é ansiedade. São aqueles "costumes comuns" que todo mundo faz, mas que em excesso são sinais de alerta.
+
+Você pode estar ansioso(a) e nem saber. É a **ansiedade silenciosa**, aquela que se esconde em pequenos hábitos do dia a dia.
+
+**Sinais de ansiedade mascarada que você precisa observar:**
+
+- **Balançar a perna o tempo todo:** Parece inofensivo, mas é seu corpo liberando tensão nervosa acumulada. Isso me lembra um episódio de DBZ que o Gohan tá na faculdade e começa a tremer a perna e causa um terromoto kkkk. Oh mentira medonha kkkk.
+- **Roer as unhas (ou cuticar a pele):** É um jeito inconsciente de aliviar ansiedade através de uma ação repetitiva. Quando eu era pequeno tinha as unhas perfeitas. Agora não tenho mais kkkkk.
+- **Distração constante durante conversas:** Você tá conversando com alguém mas sua mente não para de vagar. Isso acontece porque seu cérebro tá sobrecarregado de preocupações.
+- **Necessidade de se isolar:** Você começa a cancelar compromissos, evitar pessoas, preferir ficar sozinho. Não porque você quer solidão, mas porque interações sociais drenam sua energia emocional já escassa. É como uma bateria de celular viciada, vai de 100% a 0% em dois tempos.
+- **Culpa por descansar:** Você não consegue relaxar sem sentir que "deveria estar fazendo algo produtivo". Seu cérebro não desliga nunca. Isso também acontece quando você vai dormir, a cabeça fica a milhão.
+- **Checkar o celular compulsivamente:** Mesmo sem notificações, você pega o celular a cada 5 minutos. É uma forma de evitar ficar sozinho com seus pensamentos.
+- **Procrastinação crônica:** Você quer fazer as coisas, mas não consegue começar. Não é preguiça, é ansiedade paralisante disfarçada. Aqui vem aquele sentimento: Ah! Não vou fazer isso porque eu tenho aquilo pra fazer. Daí, muitas das vezes não faz nem um nem outro.
+- **Comer demais ou perder completamente o apetite:** Ansiedade afeta diretamente sua relação com comida. Aqui eu me acabo no sushi. Quando eu tô ansioso eu compro logo sushi pra comer, é uma forma de me aliviar do estresse e da ansiedade.
+- **Sono desregulado:** Dormir demais porque você tá exausto emocionalmente, ou insônia porque sua mente não desliga.
+
+Se você faz várias dessas coisas regularmente, seu corpo pode estar gritando que você tá ansioso, mesmo que você não sinta aquele "aperto no peito" clássico da ansiedade.
+
+**Por que é importante reconhecer?**
+
+Porque quando você não sabe que é ansiedade, você não busca ajuda. Você acha que é "só um hábito", "só um jeito de ser". Mas não é. É seu corpo e sua mente pedindo socorro do único jeito que conseguem.
+
+Se você se identificou com vários desses sinais, não ignore. Preste atenção. Converse com alguém. Procure ajuda. Ansiedade silenciosa ainda é ansiedade, e merece ser tratada.
+
 # Como identificar que seu medo virou ansiedade
 
 A linha entre medo normal e ansiedade pode ser difícil de ver, mas aqui estão os sinais principais:

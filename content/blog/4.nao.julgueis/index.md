@@ -46,7 +46,17 @@ Se fosse assim, Ele estaria se contradizendo, porque em João 7:24 Ele diz:
 
 > "Parem de julgar pelas aparências e julguem com justiça." - Joao 7:24 NTLH
 
-Então, o que Jesus quis proibir não é o **discernimento**, e sim o **espírito de condenação**.
+# Entendendo o contexto
+
+Essas duas falas de Jesus aconteceram em **momentos diferentes e com propósitos diferentes**:
+
+* Em **Mateus 7**, Jesus está no **Sermão do Monte**, ensinando sobre a vida no Reino — humildade, misericórdia e pureza de coração. O “não julgueis” é um alerta contra a **hipocrisia** e a **arrogância espiritual** de quem se coloca como juiz do outro.
+
+* Já em **João 7**, o contexto é outro: os líderes religiosos estavam **acusando Jesus por curar no sábado**. Então Ele os confronta dizendo: ***"julguem com justiça"***, ou seja, **usem discernimento espiritual em vez de julgamentos superficiais e legalistas.**
+
+Percebe a diferença?
+Jesus não está proibindo o discernimento, Ele está ensinando **como** julgar:
+não com condenação, mas com sabedoria e misericórdia.
 
 # O contexto de Mateus 7: a trave e o cisco
 
@@ -58,6 +68,7 @@ O que Ele está dizendo é:
 **O problema não é ver o erro do outro, é ignorar o próprio erro.**
 
 O "cisco" representa pequenas falhas visíveis. A "trave" representa os grandes pecados ocultos — orgulho, vaidade espiritual, crítica destrutiva.
+
 O hipócrita é aquele que quer limpar o outro sem primeiro se deixar purificar.
 
 Jesus então completa:

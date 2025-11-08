@@ -633,17 +633,20 @@ Nos dias difíceis (e eles vão existir), quando você se sentir perdido(a) de n
 > **"Mas agora, assim diz o Senhor, aquele que te criou, ó Jacó, aquele que te formou, ó Israel: Não tenha medo, pois eu te resgatarei. Eu chamei você pelo nome, e você é meu."**  
 > — Isaías 43:1 (NTLH)
 
-**Deus te chama pelo nome.** Você é DELE. E Ele tem um plano INCRÍVEL pra sua vida.
+Deus te **chamou pelo nome**. Ele te conhece. Ele te escolheu.
 
-Não desiste. Não se entrega. Não deixa o mundo definir quem você é.
+E Ele te diz hoje:
+**"Você não está perdido(a). Você pertence a Mim."**
 
-**VOCÊ É FILHO(A) DE DEUS.**
+Então respira fundo e guarda isso no coração:
 
-**VOCÊ É OBRA-PRIMA.**
+- Você **não precisa provar** seu valor — você **já é amado(a)**.
+- Você **não precisa inventar** seu propósito — ele **já foi preparado**.
+- Você **não precisa correr atrás do vento** — apenas **caminhe com Deus**.
 
-**VOCÊ TEM PROPÓSITO.**
+E quando o mundo gritar pra você “procura!”, e você não souber o que procurar…
 
-Agora vai lá e vive isso. 🔥
+Lembre-se: Você não está procurando algo. Está sendo encontrado por Alguém. E esse alguém é Jesus.
 
 > **"Que o Deus da esperança os encha de alegria e paz, por meio da fé em Cristo, para que transbordem de esperança pelo poder do Espírito Santo."**  
 > — Romanos 15:13 (NTLH)

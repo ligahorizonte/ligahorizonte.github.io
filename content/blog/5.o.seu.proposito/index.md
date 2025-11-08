@@ -11,9 +11,11 @@ pinned: false
 comments: false
 series:
  - Encontro LIGA - 2025
+ - Identidade
 categories:
  - Vida Cristã
  - Reflexões
+ - Identidade
 tags:
  - propósito
  - sentido
@@ -28,7 +30,9 @@ authors:
  - sandson
 #images:
 ---
-<span style="color: orange;"><strong>Ao final da reflexão tem uma playlist que você pode ouvir.</strong></span>
+<span style="color: yellow;"><strong>Ao final da reflexão tem uma playlist que você pode ouvir.</strong></span><br>
+<span style="color: orange;"><strong>Essa reflexão é a síntese do assunto abordado no Encontro LIGA Ágape em 07/11/2025.</strong></span><br>
+<span style="color: red;"><strong>Tema de novembro: IDENTIDADE</strong></span>
 
 # 1. Você está procurando algo que nem sabe o que é?
 

@@ -594,6 +594,21 @@ Quer ajudar pessoas? Começa ajudando uma. Quer usar seus dons? Usa hoje, onde v
 
 Deus não tá esperando você ter tudo pronto. Ele tá esperando você dar o primeiro passo.
 
+
+###### **Leia também!**
+
+{{< bs/bookmark-card
+url="https://ligahorizonte.github.io/liga/devocional.html"
+title="COMO FAZER UM DEVOCIONAL PROFUNDO" 
+img="https://tse4.mm.bing.net/th/id/OIP.iWwR_Edin6gXY_xZAtnnMQHaFb?cb=12ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3"
+author="Sandson Costa"
+authorImg="https://ligahorizonte.github.io/liga/sandson.jpg"
+authorIcon="pencil-square"
+authorIconVendor="bootstrap"
+>}}
+Aprenda a extrair verdades que transformam o coração e renovam a mente através de uma profunda reflexão da Palavra de Deus.
+{{< /bs/bookmark-card >}}
+
 # 7. O desafio: três decisões que vão mudar sua vida
 
 Beleza, já leu até aqui. Agora é hora de **decidir**.

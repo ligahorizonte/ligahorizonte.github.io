@@ -218,6 +218,6 @@ Na parte 2 da lição, vamos ver o que aconteceu depois. Como os **desejos desco
 A história de Absalão não terminou no ressentimento. Ela só piorou. Mas a sua não precisa seguir o mesmo caminho.
 
 {{< bs/alert info >}}
-{{< bs/alert-heading "Fim da Série: Libertos do medo" >}}
+{{< bs/alert-heading "P.S.:" >}}
 Se esse artigo mexeu com você de alguma forma, não guarda só pra você. Compartilha.
 {{< /bs/alert >}}

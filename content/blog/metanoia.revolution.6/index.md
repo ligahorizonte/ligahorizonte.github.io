@@ -1,22 +1,22 @@
 ---
-title: "Metanoia Revolution #6: seu guia para a metanoia"
-url: "/blog/metanoia-revolution-6-seu-guia-para-a-metanoia/"
+title: "Metanóia Revolution #6: seu guia para a metanóia"
+url: "/blog/metanóia-revolution-6-seu-guia-para-a-metanóia/"
 date: 2025-10-24T17:33:38-03:00
 draft: false
-description: "Guia prático completo pra metanoia real. Transformação é possível. Sua revolução começa agora. Você tá pronto?"
+description: "Guia prático completo pra metanóia real. Transformação é possível. Sua revolução começa agora. Você tá pronto?"
 noindex: false
 featured: false
 pinned: false
 comments: false
 series:
- - Metanoia Revolution
+ - Metanóia Revolution
 categories:
  - Vida Cristã
  - Espiritualidade
  - Discipulado
 tags:
- - metanoia
- - transforamação
+ - metanóia
+ - transformação
  - arrependimento
  - vida cristã prática
  - juventude cristã
@@ -33,11 +33,11 @@ authors:
 ---
 # Hora de agir: da teoria à prática
 
-Você chegou ao último artigo da série **Metanoia Revolution** 😎.
+Você chegou ao último artigo da série **Metanóia Revolution** 😎.
 
 Até agora, a gente cobriu:
 
-- O que é metanoia e por que é revolucionário.
+- O que é metanóia e por que é revolucionário.
 - Os maiores plot twists da Bíblia — transformações reais e absurdas.
 - A ciência — como seu cérebro pode literalmente mudar.
 - O impacto social — como mentes transformadas mudam o mundo.
@@ -51,7 +51,7 @@ Esse artigo é pra isso.
 
 Bora fechar com chave de ouro?
 
-Metanoia não acontece por acaso. Não é só acordar um dia e _"tá, agora sou transformado"_. É um processo intencional que exige escolhas diárias.
+Metanóia não acontece por acaso. Não é só acordar um dia e _"tá, agora sou transformado"_. É um processo intencional que exige escolhas diárias.
 
 Vamos praticar!
 
@@ -119,9 +119,9 @@ Esse tipo de vulnerabilidade causa medo. Mas é o ponto de partida.
 # Tenha um real encontro com Jesus
 
 Aqui vai uma verdade que precisa ser dita:
-Metanoia não é apenas força de vontade ou autoaperfeiçoamento.
+Metanóia não é apenas força de vontade ou autoaperfeiçoamento.
 Não é você tentando "ser melhor" com suas próprias forças. Isso é autoajuda disfarçado de cristianismo. E não funciona.
-Metanoia é uma resposta a um encontro com Jesus.
+Metanóia é uma resposta a um encontro com Jesus.
 
 Cada história de transformação no Novo Testamento começa com as pessoas encontrando Jesus de alguma forma:
 
@@ -175,7 +175,7 @@ E se você já fez isso antes mas se afastou? Faça de novo. Deus não cansa de 
 
 # Renove sua mente diariamente
 
-Metanoia não é um evento único. É um processo contínuo.
+Metanóia não é um evento único. É um processo contínuo.
 
 Paulo disse:
 
@@ -276,7 +276,7 @@ Pergunte-se:
 
 
 - **Espere resistência:**
-Metanoia é revolucionária. E revoluções enfrentam resistência.
+Metanóia é revolucionária. E revoluções enfrentam resistência.
     - **A resistência pode vir de:**
         - **Dentro de você:** Seus velhos hábitos não vão desistir sem luta. Seu cérebro criou caminhos neurais fortes durante anos. Mudar isso é difícil. Você vai ter dias onde vai querer desistir. Você vai falhar. Você vai se sentir hipócrita. Isso é normal. Não significa que você não mudou. Significa que você tá em processo.
     - **Das pessoas ao seu redor:** Nem todo mundo vai gostar da sua transformação. Amigos que te puxavam pra coisas erradas podem te criticar por "virar crente". Familiares podem não entender. Colegas podem te zoar.
@@ -330,10 +330,10 @@ Vai ter recaídas.
 
 Mas continue.
 Levante-se e continue.
-A metanoia é uma jornada.
+A metanóia é uma jornada.
 E Deus tá com você em cada passo.
 
 {{< bs/alert info >}}
 {{< bs/alert-heading "P.S.:" >}}
-Se esse artigo mexeu com você de alguma forma, não guarda só pra você. Compartilha com aquele amigo que também tá precisando de um reset. Às vezes, metanoia começa com uma conversa.
+Se esse artigo mexeu com você de alguma forma, não guarda só pra você. Compartilha com aquele amigo que também tá precisando de um reset. Às vezes, metanóia começa com uma conversa.
 {{< /bs/alert >}}

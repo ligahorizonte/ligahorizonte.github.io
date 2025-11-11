@@ -148,6 +148,6 @@ Que a gente aprenda com ele a não deixar os desejos e influências erradas roub
 
 
 {{< bs/alert info >}}
-{{< bs/alert-heading "Fim da Série: Libertos do medo" >}}
+{{< bs/alert-heading "P.S.:" >}}
 Se esse artigo mexeu com você de alguma forma, não guarda só pra você. Compartilha.
 {{< /bs/alert >}}

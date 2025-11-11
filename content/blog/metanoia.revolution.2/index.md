@@ -1,22 +1,22 @@
 ---
-title: "Metanoia Revolution #2: Os maiores plot twists da Bíblia"
-url: "/blog/metanoia-revolution-2-os-maiores-plot-twists-da-biblia/"
+title: "Metanóia Revolution #2: Os maiores plot twists da Bíblia"
+url: "/blog/metanóia-revolution-2-os-maiores-plot-twists-da-biblia/"
 date: 2025-10-23T16:15:38-03:00
 draft: false
-description: "As histórias reais mais insanas de transformação. Paulo, Pedro e Davi provam que metanoia muda vidas radicalmente."
+description: "As histórias reais mais insanas de transformação. Paulo, Pedro e Davi provam que metanóia muda vidas radicalmente."
 noindex: false
 featured: false
 pinned: false
 comments: false
 series:
- - Metanoia Revolution
+ - Metanóia Revolution
 categories:
  - Vida Cristã
  - Espiritualidade
  - Discipulado
 tags:
- - metanoia
- - transforamação espiritual
+ - metanóia
+ - transformação espiritual
  - arrependimento
  - juventude cristã
  - discipulado
@@ -30,7 +30,7 @@ authors:
 ---
 # Quando a vida real supera a ficção
 
-No último artigo, a gente falou do Zuko como exemplo de metanoia e sim, a transformação dele é absurda.
+No último artigo, a gente falou do Zuko como exemplo de metanóia e sim, a transformação dele é absurda.
 
 Mas se liga: tem histórias reais que fariam qualquer anime parecer leve.
 
@@ -44,7 +44,7 @@ Jesus começou sua missão com uma mensagem simples e direta:
 
 > "Daí em diante Jesus começou a anunciar a sua mensagem. Ele dizia: — Arrependam-se dos seus pecados porque o Reino do Céu está perto!" Mateus 4:17 NTLH
 
-Mas lembra do artigo anterior? A palavra traduzida como "arrependam-se" é metanoia. Ou seja, Jesus tava dizendo: _“Mudem a forma de pensar! Uma nova realidade tá chegando, e vocês precisam de uma nova mente pra enxergar isso.”_
+Mas lembra do artigo anterior? A palavra traduzida como "arrependam-se" é metanóia. Ou seja, Jesus tava dizendo: _“Mudem a forma de pensar! Uma nova realidade tá chegando, e vocês precisam de uma nova mente pra enxergar isso.”_
 
 Não era um convite educado. Era o início de uma revolução mental.
 E aí Ele começou a chamar pessoas pra essa mudança radical.
@@ -57,12 +57,12 @@ Antes de Jesus, apareceu João Batista, o cara que morava no deserto, comia gafa
 
 É... Esse cara não tava pra brincadeira.
 
-Pra João, metanoia não era emoção nem ritual, era ação real.
+Pra João, metanóia não era emoção nem ritual, era ação real.
 Jesus levou isso ainda mais longe.
 
 # Paulo: O plot twist mais insano da história
 
-Se tem uma história de metanoia que parece roteiro de filme, é a de Paulo. Sério, isso aqui é tão absurdo que você vai achar que tô exagerando. Mas não tô. Isso aconteceu.
+Se tem uma história de metanóia que parece roteiro de filme, é a de Paulo. Sério, isso aqui é tão absurdo que você vai achar que tô exagerando. Mas não tô. Isso aconteceu.
 
 ## O passado do vilão
 
@@ -106,7 +106,7 @@ Todo mundo ficou tipo: _"Peraí, esse não é o cara que destruía os cristãos 
 
 Sim. Era ele. Mas ele não era mais ele.
 
-Metanoia. Transformação total.
+Metanóia. Transformação total.
 
 E não parou por aí.
 
@@ -115,7 +115,7 @@ Plantou igrejas, escreveu grande parte do Novo Testamento (13 livros são dele),
 
 De inimigo número 1 dos cristãos a maior propagador da fé cristã da história.
 
-Isso é metanoia no nível hard!
+Isso é metanóia no nível hard!
 
 # Pedro: do “nunca vou te abandonar” ao pregador corajoso
 
@@ -156,11 +156,11 @@ O negador virou líder.
 
 Vergonha virou ousadia.
 
-Metanoia.
+Metanóia.
 
 # Conexão com o Antigo Testamento
 
-Antes de terminar, é importante saber: metanoia não começou no Novo Testamento. O conceito já tava lá no Antigo Testamento, só que com outra palavra.
+Antes de terminar, é importante saber: metanóia não começou no Novo Testamento. O conceito já tava lá no Antigo Testamento, só que com outra palavra.
 
 A palavra hebraica equivalente é shuv (שׁוּב), que significa "voltar", "retornar" ou "dar a volta".
 
@@ -172,7 +172,7 @@ Esse "voltar" não era só uma mudança de comportamento superficial. Era uma mu
 
 ## Davi: do pecado ao coração quebrantado
 
-Um dos exemplos mais marcantes de metanoia no Antigo Testamento é Davi.
+Um dos exemplos mais marcantes de metanóia no Antigo Testamento é Davi.
 Davi era o rei de Israel e é descrito como "um homem segundo o coração de Deus" (1 Sm 13:14; At 13:22). Mas ele pecou: cometeu adultério, tentou esconder, e mandou matar o marido da mulher.
 
 Mas quando o profeta Natã o confrontou, ele quebrou.
@@ -192,7 +192,7 @@ Séculos antes de Jesus, o profeta Ezequiel já tinha anunciado:
 
 > Eu lhes darei um coração novo e porei em vocês um espírito novo. Tirarei de vocês o coração de pedra, desobediente, e lhes darei um coração bondoso, obediente. Porei o meu Espírito dentro de vocês e farei com que obedeçam às minhas leis e cumpram todos os mandamentos que lhes dei. Ezequiel 36:26-27 NTLH
 
-Esse é o coração da metanoia: Deus não quer só mudar o comportamento — Ele quer transformar o interior.
+Esse é o coração da metanóia: Deus não quer só mudar o comportamento — Ele quer transformar o interior.
 
 # E você? 🫵
 
@@ -204,7 +204,7 @@ Eles erraram feio. Foram quebrados.
 
 E é justamente por isso que essas histórias são pra gente comum.
 
-Metanoia não é pra quem acerta sempre.
+Metanóia não é pra quem acerta sempre.
 
 É pra quem decide não continuar igual.
 
@@ -213,7 +213,7 @@ Jesus ainda faz isso hoje: pega pessoas quebradas e transforma completamente.
 Então... e se essa revolução começasse em você?
 
 {{< bs/alert warning >}}
-{{< bs/alert-heading "No próximo artigo: Metanoia Revolution #3 - Seu cérebro pode mudar (sério!)" >}}
+{{< bs/alert-heading "No próximo artigo: Metanóia Revolution #3 - Seu cérebro pode mudar (sério!)" >}}
 Você viu as histórias bíblicas. Mas e a ciência? Será que existe base científica pra essa ideia de transformação mental radical?
 Spoiler: tem sim. E é fascinante.
 A gente vai mergulhar na neuroplasticidade, na psicologia da mudança, e descobrir que a Bíblia tava falando de coisas que a ciência só descobriu recentemente.
@@ -223,5 +223,5 @@ A revolução continua. 🧠⚡
 
 {{< bs/alert info >}}
 {{< bs/alert-heading "P.S.:" >}}
-Se esse artigo mexeu com você de alguma forma, não guarda só pra você. Compartilha com aquele amigo que também tá precisando de um reset. Às vezes, metanoia começa com uma conversa.
+Se esse artigo mexeu com você de alguma forma, não guarda só pra você. Compartilha com aquele amigo que também tá precisando de um reset. Às vezes, metanóia começa com uma conversa.
 {{< /bs/alert >}}

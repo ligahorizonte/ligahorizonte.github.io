@@ -10,11 +10,11 @@ comments: false
 series:
 categories:
  - Vida Cristã
- - Metanoia
+ - Cultura
 tags:
  - tempo
- - transforamação espiritual
- - metanoia
+ - transformação espiritual
+ - metanóia
  - juventude cristã
  - discipulado
  - crescimento espiritual
@@ -93,7 +93,7 @@ Leia a Bíblia antes de abrir o TikTok.
 Adore antes de assistir.
 
 Você vai perceber que a presença de Deus não é entediante, é transformadora.
-E essa transformação é o verdadeiro propósito da metanoia: deixar Deus reprogramar sua mente e te libertar daquilo que o mundo te ensina a chamar de “normal”.
+E essa transformação é o verdadeiro propósito da metanóia: deixar Deus reprogramar sua mente e te libertar daquilo que o mundo te ensina a chamar de “normal”.
 
 # Conclusão
 
@@ -105,5 +105,5 @@ O tempo é o espelho das suas prioridades, e as suas prioridades revelam o que e
 
 {{< bs/alert info >}}
 {{< bs/alert-heading "P.S.:" >}}
-Se esse artigo mexeu com você de alguma forma, não guarda só pra você. Compartilha com aquele amigo que também tá precisando de um reset. Às vezes, metanoia começa com uma conversa.
+Se esse artigo mexeu com você de alguma forma, não guarda só pra você. Compartilha com aquele amigo que também tá precisando de um reset. Às vezes, metanóia começa com uma conversa.
 {{< /bs/alert >}}

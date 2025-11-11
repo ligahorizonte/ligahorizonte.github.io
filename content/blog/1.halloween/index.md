@@ -133,5 +133,5 @@ Então, neste 31 de outubro, não entre na onda do Halloween, escolha viver como
 
 {{< bs/alert info >}}
 {{< bs/alert-heading "P.S.:" >}}
-Se esse artigo mexeu com você de alguma forma, não guarda só pra você. Compartilha com aquele amigo ou amiga ou amiga que também tá precisando de um reset. Às vezes, metanoia começa com uma conversa.
+Se esse artigo mexeu com você de alguma forma, não guarda só pra você. Compartilha.
 {{< /bs/alert >}}
